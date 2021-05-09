@@ -63,6 +63,11 @@ NOTE: This file contains the styling for responsive Template.
 /*--------------------------------------------------------------------
                             General
 ---------------------------------------------------------------------*/
+
+/* body {*/
+/*     font-family: 'Tajawal', sans-serif;*/
+
+/*}*/
 *::-moz-selection { background: var(--iq-primary); color: var(--iq-white); text-shadow: none; }
 ::-moz-selection { background: var(--iq-primary); color: var(--iq-white); text-shadow: none; }
 ::selection { background: var(--iq-primary); color: var(--iq-white); text-shadow: none; }
@@ -70,7 +75,6 @@ NOTE: This file contains the styling for responsive Template.
 /* Definition Lists */
 dl dd { margin-bottom: 15px; }
 dl dd:last-child { margin-bottom: 0px; }
-
 /* Table */
 th { }
 a:hover { text-decoration: none; }

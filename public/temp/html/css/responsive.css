@@ -151,7 +151,7 @@ NOTE: This file contains the styling for responsive Template.
 		.sign-in-detail { padding: 50px 20px; }
 		.sign-in-from { padding: 20px; }
 		.iq-error h1 { font-size: 12rem; }
-		.user-detail { margin-bottom: 15px; padding-left: 0 !important; }
+		.user-detail { padding-left: 0 !important; }
 		.user-detail .d-flex { display: block !important; text-align: center; }
 		.profile-img { text-align: center; padding-right: 0 !important }
 		.profile-feed-items { width: 100%; justify-content: center; }

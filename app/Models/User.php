@@ -40,4 +40,27 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getAvatarAttribute()
+    {
+        if ($this->profile_photo)
+            return asset('storage/'.$this->profile_photo);
+        else
+            return 'https://ui-avatars.com/api/?name='.urlencode($this->name);
+    }
+
+    public function posts()
+    {
+        return $this->hasMany(Post::class)->latest();
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'name';
+    }
 }
