@@ -7,7 +7,7 @@
     <title>Unibook</title>
 
     @if (\Illuminate\Support\Facades\App::currentLocale() === 'ar')
-        <link rel="shortcut icon" href="{{asset('temp/html-rtl/images/favicon.ico')}}" />
+        <link rel="shortcut icon" href="{{asset('temp/images/favicon.ico')}}" />
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/typography.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/style.css')}}">
