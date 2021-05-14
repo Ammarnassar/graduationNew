@@ -63,6 +63,10 @@ NOTE: This file contains the styling for responsive Template.
 /*--------------------------------------------------------------------
                             General
 ---------------------------------------------------------------------*/
+
+body {
+    font-family: 'Cairo', sans-serif;
+}
 *::-moz-selection { background: var(--iq-primary); color: var(--iq-white); text-shadow: none; }
 ::-moz-selection { background: var(--iq-primary); color: var(--iq-white); text-shadow: none; }
 ::selection { background: var(--iq-primary); color: var(--iq-white); text-shadow: none; }

@@ -39,4 +39,8 @@ class Post extends Model
         return $this->hasOne(Media::class);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->latest();
+    }
 }

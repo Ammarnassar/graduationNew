@@ -11,13 +11,15 @@ use Livewire\Component;
 class card extends Component
 {
     public $post;
-    public $likeCount;
+    public $likeCount = 0;
     public $like = false;
     public $likesList = [];
+    public $commentsCount = 0;
 
     protected $listeners = [
         'likeAdded' => 'likeCount' ,
-        'likeDeleted' => 'likeCount'
+        'likeDeleted' => 'likeCount',
+        'commentAdded' => 'commentCount',
     ];
 
     public function render()
@@ -27,9 +29,11 @@ class card extends Component
 
         $this->likeCount = $this->post->likes_count;
 
-        $this->likesList = User::whereHas('likes' , function ($q) {
+        $this->commentsCount = $this->post->comments->count();
+
+        $this->likesList = collect(User::whereHas('likes' , function ($q) {
             $q->where('post_id' , $this->post->id);
-        })->get();
+        })->get())->take(5);
 
         return view('livewire.post.card');
     }
@@ -60,6 +64,11 @@ class card extends Component
     public function likeCount()
     {
         $this->likeCount = $this->post->likes->count();
+    }
+
+    public function commentCount()
+    {
+        $this->commentsCount = $this->post->comments->count();
     }
 
     public function deletePost()

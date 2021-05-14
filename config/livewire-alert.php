@@ -7,11 +7,12 @@
 return [
     'alert' => [
         'position' => 'top',
-        'timer' => 3000,
+        'timer' => 3000000,
         'toast' => true,
         'text' => null,
         'showCancelButton' => false,
-        'showConfirmButton' => false
+        'showConfirmButton' => false,
+        'width' => 'max-content'
     ],
     'confirm' => [
         'icon' => 'warning',
@@ -22,6 +23,6 @@ return [
         'showCancelButton' => true,
         'cancelButtonText' => 'No',
         'confirmButtonColor' => '#3085d6',
-        'cancelButtonColor' => '#d33'
+        'cancelButtonColor' => '#d33',
     ]
 ];

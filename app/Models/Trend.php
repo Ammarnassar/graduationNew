@@ -9,10 +9,12 @@ use Illuminate\Support\Facades\DB;
 class Trend extends Model
 {
     use HasFactory;
+
     protected $fillable = [
       'post_id',
       'name'
     ];
+
 
     public function getPostsCountAttribute()
     {
@@ -23,6 +25,6 @@ class Trend extends Model
 
     public function posts()
     {
-        return $this->belongsToMany(Post::class);
+        return $this->belongsToMany(Post::class , 'post_trend');
     }
 }
