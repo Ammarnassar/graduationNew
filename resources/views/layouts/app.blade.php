@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en">
+<html @if (App::currentLocale() === 'ar') dir="rtl" @else dir="ltr" @endif lang="en" >
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -8,20 +9,33 @@
     <!-- Favicon -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="{{asset('temp/html/images/favicon.ico')}}" />
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{asset('temp/html/css/bootstrap.min.css')}}">
-    <!-- Typography CSS -->
-    <link rel="stylesheet" href="{{asset('temp/html/css/typography.css')}}">
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="{{asset('temp/html/css/style.css')}}">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{asset('temp/html/css/responsive.css')}}">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
+    @if (\Illuminate\Support\Facades\App::currentLocale() === 'ar')
+        <link rel="shortcut icon" href="{{asset('temp/images/favicon.ico')}}" />
+        <link rel="stylesheet" href="{{asset('temp/html-rtl/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('temp/html-rtl/css/typography.css')}}">
+        <link rel="stylesheet" href="{{asset('temp/html-rtl/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('temp/html-rtl/css/responsive.css')}}">
+
+    @else
+        <link rel="shortcut icon" href="{{asset('temp/images/favicon.ico')}}" />
+        <link rel="stylesheet" href="{{asset('temp/html/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('temp/html/css/typography.css')}}">
+        <link rel="stylesheet" href="{{asset('temp/html/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('temp/html/css/responsive.css')}}">
+    @endif
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
     @livewireStyles
 
@@ -40,158 +54,42 @@
         <div id="sidebar-scrollbar">
             <nav class="iq-sidebar-menu">
                 <ul id="iq-sidebar-toggle" class="iq-menu">
-                    <li class="active">
-                        <a href="/" class="iq-waves-effect"><i class="las la-newspaper"></i><span>Newsfeed</span></a>
+                    <li @if(Route::currentRouteName() == 'home') class="active" @endif>
+                        <a href="/" class="iq-waves-effect"><i class="las la-newspaper"></i><span>{{__('Newsfeed')}}</span></a>
+                    </li>
+                    <li @if(Route::currentRouteName() == 'user.profile') class="active" @endif>
+                        <a href="{{route('user.profile' , strtolower(auth()->user()->name))}}" class="iq-waves-effect"><i class="las la-user"></i><span>{{__('Profile')}}</span></a>
                     </li>
                     <li>
-                        <a href="{{route('profile' , strtolower(auth()->user()->name))}}" class="iq-waves-effect"><i class="las la-user"></i><span>Profile</span></a>
+                        <a href="" class="iq-waves-effect"><i class="las la-user-friends"></i><span>{{__('Friends List')}}</span></a>
                     </li>
                     <li>
-                        <a href="{{asset('temp/html/friend-list.html')}}" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Friend Lists</span></a>
+                        <a href="" class="iq-waves-effect"><i class="las la-users"></i><span>{{__('Groups')}}</span></a>
+                    </li>
+                    <li @if(Route::currentRouteName() == 'user.photos') class="active" @endif>
+                        <a href="{{route('user.photos')}}" class="iq-waves-effect"><i class="las la-image"></i><span>{{__('Profile Image')}}</span></a>
+                    </li>
+                    <li @if(Route::currentRouteName() == 'user.videos') class="active" @endif>
+                        <a href="{{route('user.videos')}}" class="iq-waves-effect"><i class="las la-video"></i><span>{{__('Profile Video')}}</span></a>
                     </li>
                     <li>
-                        <a href="{{asset('temp/html/group.html')}}" class="iq-waves-effect"><i class="las la-users"></i><span>Group</span></a>
+                        <a href="" class="iq-waves-effect"><i class="las la-bell"></i><span>{{__('Notification')}}</span></a>
                     </li>
                     <li>
-                        <a href="{{asset('temp/html/profile-images.html')}}" class="iq-waves-effect"><i class="las la-image"></i><span>Profile Image</span></a>
+                        <a href="" class="iq-waves-effect"><i class="las la-anchor"></i><span>{{__('Friend Request')}}</span></a>
                     </li>
                     <li>
-                        <a href="{{asset('temp/html/profile-video.html')}}" class="iq-waves-effect"><i class="las la-video"></i><span>Profile Video</span></a>
+                        <a href="" class="iq-waves-effect"><i class="lab la-rocketchat"></i><span>{{__('Chat')}}</span></a>
                     </li>
                     <li>
-                        <a href="{{asset('temp/html/profile-event.html')}}" class="iq-waves-effect"><i class="las la-film"></i><span>Profile Events</span></a>
+                        <a href="" class="iq-waves-effect"><i class="las la-check-circle"></i><span>{{__('Todo')}}</span></a>
                     </li>
                     <li>
-                        <a href="{{asset('temp/html/notification.html')}}" class="iq-waves-effect"><i class="las la-bell"></i><span>Notification</span></a>
+                        <a href="" class="iq-waves-effect"><i class="las la-calendar"></i><span>{{__('Calendar')}}</span></a>
                     </li>
                     <li>
-                        <a href="{{asset('temp/html/file.html')}}" class="iq-waves-effect"><i class="las la-file"></i><span>Files</span></a>
+                        <a href="" class="iq-waves-effect collapsed" ><i class="bi bi-envelope"></i><span>{{__('Email')}}</span></a>
                     </li>
-                    <li>
-                        <a href="{{asset('temp/html/friend-request.htm')}}l" class="iq-waves-effect"><i class="las la-anchor"></i><span>Friend Request</span></a>
-                    </li>
-                    <li>
-                        <a href="{{asset('temp/html/chat.html')}}" class="iq-waves-effect"><i class="lab la-rocketchat"></i><span>Chat</span></a>
-                    </li>
-                    <li>
-                        <a href="{{asset('temp/html/todo.html')}}" class="iq-waves-effect"><i class="las la-check-circle"></i><span>Todo</span></a>
-                    </li>
-                    <li>
-                        <a href="{{asset('temp/html/calendar.html')}}" class="iq-waves-effect"><i class="las la-calendar"></i><span>Calendar</span></a>
-                    </li>
-                    <li>
-                        <a href="{{asset('temp/html/birthday.html')}}" class="iq-waves-effect"><i class="las la-birthday-cake"></i><span>Birthday</span></a>
-                    </li>
-                    <li>
-                        <a href="{{asset('temp/html/weather.html')}}" class="iq-waves-effect"><i class="ri-snowy-line"></i><span>Weather</span></a>
-                    </li>
-                    <li>
-                        <a href="{{asset('temp/html/music.html')}}" class="iq-waves-effect"><i class="ri-play-circle-line"></i><span>Music</span></a>
-                    </li>
-                    <li>
-                        <a href="#mailbox" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="ri-mail-line"></i><span>Email</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                        <ul id="mailbox" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            <li><a href="/"><i class="ri-inbox-line"></i>Inbox</a></li>
-                            <li><a href="/"><i class="ri-edit-line"></i>Email Compose</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#ui-elements" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="ri-focus-2-line"></i><span>Ui-Elements</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                        <ul id="ui-elements" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            <li>
-                                <a href="#ui-kit" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pencil-ruler-line"></i><span>UI Kit</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                                <ul id="ui-kit" class="iq-submenu collapse" data-parent="#ui-elements">
-                                    <li><a href="{{asset('temp/html/ui-colors.html')}}"><i class="ri-font-color"></i>colors</a></li>
-                                    <li><a href="{{asset('temp/html/ui-typography.html')}}"><i class="ri-text"></i>Typography</a></li>
-                                    <li><a href="{{asset('temp/html/ui-alerts.html')}}"><i class="ri-alert-line"></i>Alerts</a></li>
-                                    <li><a href="{{asset('temp/html/ui-badges.html')}}"><i class="ri-building-3-line"></i>Badges</a></li>
-                                    <li><a href="{{asset('temp/html/ui-breadcrumb.html')}}"><i class="ri-menu-2-line"></i>Breadcrumb</a></li>
-                                    <li><a href="{{asset('temp/html/ui-buttons.html')}}"><i class="ri-checkbox-blank-line"></i>Buttons</a></li>
-                                    <li><a href="{{asset('temp/html/ui-cards.html')}}"><i class="ri-bank-card-line"></i>Cards</a></li>
-                                    <li><a href="{{asset('temp/html/ui-carousel.html')}}"><i class="ri-slideshow-line"></i>Carousel</a></li>
-                                    <li><a href="{{asset('temp/html/ui-embed-video.html')}}"><i class="ri-slideshow-2-line"></i>Video</a></li>
-                                    <li><a href="{{asset('temp/html/ui-grid.html')}}"><i class="ri-grid-line"></i>Grid</a></li>
-                                    <li><a href="{{asset('temp/html/ui-images.html')}}"><i class="ri-image-line"></i>Images</a></li>
-                                    <li><a href="{{asset('temp/html/ui-list-group.html')}}"><i class="ri-file-list-3-line"></i>list Group</a></li>
-                                    <li><a href="{{asset('temp/html/ui-media-object.html')}}"><i class="ri-camera-line"></i>Media</a></li>
-                                    <li><a href="{{asset('temp/html/ui-modal.html')}}"><i class="ri-stop-mini-line"></i>Modal</a></li>
-                                    <li><a href="{{asset('temp/html/ui-notifications.html')}}"><i class="ri-notification-line"></i>Notifications</a></li>
-                                    <li><a href="{{asset('temp/html/ui-pagination.html')}}"><i class="ri-pages-line"></i>Pagination</a></li>
-                                    <li><a href="{{asset('temp/html/ui-popovers.html')}}"><i class="ri-folder-shield-2-line"></i>Popovers</a></li>
-                                    <li><a href="{{asset('temp/html/ui-progressbars.html')}}"><i class="ri-battery-low-line"></i>Progressbars</a></li>
-                                    <li><a href="{{asset('temp/html/ui-tabs.html')}}"><i class="ri-database-line"></i>Tabs</a></li>
-                                    <li><a href="{{asset('temp/html/ui-tooltips.html')}}"><i class="ri-record-mail-line"></i>Tooltips</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#forms" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-profile-line"></i><span>Forms</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                                <ul id="forms" class="iq-submenu collapse" data-parent="#ui-elements">
-                                    <li><a href="{{asset('temp/html/form-layout.html')}}"><i class="ri-tablet-line"></i>Form Elements</a></li>
-                                    <li><a href="{{asset('temp/html/form-validation.html')}}"><i class="ri-device-line"></i>Form Validation</a></li>
-                                    <li><a href="{{asset('temp/html/form-switch.html')}}"><i class="ri-toggle-line"></i>Form Switch</a></li>
-                                    <li><a href="{{asset('temp/html/form-chechbox.html')}}"><i class="ri-checkbox-line"></i>Form Checkbox</a></li>
-                                    <li><a href="{{asset('temp/html/form-radio.html')}}"><i class="ri-radio-button-line"></i>Form Radio</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#wizard-form" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-archive-drawer-line"></i><span>Forms Wizard</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                                <ul id="wizard-form" class="iq-submenu collapse" data-parent="#ui-elements">
-                                    <li><a href="{{asset('temp/html/form-wizard.html')}}"><i class="ri-clockwise-line"></i>Simple Wizard</a></li>
-                                    <li><a href="{{asset('temp/html/form-wizard-validate.html')}}"><i class="ri-clockwise-2-line"></i>Validate Wizard</a></li>
-                                    <li><a href="{{asset('temp/html/form-wizard-vertical.htm')}}l"><i class="ri-anticlockwise-line"></i>Vertical Wizard</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#tables" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-table-line"></i><span>Table</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                                <ul id="tables" class="iq-submenu collapse" data-parent="#ui-elements">
-                                    <li><a href="{{asset('temp/html/tables-basic.html')}}"><i class="ri-table-line"></i>Basic Tables</a></li>
-                                    <li><a href="{{asset('temp/html/data-table.html')}}"><i class="ri-database-line"></i>Data Table</a></li>
-                                    <li><a href="{{asset('temp/html/table-editable.html')}}"><i class="ri-refund-line"></i>Editable Table</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#icons" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-list-check"></i><span>Icons</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                                <ul id="icons" class="iq-submenu collapse" data-parent="#ui-elements">
-                                    <li><a href="{{asset('temp/html/icon-dripicons.html')}}"><i class="ri-stack-line"></i>Dripicons</a></li>
-                                    <li><a href="{{asset('temp/html/icon-fontawesome-5.html')}}"><i class="ri-facebook-fill"></i>Font Awesome 5</a></li>
-                                    <li><a href="{{asset('temp/html/icon-lineawesome.html')}}"><i class="ri-keynote-line"></i>line Awesome</a></li>
-                                    <li><a href="{{asset('temp/html/icon-remixicon.html')}}"><i class="ri-remixicon-line"></i>Remixicon</a></li>
-                                    <li><a href="{{asset('temp/html/icon-unicons.html')}}"><i class="ri-underline"></i>unicons</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#pages" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="ri-pages-line"></i><span>Pages</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                        <ul id="pages" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                            <li>
-                                <a href="#authentication" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pages-line"></i><span>Authentication</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                                <ul id="authentication" class="iq-submenu collapse" data-parent="#pages">
-                                    <li><a href="{{asset('temp/html/sign-in.html')}}"><i class="ri-login-box-line"></i>Login</a></li>
-                                    <li><a href="{{asset('temp/html/sign-up.html')}}"><i class="ri-login-circle-line"></i>Register</a></li>
-                                    <li><a href="{{asset('temp/html/pages-recoverpw.html')}}"><i class="ri-record-mail-line"></i>Recover Password</a></li>
-                                    <li><a href="{{asset('temp/html/pages-confirm-mail.html')}}"><i class="ri-file-code-line"></i>Confirm Mail</a></li>
-                                    <li><a href="{{asset('temp/html/pages-lock-screen.html')}}"><i class="ri-lock-line"></i>Lock Screen</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#extra-pages" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-pantone-line"></i><span>Extra Pages</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
-                                <ul id="extra-pages" class="iq-submenu collapse" data-parent="#pages">
-                                    <li><a href="{{asset('temp/html/pages-timeline.html')}}"><i class="ri-map-pin-time-line"></i>Timeline</a></li>
-                                    <li><a href="{{asset('temp/html/pages-invoice.html')}}"><i class="ri-question-answer-line"></i>Invoice</a></li>
-                                    <li><a href="{{asset('temp/html/blank-page.html')}}"><i class="ri-invision-line"></i>Blank Page</a></li>
-                                    <li><a href="{{asset('temp/html/pages-error.html')}}"><i class="ri-error-warning-line"></i>Error 404</a></li>
-                                    <li><a href="{{asset('temp/html/pages-error-500.html')}}"><i class="ri-error-warning-line"></i>Error 500</a></li>
-                                    <li><a href="{{asset('temp/html/pages-pricing.html')}}"><i class="ri-price-tag-line"></i>Pricing</a></li>
-                                    <li><a href="{{asset('temp/html/pages-pricing-one.html')}}"><i class="ri-price-tag-2-line"></i>Pricing 1</a></li>
-                                    <li><a href="{{asset('temp/html/pages-maintenance.html')}}"><i class="ri-archive-line"></i>Maintenance</a></li>
-                                    <li><a href="{{asset('temp/html/pages-comingsoon.html')}}"><i class="ri-mastercard-line"></i>Coming Soon</a></li>
-                                    <li><a href="{{asset('temp/html/pages-faq.html')}}"><i class="ri-compasses-line"></i>Faq</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-
                 </ul>
             </nav>
             <div class="p-3"></div>
@@ -199,39 +97,40 @@
     </div>
 
     <!-- TOP Nav Bar -->
-    <div class="iq-top-navbar">
+    <div class="iq-top-navbar" >
         <div class="iq-navbar-custom">
             <nav class="navbar navbar-expand-lg navbar-light p-0">
                 <div class="iq-navbar-logo d-flex justify-content-between">
                     <a href="/">
-                        <img src="{{asset('temp/html/images/logo.png')}}" class="img-fluid" alt="">
-                        <span>SocialV</span>
+                        <img src="{{asset('temp/images/logo.png')}}" loading="lazy" class="img-fluid" alt="">
+                        <span>UniBook</span>
                     </a>
                     <div class="iq-menu-bt align-self-center">
                         <div class="wrapper-menu">
-                            <div class="main-circle"><i class="ri-menu-line"></i></div>
+                            <div class="main-circle"><i class="bi bi-list"></i></div>
                         </div>
                     </div>
                 </div>
                 <div class="iq-search-bar">
                     @if (session()->has('message'))
-                        <div class="alert alert-success " style="line-height: 25px !important;" id="alert" role="alert">
+                        <div class="alert alert-success w-auto" style="margin-top: 50px;line-height: 25px !important; z-index: 10000 !important;" id="alert" role="alert">
                             {{ session('message') }}dds
                         </div>
                     @endif
                     <form action="#" class="searchbox">
-                        <input type="text" class="text search-input" placeholder="Type here to search...">
-                        <a class="search-link" href="#"><i class="ri-search-line"></i></a>
+                        <input type="text" class="text search-input" placeholder="{{__('Type here to search...')}}">
+
+                        <a class="search-link" href="#"><i class="bi bi-search"></i></a>
                     </form>
 
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-label="Toggle navigation">
-                    <i class="ri-menu-3-line"></i>
+                    <i class="bi bi-list"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-list">
                         <li>
-                            <a href="{{route('profile' , strtolower(auth()->user()->name))}}" class="iq-waves-effect d-flex align-items-center">
+                            <a href="{{route('user.profile' , strtolower(auth()->user()->name))}}" class="iq-waves-effect d-flex align-items-center">
                                 <img src="{{auth()->user()->avatar}}" class="img-fluid rounded-circle mr-3" alt="user">
                                 <div class="caption">
                                     <h6 class="mb-0 line-height">
@@ -241,12 +140,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/" class="iq-waves-effect d-flex align-items-center">
-                                <i class="ri-home-line"></i>
+                            <a href="{{route('home')}}" class="iq-waves-effect d-flex align-items-center">
+                                <i class="bi bi-house-door"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="search-toggle iq-waves-effect" href="#"><i class="ri-group-line"></i></a>
+                            <a class="search-toggle iq-waves-effect" href="#"><i class="bi bi-person-plus" style="font-size: 20px"></i></a>
                             <div class="iq-sub-dropdown iq-sub-dropdown-large">
                                 <div class="iq-card shadow-none m-0">
                                     <div class="iq-card-body p-0 ">
@@ -257,7 +156,7 @@
                                             <div class="iq-sub-card iq-sub-card-big d-flex align-items-center justify-content-between" >
                                                 <div class="d-flex align-items-center">
                                                     <div class="">
-                                                        <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/01.jpg')}}" alt="">
+                                                        <img class="avatar-40 rounded" src="{{asset('temp/images/user/01.jpg')}}" alt="">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <h6 class="mb-0 ">Jaques Amole</h6>
@@ -274,7 +173,7 @@
                                             <div class="iq-sub-card iq-sub-card-big d-flex align-items-center justify-content-between" >
                                                 <div class="d-flex align-items-center">
                                                     <div class="">
-                                                        <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/02.jpg')}}" alt="">
+                                                        <img class="avatar-40 rounded" src="{{asset('temp/images/user/02.jpg')}}" alt="">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <h6 class="mb-0 ">Lucy Tania</h6>
@@ -291,7 +190,7 @@
                                             <div class="iq-sub-card iq-sub-card-big d-flex align-items-center justify-content-between" >
                                                 <div class="d-flex align-items-center">
                                                     <div class="">
-                                                        <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/03.jpg')}}" alt="">
+                                                        <img class="avatar-40 rounded" src="{{asset('temp/images/user/03.jpg')}}" alt="">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <h6 class="mb-0 ">Manny Petty</h6>
@@ -308,7 +207,7 @@
                                             <div class="iq-sub-card iq-sub-card-big d-flex align-items-center justify-content-between" >
                                                 <div class="d-flex align-items-center">
                                                     <div class="">
-                                                        <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/04.jpg')}}" alt="">
+                                                        <img class="avatar-40 rounded" src="{{asset('temp/images/user/04.jpg')}}" alt="">
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <h6 class="mb-0 ">Marsha Mello</h6>
@@ -342,7 +241,7 @@
                                         <a href="#" class="iq-sub-card" >
                                             <div class="media align-items-center">
                                                 <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/01.jpg')}}" alt="">
+                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/01.jpg')}}" alt="">
                                                 </div>
                                                 <div class="media-body ml-3">
                                                     <h6 class="mb-0 ">Emma Watson Bni</h6>
@@ -354,7 +253,7 @@
                                         <a href="#" class="iq-sub-card" >
                                             <div class="media align-items-center">
                                                 <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/02.jpg')}}" alt="">
+                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/02.jpg')}}" alt="">
                                                 </div>
                                                 <div class="media-body ml-3">
                                                     <h6 class="mb-0 ">New customer is join</h6>
@@ -366,7 +265,7 @@
                                         <a href="#" class="iq-sub-card" >
                                             <div class="media align-items-center">
                                                 <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/03.jpg')}}" alt="">
+                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/03.jpg')}}" alt="">
                                                 </div>
                                                 <div class="media-body ml-3">
                                                     <h6 class="mb-0 ">Two customer is left</h6>
@@ -378,7 +277,7 @@
                                         <a href="#" class="iq-sub-card" >
                                             <div class="media align-items-center">
                                                 <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/04.jpg')}}" alt="">
+                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/04.jpg')}}" alt="">
                                                 </div>
                                                 <div class="media-body ml-3">
                                                     <h6 class="mb-0 ">New Mail from Fenny</h6>
@@ -405,7 +304,7 @@
                                         <a href="#" class="iq-sub-card" >
                                             <div class="media align-items-center">
                                                 <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/01.jpg')}}" alt="">
+                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/01.jpg')}}" alt="">
                                                 </div>
                                                 <div class="media-body ml-3">
                                                     <h6 class="mb-0 ">Bni Emma Watson</h6>
@@ -416,7 +315,7 @@
                                         <a href="#" class="iq-sub-card" >
                                             <div class="media align-items-center">
                                                 <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/02.jpg')}}" alt="">
+                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/02.jpg')}}" alt="">
                                                 </div>
                                                 <div class="media-body ml-3">
                                                     <h6 class="mb-0 ">Lorem Ipsum Watson</h6>
@@ -427,7 +326,7 @@
                                         <a href="#" class="iq-sub-card" >
                                             <div class="media align-items-center">
                                                 <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/03.jpg')}}" alt="">
+                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/03.jpg')}}" alt="">
                                                 </div>
                                                 <div class="media-body ml-3">
                                                     <h6 class="mb-0 ">Why do we use it?</h6>
@@ -438,7 +337,7 @@
                                         <a href="#" class="iq-sub-card" >
                                             <div class="media align-items-center">
                                                 <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/04.jpg')}}" alt="">
+                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/04.jpg')}}" alt="">
                                                 </div>
                                                 <div class="media-body ml-3">
                                                     <h6 class="mb-0 ">Variations Passages</h6>
@@ -449,7 +348,7 @@
                                         <a href="#" class="iq-sub-card" >
                                             <div class="media align-items-center">
                                                 <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/html/images/user/05.jpg')}}" alt="">
+                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/05.jpg')}}" alt="">
                                                 </div>
                                                 <div class="media-body ml-3">
                                                     <h6 class="mb-0 ">Lorem Ipsum generators</h6>
@@ -462,64 +361,60 @@
                             </div>
                         </li>
                     </ul>
-                    <ul class="navbar-list">
+                    <ul class="navbar-list" style="">
                         <li>
                             <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                                <i class="ri-arrow-down-s-fill"></i>
+                                <i class="bi bi-arrow-down-circle"></i>
                             </a>
-                            <div class="iq-sub-dropdown iq-user-dropdown">
+                            <div class="iq-sub-dropdown iq-user-dropdown" >
                                 <div class="iq-card shadow-none m-0">
                                     <div class="iq-card-body p-0 ">
                                         <div class="bg-primary p-3 line-height">
-                                            <h5 class="mb-0 text-white line-height">Hello {{auth()->user()->name}}</h5>
-                                            <span class="text-white font-size-12">Available</span>
+                                            <h5 class="mb-0 text-white line-height">{{__('Hello')}} {{auth()->user()->name}}</h5>
+                                            <span class="text-white font-size-12">{{__('Available')}}</span>
                                         </div>
-                                        <a href="{{asset('temp/html/profile.html')}}" class="iq-sub-card iq-bg-primary-hover">
+                                        <a href="{{asset('temp/profile.html')}}" class="iq-sub-card iq-bg-primary-hover">
                                             <div class="media align-items-center">
                                                 <div class="rounded iq-card-icon iq-bg-primary">
-                                                    <i class="ri-file-user-line"></i>
+                                                    <i class="bi bi-person-square"></i>
                                                 </div>
                                                 <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">My Profile</h6>
-                                                    <p class="mb-0 font-size-12">View personal profile details.</p>
+                                                    <h6 class="mb-0 ">{{__('My Profile')}}</h6>
                                                 </div>
                                             </div>
                                         </a>
-                                        <a href="{{asset('temp/html/profile-edit.html')}}" class="iq-sub-card iq-bg-warning-hover">
+                                        <a href="{{asset('temp/profile-edit.html')}}" class="iq-sub-card iq-bg-warning-hover">
                                             <div class="media align-items-center">
                                                 <div class="rounded iq-card-icon iq-bg-warning">
-                                                    <i class="ri-profile-line"></i>
+                                                    <i class="bi bi-pencil-square"></i>
                                                 </div>
                                                 <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">Edit Profile</h6>
-                                                    <p class="mb-0 font-size-12">Modify your personal details.</p>
+                                                    <h6 class="mb-0 ">{{__('Edit Profile')}}</h6>
                                                 </div>
                                             </div>
                                         </a>
-                                        <a href="{{asset('temp/html/account-setting.html')}}" class="iq-sub-card iq-bg-info-hover">
+                                        <a href="{{asset('temp/account-setting.html')}}" class="iq-sub-card iq-bg-info-hover">
                                             <div class="media align-items-center">
                                                 <div class="rounded iq-card-icon iq-bg-info">
-                                                    <i class="ri-account-box-line"></i>
+                                                    <i class="bi bi-gear"></i>
                                                 </div>
                                                 <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">Account settings</h6>
-                                                    <p class="mb-0 font-size-12">Manage your account parameters.</p>
+                                                    <h6 class="mb-0 ">{{__('Account settings')}}</h6>
                                                 </div>
                                             </div>
                                         </a>
-                                        <a href="{{asset('temp/html/privacy-setting.html')}}" class="iq-sub-card iq-bg-danger-hover">
+                                        <a href="{{asset('temp/privacy-setting.html')}}" class="iq-sub-card iq-bg-danger-hover">
                                             <div class="media align-items-center">
                                                 <div class="rounded iq-card-icon iq-bg-danger">
-                                                    <i class="ri-lock-line"></i>
+                                                    <i class="bi bi-sliders"></i>
                                                 </div>
                                                 <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">Privacy Settings</h6>
-                                                    <p class="mb-0 font-size-12">Control your privacy parameters.</p>
+                                                    <h6 class="mb-0 ">{{__('Privacy Settings')}}</h6>
                                                 </div>
                                             </div>
                                         </a>
                                         <div class="d-inline-block w-100 text-center p-3">
-                                            <a class="bg-primary iq-sign-btn" href="{{route('logout')}}" role="button">Sign out<i class="ri-login-box-line ml-2"></i></a>
+                                            <a class="bg-primary iq-sign-btn" href="{{route('logout')}}" role="button">{{__('Sign out')}}<i class="bi bi-box-arrow-right mx-2"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -533,14 +428,14 @@
     <!-- TOP Nav Bar END -->
 
     <!-- Right Sidebar Panel Start-->
-    <div class="right-sidebar-mini right-sidebar">
+    <div class="right-sidebar-mini right-sidebar" style="z-index: 10">
         <div class="right-sidebar-panel p-0">
             <div class="iq-card shadow-none">
                 <div class="iq-card-body p-0">
                     <div class="media-height p-3">
                         <div class="media align-items-center mb-4">
                             <div class="iq-profile-avatar status-online">
-                                <img class="rounded-circle avatar-50" src="{{asset('temp/html/images/user/01.jpg')}}" alt="">
+                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/01.jpg')}}" alt="">
                             </div>
                             <div class="media-body ml-3">
                                 <h6 class="mb-0"><a href="#">Anna Sthesia</a></h6>
@@ -549,7 +444,7 @@
                         </div>
                         <div class="media align-items-center mb-4">
                             <div class="iq-profile-avatar status-online">
-                                <img class="rounded-circle avatar-50" src="{{asset('temp/html/images/user/02.jpg')}}" alt="">
+                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/02.jpg')}}" alt="">
                             </div>
                             <div class="media-body ml-3">
                                 <h6 class="mb-0"><a href="#">Paul Molive</a></h6>
@@ -558,7 +453,7 @@
                         </div>
                         <div class="media align-items-center mb-4">
                             <div class="iq-profile-avatar status-online">
-                                <img class="rounded-circle avatar-50" src="{{asset('temp/html/images/user/03.jpg')}}" alt="">
+                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/03.jpg')}}" alt="">
                             </div>
                             <div class="media-body ml-3">
                                 <h6 class="mb-0"><a href="#">Anna Mull</a></h6>
@@ -567,7 +462,7 @@
                         </div>
                         <div class="media align-items-center mb-4">
                             <div class="iq-profile-avatar status-online">
-                                <img class="rounded-circle avatar-50" src="{{asset('temp/html/images/user/04.jpg')}}" alt="">
+                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/04.jpg')}}" alt="">
                             </div>
                             <div class="media-body ml-3">
                                 <h6 class="mb-0"><a href="#">Paige Turner</a></h6>
@@ -576,19 +471,18 @@
                         </div>
                         <div class="media align-items-center mb-4">
                             <div class="iq-profile-avatar status-online">
-                                <img class="rounded-circle avatar-50" src="{{asset('temp/html/images/user/11.jpg')}}" alt="">
+                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/11.jpg')}}" alt="">
                             </div>
                             <div class="media-body ml-3">
                                 <h6 class="mb-0"><a href="#">Bob Frapples</a></h6>
                                 <p class="mb-0">Admin</p>
                             </div>
                         </div>
-
-
                     </div>
                     <div class="right-sidebar-toggle bg-primary mt-3">
-                        <i class="ri-arrow-left-line side-left-icon"></i>
-                        <i class="ri-arrow-right-line side-right-icon"><span class="ml-3 d-inline-block">Close Menu</span></i>
+                        <i class="bi bi-arrow-left side-left-icon"></i>
+                        <i class="bi bi-arrow-right side-right-icon"><span class="ml-3 d-inline-block">Close Menu</span></i>
+
                     </div>
                 </div>
             </div>
@@ -620,53 +514,35 @@
 
 <!-- Footer END -->
 <!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="{{asset('temp/html/js/jquery.min.js')}}"></script>
-<script src="{{asset('temp/html/js/popper.min.js')}}"></script>
-<script src="{{asset('temp/html/js/bootstrap.min.js')}}"></script>
-<!-- Appear JavaScript -->
-<script src="{{asset('temp/html/js/jquery.appear.js')}}"></script>
-<!-- Countdown JavaScript -->
-<script src="{{asset('temp/html/js/countdown.min.js')}}"></script>
-<!-- Counterup JavaScript -->
-<script src="{{asset('temp/html/js/waypoints.min.js')}}"></script>
-<script src="{{asset('temp/html/js/jquery.counterup.min.js')}}"></script>
-<!-- Wow JavaScript -->
-<script src="{{asset('temp/html/js/wow.min.js')}}"></script>
-<!-- Apexcharts JavaScript -->
-<script src="{{asset('temp/html/js/apexcharts.js')}}"></script>
-<!-- Slick JavaScript -->
-<script src="{{asset('temp/html/js/slick.min.js')}}"></script>
-<!-- Select2 JavaScript -->
-<script src="{{asset('temp/html/js/select2.min.js')}}"></script>
-<!-- Owl Carousel JavaScript -->
-<script src="{{asset('temp/html/js/owl.carousel.min.js')}}"></script>
-<!-- Magnific Popup JavaScript -->
-<script src="{{asset('temp/html/js/jquery.magnific-popup.min.js')}}"></script>
-<!-- Smooth Scrollbar JavaScript -->
-<script src="{{asset('temp/html/js/smooth-scrollbar.js')}}"></script>
-<!-- lottie JavaScript -->
-<script src="{{asset('temp/html/js/lottie.js')}}"></script>
-<!-- am core JavaScript -->
-<script src="{{asset('temp/html/js/core.js')}}"></script>
-<!-- am charts JavaScript -->
-<script src="{{asset('temp/html/js/charts.js')}}"></script>
-<!-- am animated JavaScript -->
-<script src="{{asset('temp/html/js/animated.js')}}"></script>
-<!-- am kelly JavaScript -->
-<script src="{{asset('temp/html/js/kelly.js')}}"></script>
-<!-- am maps JavaScript -->
-<script src="{{asset('temp/html/js/maps.js')}}"></script>
-<!-- am worldLow JavaScript -->
-<script src="{{asset('temp/html/js/worldLow.js')}}"></script>
-<!-- Chart Custom JavaScript -->
-<script src="{{asset('temp/html/js/chart-custom.js')}}"></script>
-<!-- Custom JavaScript -->
-<script src="{{asset('temp/html/js/custom.js')}}"></script>
+
+    <script src="{{asset('temp/js/jquery.min.js')}}"></script>
+    <script src="{{asset('temp/js/popper.min.js')}}"></script>
+    <script src="{{asset('temp/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('temp/js/jquery.appear.js')}}"></script>
+    <script src="{{asset('temp/js/countdown.min.js')}}"></script>
+    <script src="{{asset('temp/js/waypoints.min.js')}}"></script>
+    <script src="{{asset('temp/js/jquery.counterup.min.js')}}"></script>
+    <script src="{{asset('temp/js/wow.min.js')}}"></script>
+    <script src="{{asset('temp/js/apexcharts.js')}}"></script>
+    <script src="{{asset('temp/js/slick.min.js')}}"></script>
+    <script src="{{asset('temp/js/select2.min.js')}}"></script>
+    <script src="{{asset('temp/js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('temp/js/jquery.magnific-popup.min.js')}}"></script>
+    <script src="{{asset('temp/js/smooth-scrollbar.js')}}"></script>
+    <script src="{{asset('temp/js/lottie.js')}}"></script>
+    <script src="{{asset('temp/js/core.js')}}"></script>
+    <script src="{{asset('temp/js/charts.js')}}"></script>
+    <script src="{{asset('temp/js/animated.js')}}"></script>
+    <script src="{{asset('temp/js/kelly.js')}}"></script>
+    <script src="{{asset('temp/js/maps.js')}}"></script>
+    <script src="{{asset('temp/js/worldLow.js')}}"></script>
+    <script src="{{asset('temp/js/chart-custom.js')}}"></script>
+    <script src="{{asset('temp/js/custom.js')}}"></script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10">
 </script>
 <x-livewire-alert::scripts />
+
 </body>
 </html>

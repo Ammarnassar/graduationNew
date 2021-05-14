@@ -3,8 +3,10 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\TrendController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,17 +20,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::view('/login', 'auth.login')->name('login');
-Route::post('/login', [AuthController::class , 'login']);
+    Route::view('/login', 'auth.login')->name('login');
+    Route::post('/login', [AuthController::class , 'login']);
 
-Route::view('/register', 'auth.register')->name('register');
-Route::post('/register', [AuthController::class , 'register']);
+    Route::view('/register', 'auth.register')->name('register');
+    Route::post('/register', [AuthController::class , 'register']);
 
-Route::group(['middleware' => 'auth'] , function (){
+    Route::group(['middleware' => 'auth'] , function (){
+        Route::get('/' , [HomeController::class , 'home'])->name('home');
+        Route::get('logout', [AuthController::class , 'logout'])->name('logout');
 
-    Route::get('/' , [HomeController::class , 'home'])->name('home');
-    Route::get('logout', [AuthController::class , 'logout'])->name('logout');
-    Route::get('/profile/{user:name}' , [UserController::class , 'profile'])->name('profile');
-});
+        Route::group(['as' => 'user.'] , function(){
+            Route::get('/profile/{user:name}' , [UserController::class , 'profile'])->name('profile');
+            Route::get('/photos' , [UserController::class , 'photos'])->name('photos');
+            Route::get('/videos' , [UserController::class , 'videos'])->name('videos');
+        });
+
+        Route::group(['as' => 'trend.'] , function(){
+            Route::get('/trends' , [TrendController::class , 'index'])->name('index');
+            Route::get('/trend/{id}' , [TrendController::class , 'show'])->name('show');
+        });
+    });
+
+
 
 
