@@ -32,9 +32,9 @@
                     <a href="#" class="float-left mt-2">Forgot password?</a>
                 </div>
                 <div class="d-inline-block w-100">
-                    <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
-                        <input type="checkbox" class="custom-control-input" id="customCheck1">
-                        <label class="custom-control-label" for="customCheck1">Remember Me</label>
+                    <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1 ">
+                        <input type="checkbox" class="form-check-input " style="height: 17px ; width: 17px" id="remember" name="remember">
+                        <label class="form-check-label mx-1" for="customCheck1">Remember Me</label>
                     </div>
                     <button type="submit" class="btn btn-primary float-right">Sign in</button>
                 </div>

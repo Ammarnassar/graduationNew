@@ -20,6 +20,7 @@ class card extends Component
         'likeAdded' => 'likeCount' ,
         'likeDeleted' => 'likeCount',
         'commentAdded' => 'commentCount',
+        'commentDeleted' => 'commentCount',
     ];
 
     public function render()

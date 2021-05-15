@@ -8,7 +8,7 @@
                         <img src="{{$comment->user->avatar}}" alt="userimg" class="avatar-35 rounded-circle img-fluid">
                     </div>
                     <div class="d-flex flex-column mx-2">
-                        <h6 class="">{{$comment->user->name}}</h6>
+                        <a class="btn btn-link p-0 text-dark font-size-14" href="{{route('user.profile' , $comment->user->id)}}">{{$comment->user->name}}</a>
                         <span style="font-size: 10px" >{{$comment->created_at->diffForHumans()}} </span>
                     </div>
 

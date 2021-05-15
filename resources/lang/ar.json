@@ -43,5 +43,8 @@
     "Suggested Groups" : "المجموعات المقترحة ",
     "No users" : "لا يوجد ",
     "Uploading..." : " جارِ التحميل ...",
-    "Your Videos" : "الفيديوهات الخاصة بك"
+    "Your Videos" : "الفيديوهات الخاصة بك",
+    "Comment Created Successfully !" : "تم نشر التعليق بنجاح !",
+    "Post Created Successfully !" : "تم نشر المنشور بنجاح !",
+    "Comment Deleted Successfully !" : "تم حذف التعليق بنجاح !"
 }

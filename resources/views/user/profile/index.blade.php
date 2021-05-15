@@ -198,7 +198,7 @@
                                         <div id="post-modal-data" class="iq-card">
                                             <livewire:post.new-post />
                                         </div>
-                                        <livewire:post.index :posts="$posts"/>
+                                        <livewire:post.index :posts="$user->posts"/>
                                     </div>
                                 </div>
                             </div>

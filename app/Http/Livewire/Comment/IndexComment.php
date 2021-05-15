@@ -35,7 +35,7 @@ class IndexComment extends Component
 
         $this->alert(
             'success',
-            'Comment Deleted Successfully !'
+            __('Comment Deleted Successfully !')
         );
     }
 }

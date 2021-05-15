@@ -9,18 +9,17 @@
     <!-- Favicon -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{asset('temp/images/favicon.ico')}}" />
 
-    @if (\Illuminate\Support\Facades\App::currentLocale() === 'ar')
-        <link rel="shortcut icon" href="{{asset('temp/images/favicon.ico')}}" />
+    @if (App::currentLocale() === 'ar')
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/typography.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/responsive.css')}}">
 
     @else
-        <link rel="shortcut icon" href="{{asset('temp/images/favicon.ico')}}" />
-        <link rel="stylesheet" href="{{asset('temp/html/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html/css/typography.css')}}">
+        <link rel="stylesheet" href="{{asset('temp/html/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html/css/responsive.css')}}">
     @endif
@@ -128,9 +127,9 @@
                     <i class="bi bi-list"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto navbar-list">
+                    <ul class="navbar-nav mx-auto navbar-list">
                         <li>
-                            <a href="{{route('user.profile' , strtolower(auth()->user()->name))}}" class="iq-waves-effect d-flex align-items-center">
+                            <a href="{{route('user.profile' , auth()->id())}}" class="iq-waves-effect d-flex align-items-center">
                                 <img src="{{auth()->user()->avatar}}" class="img-fluid rounded-circle mr-3" alt="user">
                                 <div class="caption">
                                     <h6 class="mb-0 line-height">
@@ -373,7 +372,7 @@
                                             <h5 class="mb-0 text-white line-height">{{__('Hello')}} {{auth()->user()->name}}</h5>
                                             <span class="text-white font-size-12">{{__('Available')}}</span>
                                         </div>
-                                        <a href="{{asset('temp/profile.html')}}" class="iq-sub-card iq-bg-primary-hover">
+                                        <a href="{{route('user.profile' , auth()->id())}}" class="iq-sub-card iq-bg-primary-hover">
                                             <div class="media align-items-center">
                                                 <div class="rounded iq-card-icon iq-bg-primary">
                                                     <i class="bi bi-person-square"></i>
@@ -383,7 +382,7 @@
                                                 </div>
                                             </div>
                                         </a>
-                                        <a href="{{asset('temp/profile-edit.html')}}" class="iq-sub-card iq-bg-warning-hover">
+                                        <a href="{{route('user.profile.edit')}}" class="iq-sub-card iq-bg-warning-hover">
                                             <div class="media align-items-center">
                                                 <div class="rounded iq-card-icon iq-bg-warning">
                                                     <i class="bi bi-pencil-square"></i>
@@ -428,7 +427,7 @@
     <!-- TOP Nav Bar END -->
 
     <!-- Right Sidebar Panel Start-->
-    <div class="right-sidebar-mini right-sidebar" style="z-index: 10">
+    <div class=" right-sidebar right-sidebar-mini" style=" z-index: 10">
         <div class="right-sidebar-panel p-0">
             <div class="iq-card shadow-none">
                 <div class="iq-card-body p-0">
@@ -479,7 +478,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="right-sidebar-toggle bg-primary mt-3">
+                    <div class=" right-sidebar-toggle bg-primary mt-3">
                         <i class="bi bi-arrow-left side-left-icon"></i>
                         <i class="bi bi-arrow-right side-right-icon"><span class="ml-3 d-inline-block">Close Menu</span></i>
 
