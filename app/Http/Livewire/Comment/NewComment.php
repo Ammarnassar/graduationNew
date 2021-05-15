@@ -29,7 +29,7 @@ class NewComment extends Component
 
         $this->alert(
             'success',
-            'Comment Created Successfully !'
+            __('Comment Created Successfully !')
         );
 
     }

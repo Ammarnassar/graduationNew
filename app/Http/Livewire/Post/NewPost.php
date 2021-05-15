@@ -87,7 +87,7 @@ class NewPost extends Component
 
         $this->alert(
             'success',
-            'Post Created Successfully !'
+            __('Post Created Successfully !')
         );
     }
 

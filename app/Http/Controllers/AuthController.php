@@ -13,7 +13,7 @@ class AuthController extends Controller
 
     public function login(LoginRequest $request)
     {
-        if (auth()->attempt($request->validated()))
+        if (auth()->attempt($request->validated() , $request->remember))
         {
             return redirect()->route('home');
         }

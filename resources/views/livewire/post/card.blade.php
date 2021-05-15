@@ -9,7 +9,7 @@
                         <img class="rounded-circle img-fluid" src="{{$post->user->avatar}}" alt="">
                     </div>
                     <div class="media-support-info mt-2">
-                        <a href="{{route('user.profile' , strtolower($post->user->name))}}" class="btn btn-link p-0 text-dark d-inline-block font-size-20" >{{$post->user->name}}</a>
+                        <a href="{{route('user.profile' , $post->user->id)}}" class="btn btn-link p-0 text-dark d-inline-block font-size-20" >{{$post->user->name}}</a>
                         <p class="mb-0 text-primary">{{$post->created_at->diffForHumans()}}</p>
                     </div>
                     @if($post->user->id == auth()->id())
@@ -118,7 +118,7 @@
                                     </span>
                                     <div class="dropdown-menu">
                                         @forelse($likesList as $user)
-                                            <a class="dropdown-item" href="{{route('user.profile' , strtolower($user->name))}}">{{$user->name}}</a>
+                                            <a class="dropdown-item" href="{{route('user.profile' , $user->id)}}">{{$user->name}}</a>
                                         @empty
                                             <a class="dropdown-item">{{__('No users')}}</a>
                                         @endforelse

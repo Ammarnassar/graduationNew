@@ -12,7 +12,7 @@ return [
         'text' => null,
         'showCancelButton' => false,
         'showConfirmButton' => false,
-        'width' => 'max-content'
+        'width' => 'max-content',
     ],
     'confirm' => [
         'icon' => 'warning',

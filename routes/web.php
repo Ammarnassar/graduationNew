@@ -31,7 +31,8 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
         Route::get('logout', [AuthController::class , 'logout'])->name('logout');
 
         Route::group(['as' => 'user.'] , function(){
-            Route::get('/profile/{user:name}' , [UserController::class , 'profile'])->name('profile');
+            Route::view('/profile/edit' , 'user.profile.edit')->name('profile.edit');
+            Route::get('/profile/{id}' , [UserController::class , 'profile'])->name('profile');
             Route::get('/photos' , [UserController::class , 'photos'])->name('photos');
             Route::get('/videos' , [UserController::class , 'videos'])->name('videos');
         });

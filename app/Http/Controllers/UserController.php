@@ -8,11 +8,10 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function profile(User $user)
+    public function profile($id)
     {
         return view('user.profile.index' , [
-            'user' => $user,
-            'posts' => Post::with(['likes' , 'user'])->where('user_id' , $user->id)->get()
+            'user' => User::with(['posts' , 'posts.likes'])->findOrFail($id),
         ]);
     }
 

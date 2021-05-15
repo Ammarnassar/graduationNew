@@ -1,22 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html @if (App::currentLocale() === 'ar') dir="rtl" @else dir="ltr" @endif lang="en" >
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Unibook</title>
+    <link rel="shortcut icon" href="{{asset('temp/images/favicon.ico')}}" />
 
     @if (\Illuminate\Support\Facades\App::currentLocale() === 'ar')
-        <link rel="shortcut icon" href="{{asset('temp/images/favicon.ico')}}" />
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/typography.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/responsive.css')}}">
 
     @else
-        <link rel="shortcut icon" href="{{asset('temp/images/favicon.ico')}}" />
-        <link rel="stylesheet" href="{{asset('temp/html/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html/css/typography.css')}}">
+        <link rel="stylesheet" href="{{asset('temp/html/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html/css/responsive.css')}}">
     @endif
@@ -81,13 +80,6 @@
 <script src="{{asset('temp/js/owl.carousel.min.js')}}"></script>
 <script src="{{asset('temp/js/jquery.magnific-popup.min.js')}}"></script>
 <script src="{{asset('temp/js/smooth-scrollbar.js')}}"></script>
-<script src="{{asset('temp/js/lottie.js')}}"></script>
-<script src="{{asset('temp/js/core.js')}}"></script>
-<script src="{{asset('temp/js/charts.js')}}"></script>
-<script src="{{asset('temp/js/animated.js')}}"></script>
-<script src="{{asset('temp/js/kelly.js')}}"></script>
-<script src="{{asset('temp/js/maps.js')}}"></script>
-<script src="{{asset('temp/js/worldLow.js')}}"></script>
 <script src="{{asset('temp/js/chart-custom.js')}}"></script>
 <script src="{{asset('temp/js/custom.js')}}"></script>
 

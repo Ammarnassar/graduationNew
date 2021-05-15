@@ -54,14 +54,12 @@
             <hr>
             <div class="d-flex flex-row justify-content-between align-items-center">
                 <ul class="post-opt-block d-flex align-items-center list-inline m-0 p-0">
-
                     <label for="media" class="m-0" style="cursor: pointer">
                         <li class="iq-bg-primary rounded  pointer p-2 d-flex align-items-center">
                             <i class="bi bi-images" style="font-size: 20px"></i>
                             <span class="mx-2">{{__('Photo/Video')}}</span>
                         </li>
                     </label>
-
                 </ul>
 
                 <button type="submit" class="btn  bg-primary text-white w-25 h-25 " @if(!$body && !$media) disabled @endif>
