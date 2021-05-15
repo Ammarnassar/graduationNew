@@ -95,7 +95,7 @@
                 @endif
             </div>
             <div class="comment-area mt-3">
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-between align-items-center" style="width: max-content">
                     <div class="like-block position-relative d-flex align-items-center">
                         <div class="d-flex align-items-center">
                             <div class="like-data d-flex align-items-center">
@@ -139,7 +139,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="share-block d-flex align-items-center feather-icon mr-3">
+                    <div class="share-block d-flex align-items-center feather-icon mx-3">
                         <a href="">
                             <i class="las la-share " style="font-size: 18px"></i>
                             <span class="ml-1">99 {{__('Share')}}</span>
