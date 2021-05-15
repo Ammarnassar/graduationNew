@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Models\Follow;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,6 +33,12 @@ class AuthController extends Controller
         ]);
 
         Auth::attempt($request->only(['email' , 'password']));
+
+        Follow::create([
+            'following'=>auth()->id(),
+            'follower'=>auth()->id(),
+        ]);
+
 
         return redirect()->route('home');
     }

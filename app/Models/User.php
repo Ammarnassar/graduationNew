@@ -59,8 +59,34 @@ class User extends Authenticatable
         return $this->hasMany(Like::class);
     }
 
+    public function notifications()
+    {
+        return $this->hasMany(Notifications::class,'receiver')->latest();
+    }
+
     public function getRouteKeyName()
     {
         return 'name';
+    }
+
+    public function mails(){
+        return $this->hasMany(Mail::class,'receiver');
+    }
+
+    public function trashs(){
+        return $this->hasMany(Mail::class,'receiver')->onlyTrashed();
+    }
+
+    public function following(){
+        return $this->belongsToMany(User::class,'follows','following','follower');
+    }
+
+    public function followers(){
+        return $this->belongsToMany(User::class,'follows','follower','following');
+    }
+
+    public function postsFromFollowing(){
+        return $this->hasManyThrough(Post::class,Follow::class,'following','user_id','id'
+        ,'follower')->latest();
     }
 }
