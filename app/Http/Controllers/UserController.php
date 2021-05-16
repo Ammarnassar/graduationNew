@@ -11,7 +11,8 @@ class UserController extends Controller
     public function profile($id)
     {
         return view('user.profile.index' , [
-            'user' => User::with(['posts' , 'posts.likes'])->findOrFail($id),
+            'user' => User::findOrFail($id),
+            'posts' => Post::where('user_id' , $id)->latest()->get(),
         ]);
     }
 
