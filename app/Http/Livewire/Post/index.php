@@ -17,8 +17,6 @@ class index extends Component
 
     public function render()
     {
-        $this->posts = Post::with(['likes' , 'user'])->latest()->get();
-
         return view('livewire.post.index');
     }
 
