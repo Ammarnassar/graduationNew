@@ -200,7 +200,7 @@
                                             <livewire:post.new-post />
                                             @endif
                                         </div>
-                                        <livewire:post.index :posts="$user->posts"/>
+                                        <livewire:post.index :posts="$posts"/>
                                     </div>
                                 </div>
                             </div>
