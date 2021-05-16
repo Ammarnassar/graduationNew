@@ -38,18 +38,18 @@
 <!-- loader END -->
 <!-- Sign in Start -->
 <section class="sign-in-page">
-    <div id="container-inside ">
+    <div id="container-inside " class="d-none d-md-block">
         <div id="circle-small" style="left: -150px;"></div>
         <div id="circle-medium"  style="left: -300px;"></div>
-        <div id="circle-large" class="d-none d-md-block" style="left: -450px;"></div>
-        <div id="circle-xlarge " class="d-none d-md-block" style="left: -600px;"></div>
-        <div id="circle-xxlarge" class="d-none d-md-block" style="left: -750px;"></div>
+        <div id="circle-large"  style="left: -450px;"></div>
+        <div id="circle-xlarge "  style="left: -600px;"></div>
+        <div id="circle-xxlarge"  style="left: -750px;"></div>
 
         <div id="circle-small" style="right: -150px;"></div>
         <div id="circle-medium"  style="right: -300px;"></div>
-        <div id="circle-large" class="d-none d-md-block" style="right: -450px;"></div>
-        <div id="circle-xlarge " class="d-none d-md-block" style="right: -600px;"></div>
-        <div id="circle-xxlarge" class="d-none d-md-block" style="right: -750px;"></div>
+        <div id="circle-large"  style="right: -450px;"></div>
+        <div id="circle-xlarge "  style="right: -600px;"></div>
+        <div id="circle-xxlarge"  style="right: -750px;"></div>
 
     </div>
     <div class="container  d-flex flex-column justify-content-center align-items-center " style="min-height: 100vh;">
