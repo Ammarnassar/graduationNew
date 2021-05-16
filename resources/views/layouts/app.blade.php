@@ -57,7 +57,7 @@
                         <a href="/" class="iq-waves-effect"><i class="las la-newspaper"></i><span>{{__('Newsfeed')}}</span></a>
                     </li>
                     <li @if(Route::currentRouteName() == 'user.profile') class="active" @endif>
-                        <a href="{{route('user.profile' , strtolower(auth()->user()->name))}}" class="iq-waves-effect"><i class="las la-user"></i><span>{{__('Profile')}}</span></a>
+                        <a href="{{route('user.profile' , auth()->id())}}" class="iq-waves-effect"><i class="las la-user"></i><span>{{__('Profile')}}</span></a>
                     </li>
                     <li>
                         <a href="" class="iq-waves-effect"><i class="las la-user-friends"></i><span>{{__('Friends List')}}</span></a>

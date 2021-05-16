@@ -74,7 +74,7 @@
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="timeline" role="tabpanel">
                             <div class="iq-card-body p-0">
-                                <div class="row">
+                                <div class="row flex-lg-row-reverse flex-column-reverse">
                                     <div class="col-lg-4">
                                         <div class="iq-card">
                                             <div class="iq-card-body">
@@ -196,7 +196,9 @@
                                     </div>
                                     <div class="col-lg-8">
                                         <div id="post-modal-data" class="iq-card">
+                                            @if($user->id == @auth()->id())
                                             <livewire:post.new-post />
+                                            @endif
                                         </div>
                                         <livewire:post.index :posts="$user->posts"/>
                                     </div>

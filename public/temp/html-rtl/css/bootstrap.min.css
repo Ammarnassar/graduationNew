@@ -3637,7 +3637,8 @@ input[type=submit].btn-block {
 }
 
 .dropdown-menu.show {
-	display: block
+	display: block;
+    transform:translate3d(150px, 27px, 0px) !important;
 }
 
 .dropdown-header {

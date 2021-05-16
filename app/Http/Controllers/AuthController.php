@@ -18,8 +18,8 @@ class AuthController extends Controller
             return redirect()->route('home');
         }
 
-        return back()->withErrors([
-            'loginError' => 'There is a problem with login , try again later !'
+        return back()->withInput()->withErrors([
+            'loginError' => __('There is a problem with login , please check the entered data !')
         ]);
     }
 

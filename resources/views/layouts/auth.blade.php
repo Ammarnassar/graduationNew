@@ -1,5 +1,5 @@
 <!doctype html>
-<html @if (App::currentLocale() === 'ar') dir="rtl" @else dir="ltr" @endif lang="en" >
+<html @if (App::currentLocale() === 'ar') dir="rtl" @else dir="ltr" @endif lang="en">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -19,8 +19,17 @@
         <link rel="stylesheet" href="{{asset('temp/html/css/style.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html/css/responsive.css')}}">
     @endif
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+
 </head>
-<body>
+<body >
 <!-- loader Start -->
 <div id="loading">
     <div id="loading-center">
@@ -29,37 +38,22 @@
 <!-- loader END -->
 <!-- Sign in Start -->
 <section class="sign-in-page">
-    <div id="container-inside">
-        <div id="circle-small"></div>
-        <div id="circle-medium"></div>
-        <div id="circle-large"></div>
-        <div id="circle-xlarge"></div>
-        <div id="circle-xxlarge"></div>
+    <div id="container-inside ">
+        <div id="circle-small" style="left: -150px;"></div>
+        <div id="circle-medium"  style="left: -300px;"></div>
+        <div id="circle-large" class="d-none d-md-block" style="left: -450px;"></div>
+        <div id="circle-xlarge " class="d-none d-md-block" style="left: -600px;"></div>
+        <div id="circle-xxlarge" class="d-none d-md-block" style="left: -750px;"></div>
+
+        <div id="circle-small" style="right: -150px;"></div>
+        <div id="circle-medium"  style="right: -300px;"></div>
+        <div id="circle-large" class="d-none d-md-block" style="right: -450px;"></div>
+        <div id="circle-xlarge " class="d-none d-md-block" style="right: -600px;"></div>
+        <div id="circle-xxlarge" class="d-none d-md-block" style="right: -750px;"></div>
+
     </div>
-    <div class="container p-0">
-        <div class="row no-gutters">
-            <div class="col-md-6 text-center pt-5">
-                <div class="sign-in-detail text-white">
-                    <a class="sign-in-logo mb-5" href="#"><img src="{{asset('temp/images/logo-full.png')}}" class="img-fluid" alt="logo"></a>
-                    <div class="owl-carousel" data-autoplay="true" data-loop="true" data-nav="false" data-dots="true" data-items="1" data-items-laptop="1" data-items-tab="1" data-items-mobile="1" data-items-mobile-sm="1" data-margin="0">
-                        <div class="item">
-                            <img src="{{asset('temp/images/login/1.png')}}" class="img-fluid mb-4" alt="logo">
-                            <h4 class="mb-1 text-white">Manage your orders</h4>
-                            <p>It is a long established fact that a reader will be distracted by the readable content.</p>
-                        </div>
-                        <div class="item">
-                            <img src="{{asset('temp/images/login/1.png')}}" class="img-fluid mb-4" alt="logo">
-                            <h4 class="mb-1 text-white">Manage your orders</h4>
-                            <p>It is a long established fact that a reader will be distracted by the readable content.</p>
-                        </div>
-                        <div class="item">
-                            <img src="{{asset('temp/images/login/1.png')}}" class="img-fluid mb-4" alt="logo">
-                            <h4 class="mb-1 text-white">Manage your orders</h4>
-                            <p>It is a long established fact that a reader will be distracted by the readable content.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="container  d-flex flex-column justify-content-center align-items-center " style="min-height: 100vh;">
+        <div class="row no-gutters w-100">
             @yield('content')
         </div>
     </div>

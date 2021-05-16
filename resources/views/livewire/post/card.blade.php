@@ -1,13 +1,13 @@
 
 <div class="iq-card iq-card-block " id="card">
     <a href="{{route('home')}}" class="">
-    <div class="iq-card-body post-card p-3 "  style="cursor: pointer">
+    <div class="iq-card-body  p-3 "  style="cursor: pointer">
         <a href="{{route('home')}}">
             <div class="user-post-data">
                 <div class="d-flex flex-wrap">
-                    <div class="media-support-user-img mr-3">
+                    <a href="{{route('user.profile' , $post->user->id)}}" class="media-support-user-img mr-3">
                         <img class="rounded-circle img-fluid" src="{{$post->user->avatar}}" alt="">
-                    </div>
+                    </a>
                     <div class="media-support-info mt-2">
                         <a href="{{route('user.profile' , $post->user->id)}}" class="btn btn-link p-0 text-dark d-inline-block font-size-20" >{{$post->user->name}}</a>
                         <p class="mb-0 text-primary">{{$post->created_at->diffForHumans()}}</p>
@@ -18,51 +18,51 @@
                       <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
                       <i class="las la-ellipsis-v"></i>
                       </span>
-                                <div class="dropdown-menu " style=" width: fit-content" >
-                                    <a class="dropdown-item p-3 " href="#">
-                                        <div class="d-flex align-items-center ">
-                                            <div class="icon font-size-20">
-                                                <i class="lar la-save"></i>
-                                            </div>
-                                            <div class="data ml-2 ">
-                                                <h6>{{__('Save Post')}}</h6>
-                                            </div>
+                            <div class="dropdown-menu " style="width: fit-content" >
+                                <a class="dropdown-item p-3 " href="#">
+                                    <div class="d-flex align-items-center ">
+                                        <div class="icon font-size-20">
+                                            <i class="lar la-save"></i>
                                         </div>
-                                    </a>
-                                    <a class="dropdown-item p-3" href="#">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon font-size-20"><i class="las la-eye-slash"></i></div>
-                                            <div class="data ml-2">
-                                                <h6>{{__('Hide Post')}}</h6>
-                                            </div>
+                                        <div class="data ml-2 ">
+                                            <h6>{{__('Save Post')}}</h6>
                                         </div>
-                                    </a>
-                                    <a class="dropdown-item p-3" href="#">
-                                        <div class="d-flex align-items-center">
-                                            <div class="icon font-size-20"><i class="las la-user-times"></i></i></div>
-                                            <div class="data ml-2">
-                                                <h6>{{__('Unfollow')}} {{$post->user->name}}</h6>
-                                            </div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item p-3" href="#">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon font-size-20"><i class="las la-eye-slash"></i></div>
+                                        <div class="data ml-2">
+                                            <h6>{{__('Hide Post')}}</h6>
                                         </div>
-                                    </a>
-                                    <a class="dropdown-item p-3" wire:click="deletePost">
-                                        <div class="d-flex ">
-                                            <div class="icon font-size-20 d-flex align-items-center">
-                                                <i class="far fa-trash-alt text-danger"></i>
-                                            </div>
-                                            <div class="data ml-2">
-                                                <h6 class="text-danger">{{__('Delete Post')}}</h6>
-                                            </div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item p-3" href="#">
+                                    <div class="d-flex align-items-center">
+                                        <div class="icon font-size-20"><i class="las la-user-times"></i></i></div>
+                                        <div class="data ml-2">
+                                            <h6>{{__('Unfollow')}} {{$post->user->name}}</h6>
                                         </div>
-                                    </a>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item p-3" wire:click="deletePost">
+                                    <div class="d-flex ">
+                                        <div class="icon font-size-20 d-flex align-items-center">
+                                            <i class="far fa-trash-alt text-danger"></i>
+                                        </div>
+                                        <div class="data ml-2">
+                                            <h6 class="text-danger">{{__('Delete Post')}}</h6>
+                                        </div>
+                                    </div>
+                                </a>
 
-                                </div>
                             </div>
                         </div>
+                    </div>
                     @endif
                 </div>
             </div>
-            <div class="mt-3" dir="auto">
+            <div class="mt-3 post-card" dir="auto">
                 <p class="p-0 mb-0 line-height w-100 text-justify" >
                     {!! $post->body !!}
                 </p>
@@ -116,7 +116,7 @@
                                     <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
                                          {{$likeCount}}  {{__('Likes')}}
                                     </span>
-                                    <div class="dropdown-menu">
+                                    <div class="dropdown-menu" style="">
                                         @forelse($likesList as $user)
                                             <a class="dropdown-item" href="{{route('user.profile' , $user->id)}}">{{$user->name}}</a>
                                         @empty
