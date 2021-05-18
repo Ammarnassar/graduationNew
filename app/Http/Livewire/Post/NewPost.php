@@ -22,7 +22,7 @@ class NewPost extends Component
 
     protected $rules = [
         'body' => 'nullable|max:255',
-        'media' => 'nullable|file|max:5120',
+        'media' => 'nullable|file',
     ];
 
     function getTagsFromPost($string)

@@ -11,8 +11,8 @@ class IndexComment extends Component
     public $comments = [];
 
     protected $listeners = [
-        'commentAdded' => 'comments',
-        'commentDeleted' => 'comments',
+        'commentAdded' => 'render',
+        'commentDeleted' => 'render',
     ];
 
     public function render()
@@ -20,11 +20,6 @@ class IndexComment extends Component
         $this->comments = collect($this->post->comments)->take(3);
 
         return view('livewire.comment.index-comment');
-    }
-
-    public function comments()
-    {
-        $this->comments = collect($this->post->comments)->take(3);
     }
 
     public function deleteComment($id)
