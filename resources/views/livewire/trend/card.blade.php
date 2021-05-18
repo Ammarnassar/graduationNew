@@ -1,4 +1,5 @@
 <div class="iq-card">
+
     <div class="iq-card-header d-flex justify-content-between">
         <div class="iq-header-title">
             <h4 class="card-title text-primary">{{__('Trends')}}</h4>
@@ -19,5 +20,6 @@
         </ul>
         <a href="#" class="btn btn-primary d-block mt-3">See All</a>
     </div>
+
 </div>
 

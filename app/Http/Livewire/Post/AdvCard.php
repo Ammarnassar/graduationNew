@@ -5,10 +5,9 @@ namespace App\Http\Livewire\Post;
 use App\Models\Like;
 use App\Models\Post;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
-class card extends Component
+class AdvCard extends Component
 {
     public $post;
     public $likeCount = 0;
@@ -36,14 +35,14 @@ class card extends Component
             $q->where('post_id' , $this->post->id);
         })->get())->take(5);
 
-        return view('livewire.post.card');
+        return view('livewire.post.adv-card');
     }
 
     public function newLike()
     {
-         Like::insertGetId([
-           'post_id' => $this->post->id,
-           'user_id' => auth()->id()
+        Like::insertGetId([
+            'post_id' => $this->post->id,
+            'user_id' => auth()->id()
         ]);
 
         $this->like = true;

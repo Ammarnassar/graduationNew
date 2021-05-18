@@ -45,6 +45,11 @@ Route::group(
             Route::get('/trends', [TrendController::class, 'index'])->name('index');
             Route::get('/trend/{id}', [TrendController::class, 'show'])->name('show');
         });
+
+        Route::group(['as' => 'post.'], function () {
+            Route::get('/post/{id}', [PostController::class, 'show'])->name('show');
+        });
+
     });
 });
 

@@ -18,9 +18,12 @@ class TrendController extends Controller
 
     public function show($id)
     {
+        $trend = Trend::findOrFail($id);
+        $posts = $trend->posts;
 
         return view('trend.show' , [
-            'trend' => Trend::findOrFail($id)
+            'trend' => $trend,
+            'posts' => $posts
         ]);
     }
 

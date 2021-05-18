@@ -76,7 +76,7 @@
                     x-on:livewire-upload-error="isUploading = false"
                     x-on:livewire-upload-progress="progress = $event.detail.progress"
                     class="position-relative">
-                    <input type="file" id="media" class="d-none" wire:model="media">
+                    <input type="file" id="media" class="d-none" wire:model="media" accept="image/* , video/*">
                     <div wire:loading wire:target="media" class="position-absolute font-size-12 px-2">
                         {{__('Uploading...')}}
                     </div>
