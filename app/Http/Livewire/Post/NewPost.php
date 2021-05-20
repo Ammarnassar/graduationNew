@@ -21,12 +21,13 @@ class NewPost extends Component
     public $media;
 
     protected $rules = [
-        'body' => 'max:255',
+        'body' => 'nullable|max:255',
+        'media' => 'nullable|file',
     ];
 
     function getTagsFromPost($string)
     {
-        $regex = '/(#[A-Za-z0-9-_]+)(?:#[A-Za-z0-9-_]+)*/';
+        $regex = '/(?:^|\s)(#[^\s#]+|[^\s#]+#)(?=$|\s)*/';
 
         preg_match_all($regex, $string, $matches);
 
@@ -70,17 +71,12 @@ class NewPost extends Component
         if ($this->tags) {
             foreach ($this->tags as $tag)
             {
-                $trend_id = Trend::insertGetId([
+                $trend = Trend::firstOrCreate([
                     'name' =>  $tag,
-                    'post_id' => $post_id,
-                    'created_at' => now(),
-                    'updated_at' => now()
                 ]);
-
-                $trend = Trend::findOrFail($trend_id);
                 $trend->posts()->attach($post_id);
-            }
 
+            }
         }
 
         $this->body = '';
@@ -91,7 +87,7 @@ class NewPost extends Component
 
         $this->alert(
             'success',
-            'Post Created Successfully !'
+            __('Post Created Successfully !')
         );
     }
 

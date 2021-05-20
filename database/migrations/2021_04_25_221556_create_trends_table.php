@@ -16,7 +16,6 @@ class CreateTrendsTable extends Migration
         Schema::create('trends', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('post_id')->constrained('posts')->cascadeOnDelete();
             $table->timestamps();
         });
     }

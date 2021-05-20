@@ -14,13 +14,13 @@ class AuthController extends Controller
 
     public function login(LoginRequest $request)
     {
-        if (auth()->attempt($request->validated()))
+        if (auth()->attempt($request->validated() , $request->remember))
         {
             return redirect()->route('home');
         }
 
-        return back()->withErrors([
-            'loginError' => 'There is a problem with login , try again later !'
+        return back()->withInput()->withErrors([
+            'loginError' => __('There is a problem with login , please check the entered data !')
         ]);
     }
 

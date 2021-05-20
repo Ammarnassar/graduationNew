@@ -8,11 +8,29 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function profile(User $user)
+    public function profile($id)
     {
-        return view('user.profile' , [
-            'user' => $user,
-            'posts' => Post::with(['likes' , 'user'])->where('user_id' , $user->id)->get()
+        return view('user.profile.index' , [
+            'user' => User::findOrFail($id),
+            'posts' => Post::where('user_id' , $id)->latest()->get(),
+        ]);
+    }
+
+    public function photos()
+    {
+        return view('user.photos' , [
+            'posts' => auth()->user()->posts()->whereHas('media', function($q){
+                $q->whereIn('extension', ['jpg' , 'jpeg' , 'png']);
+            })->get()
+        ]);
+    }
+
+    public function videos()
+    {
+        return view('user.videos' , [
+            'posts' => auth()->user()->posts()->whereHas('media', function($q){
+                $q->whereIn('extension', ['mp4' , 'ogg' , 'mpeg' , 'mov' , 'flv' , 'mkv' , 'avi']);
+            })->get()
         ]);
     }
 }
