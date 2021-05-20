@@ -17,6 +17,10 @@ class index extends Component
 
     public function render()
     {
+
+        $this->posts = auth()->user()->postsFromFollowing;
+
+
         return view('livewire.post.index');
     }
 

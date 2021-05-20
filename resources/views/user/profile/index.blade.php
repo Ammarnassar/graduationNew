@@ -25,9 +25,9 @@
                                 </div>
                                 <div class="profile-info p-4 pt-0 d-flex align-items-center justify-content-between position-relative">
                                     <div class="social-links text-center ">
-                                       <button class="btn btn-primary ">
-                                           Follow
-                                       </button>
+                                        @if(auth()->id() !== $user->id)
+                                        <livewire:follow.follow :user="$user"/>
+                                        @endif
                                     </div>
                                     <div class="social-info">
                                         <ul class="social-data-block d-flex align-items-center justify-content-between list-inline p-0 m-0">
@@ -37,11 +37,11 @@
                                             </li>
                                             <li class="text-center pl-3">
                                                 <h6>Followers</h6>
-                                                <p class="mb-0">206</p>
+                                                <p class="mb-0">{{$user->followers->count()-1}}</p>
                                             </li>
                                             <li class="text-center pl-3">
                                                 <h6>Following</h6>
-                                                <p class="mb-0">100</p>
+                                                <p class="mb-0">{{$user->following->count()-1}}</p>
                                             </li>
                                         </ul>
                                     </div>

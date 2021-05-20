@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TrendController;
 use App\Http\Controllers\UserController;
+use App\Http\Livewire\Email\Inbox;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -18,6 +21,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
@@ -33,6 +37,12 @@ Route::group(
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/', [HomeController::class, 'home'])->name('home');
         Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+        Route::prefix('email')->group(function () {
+            Route::view('/inbox',  'pages.mail.inbox')->name('inbox');
+            Route::view('/send', 'pages.mail.email-compose')->name('send');
+            Route::get('/download/{id}', [Inbox::class,'download'])->name('download');
+        });
 
         Route::group(['as' => 'user.'], function () {
             Route::view('/profile/edit', 'user.profile.edit')->name('profile.edit');
@@ -51,6 +61,7 @@ Route::group(
         });
 
     });
+
 });
 
 

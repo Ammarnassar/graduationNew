@@ -1842,13 +1842,6 @@ module.exports = {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-$("#orgchart").jOrgChart({
-  chartElement: '#chart'
-});
-$("div#chart div.btn-group > a.dropdown-toggle").click(function (e) {
-  e.stopPropagation();
-});
-
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
