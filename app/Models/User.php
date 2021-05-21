@@ -91,4 +91,9 @@ class User extends Authenticatable
         ,'follower')->latest();
     }
 
+    public function media()
+    {
+        return $this->morphMany(Media::class,'mediaable');
+    }
+
 }

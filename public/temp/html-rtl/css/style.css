@@ -1059,3 +1059,13 @@ Add User Page
 -----------------------------------------------------------------------*/
 .add-img-user .p-image { position: static; text-align: right; display: block; height: auto; width: auto; background: transparent; margin-top: 20px; }
 .img-extension a, .img-extension span { color: var(--iq-body-text); padding: 0 3px; font-size: 13px; }
+
+.icon-circle{
+    height: 40px; width: 40px; border-radius: 50%; line-height: 40px; text-align: center; font-size: 18px;
+}
+.profilePhoto{
+    border: 2px solid #adb5bd;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+}

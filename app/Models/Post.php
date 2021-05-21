@@ -36,7 +36,7 @@ class Post extends Model
 
     public function media()
     {
-        return $this->hasOne(Media::class);
+        return $this->morphMany(Media::class,'mediaable');
     }
 
     public function comments()

@@ -2,21 +2,18 @@
     <div id="content-page" class="content-page">
         <div class="container relative">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-12 col-md-3">
                     <div class="iq-card">
                         <div class="iq-card-body">
                             <div class="">
                                 <div class="iq-email-list">
-                                    <a href="{{route('send')}}" class="btn btn-primary btn-lg btn-block mb-3 font-size-16 p-3 text-white"><i class="ri-send-plane-line mr-2"></i>New Message</a>
+                                    <a href="{{route('email.send')}}" class="btn btn-primary btn-lg btn-block mb-3 font-size-16 p-3 text-white"><i class="ri-send-plane-line mr-2"></i>{{__('New Message')}}</a>
                                     <div class="iq-email-ui nav flex-column nav-pills">
-                                        <li class="nav-link active" role="tab" data-toggle="pill" href="#mail-inbox"><a href="index.html"><i class="ri-mail-line"></i>Inbox<span class="badge badge-primary ml-2">@if(auth()->user()->mails->count()){{auth()->user()->mails->count()}}  @endif</span></a></li>
-                                        <li class="nav-link" role="tab" data-toggle="pill" href="#mail-starred"><a href="#"><i class="ri-star-line"></i>Starred</a></li>
-                                        <li class="nav-link" role="tab" data-toggle="pill" href="#mail-snoozed"><a href="#"><i class="ri-time-line"></i>Snoozed</a></li>
-                                        <li class="nav-link" role="tab" data-toggle="pill" href="#mail-draft"><a href="#"><i class="ri-file-list-2-line"></i>Draft</a></li>
-                                        <li class="nav-link" role="tab" data-toggle="pill" href="#mail-sent"><a href="#"><i class="ri-mail-send-line"></i>Sent Mail</a></li>
-                                        <li class="nav-link" role="tab" data-toggle="pill" href="#mail-trash"><a href="#"><i class="ri-delete-bin-line"></i>Trash <span class="badge badge-primary ml-2">@if(auth()->user()->trashs->count()){{auth()->user()->trashs->count()}}  @endif</span></a></li>
-                                        <li class="nav-link" role="tab" data-toggle="pill" href="#mail-important"><a href="#"><i class="ri-bookmark-line"></i>Important <span class="badge badge-primary ml-2">@if($bookmarks_count){{$bookmarks_count}}  @endif</span></a></li>
-                                        <li class="nav-link" role="tab" data-toggle="pill" href="#mail-spam"><a href="#"><i class="ri-spam-line"></i>Spam</a></li>
+                                        <li class="nav-link active" role="tab" data-toggle="pill" href="#mail-inbox"><a href="index.html"><i class="ri-mail-line"></i>{{__('Inbox')}}<span class="badge badge-primary ml-2">@if(auth()->user()->mails->count()){{auth()->user()->mails->count()}}  @endif</span></a></li>
+                                        <li class="nav-link" role="tab" data-toggle="pill" href="#mail-sent"><a href="#"><i class="ri-mail-send-line"></i>{{__('Sent Mail')}}</a></li>
+                                        <li class="nav-link" role="tab" data-toggle="pill" href="#mail-trash"><a href="#"><i class="ri-delete-bin-line"></i>{{__('Trash')}} <span class="badge badge-primary ml-2">@if(auth()->user()->trashs->count()){{auth()->user()->trashs->count()}}  @endif</span></a></li>
+                                        <li class="nav-link" role="tab" data-toggle="pill" href="#mail-important"><a href="#"><i class="ri-bookmark-line"></i>{{__('Important')}} <span class="badge badge-primary ml-2">@if($bookmarks_count){{$bookmarks_count}}  @endif</span></a></li>
+                                        <li class="nav-link" role="tab" data-toggle="pill" href="#mail-spam"><a href="#"><i class="ri-spam-line"></i>{{__('Spam')}}</a></li>
                                     </div>
                                 </div>
                             </div>
@@ -31,15 +28,14 @@
                                     <div class="d-flex justify-content-between">
                                         <ul>
 
-                                            <li data-toggle="tooltip" data-placement="top" title="Reload"><a href="{{route('inbox')}}"><i class="ri-restart-line"></i></a></li>
-                                            <li data-toggle="tooltip" data-placement="top" title="Archive"><a href="#"><i class="ri-mail-open-line"></i></a></li>
-                                            <li data-toggle="tooltip" data-placement="top" title="Inbox"><a href="#"><i class="ri-mail-unread-line"></i></a></li>
-                                            <li data-toggle="tooltip" data-placement="top" title="Zoom"><a href="#"><i class="ri-drag-move-2-line"></i></a></li>
+                                            <li data-toggle="tooltip" data-placement="top" title="{{__('Reload')}}"><a href="{{route('email.inbox')}}"><i class="ri-restart-line"></i></a></li>
+                                            <li data-toggle="tooltip" data-placement="top" title="{{__('Archive')}}"><a href="#"><i class="ri-mail-open-line"></i></a></li>
+                                            <li data-toggle="tooltip" data-placement="top" title="{{__('Inbox')}}"><a href="#"><i class="ri-mail-unread-line"></i></a></li>
                                         </ul>
                                         <div class="iq-email-search d-flex">
                                             <form class="mr-3 position-relative">
                                                 <div class="form-group mb-0">
-                                                    <input type="text" wire:model="search" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search">
+                                                    <input type="text" wire:model="search" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{__('Search')}}">
                                                     <a class="search-link" href="#"><i class="ri-search-line"></i></a>
                                                 </div>
                                             </form>
@@ -150,15 +146,18 @@
                                                                         </div>
                                                                         <hr>
                                                                         <div class="attegement">
-                                                                            <h6 class="mb-2">ATTACHED FILES:</h6>
+                                                                            <h6 class="mb-2">{{__('ATTACHED FILES')}}:</h6>
                                                                             <ul>
                                                                                 @forelse ($mail->files as $key =>$file)
                                                                                 <li class="icon icon-attegment cursor-pointer">
-                                                                                    <a  href="{{route('download',$file->id)}}"><i class="fa fa-file-text-o cursor-pointer" aria-hidden="true"></i> <span class="ml-1">{{$file->file_name}}</span></a>
+                                                                                    <a  href="{{route('email.download',$file->id)}}">
+                                                                                        <span class="ml-1">{{$file->file_name}}</span>
+                                                                                        <i class="{{$file->icon}} cursor-pointer" aria-hidden="true"></i>
+                                                                                    </a>
 
                                                                                 </li>
                                                                                 @empty
-                                                                                    <p class="">NO FILES</p>
+                                                                                    <p class="">{{__('NO FILES')}}</p>
                                                                                 @endforelse
 
 
@@ -171,7 +170,7 @@
                                                     </div>
                                                 </div>
                                                 @empty
-                                                    <p class="text-center">Empty mails</h1>
+                                                    <p class="text-center">{{__('Empty Mails')}}</h1>
                                                 @endforelse
                                             </ul>
                                         </div>
@@ -358,7 +357,7 @@
                                                                                 <ul>
                                                                                     @forelse ($mail->files as $key =>$file)
                                                                                     <li class="icon icon-attegment cursor-pointer">
-                                                                                        <a  href="{{route('download',$file->id)}}"><i class="fa fa-file-text-o cursor-pointer" aria-hidden="true"></i> <span class="ml-1">{{$file->file_name}}</span></a>
+                                                                                        <a  href="{{route('email.download',$file->id)}}"><i class="fa fa-file-text-o cursor-pointer" aria-hidden="true"></i> <span class="ml-1">{{$file->file_name}}</span></a>
 
                                                                                     </li>
                                                                                     @empty
@@ -375,7 +374,7 @@
                                                         </div>
                                                     </div>
                                                     @empty
-                                                        <p class="text-center">Empty mails</h1>
+                                                        <p class="text-center">{{__('Empty Mails')}}</h1>
                                                     @endforelse
                                                 </ul>
                                             </div>
@@ -481,7 +480,7 @@
                                                                                 <ul>
                                                                                     @forelse ($mail->files as $key =>$file)
                                                                                     <li class="icon icon-attegment cursor-pointer">
-                                                                                        <a href="{{route('download',$file->id)}}"><i class="fa fa-file-text-o cursor-pointer" aria-hidden="true"></i> <span class="ml-1">{{$file->file_name}}</span></a>
+                                                                                        <a href="{{route('email.download',$file->id)}}"><i class="fa fa-file-text-o cursor-pointer" aria-hidden="true"></i> <span class="ml-1">{{$file->file_name}}</span></a>
                                                                                     </li>
                                                                                     @empty
                                                                                         <p>Empty</p>
@@ -497,7 +496,7 @@
                                                         </div>
                                                     </div>
                                                     @empty
-                                                        <p class="text-center">Empty trash</h1>
+                                                        <p class="text-center">{{__('Empty Mails')}}</h1>
                                                     @endforelse
                                                 </ul>
                                             </ul>
@@ -602,7 +601,7 @@
                                                                             <ul>
                                                                                 @forelse ($mail->files as $key =>$file)
                                                                                 <li class="icon icon-attegment cursor-pointer">
-                                                                                    <a  href="{{route('download',$file->id)}}"><i class="fa fa-file-text-o cursor-pointer" aria-hidden="true"></i> <span class="ml-1">{{$file->file_name}}</span></a>
+                                                                                    <a  href="{{route('email.download',$file->id)}}"><i class="fa fa-file-text-o cursor-pointer" aria-hidden="true"></i> <span class="ml-1">{{$file->file_name}}</span></a>
 
                                                                                 </li>
                                                                                 @empty
@@ -619,7 +618,7 @@
                                                     </div>
                                                 </div>
                                                 @empty
-                                                    <p class="text-center">Empty mails</h1>
+                                                    <p class="text-center">{{__('Empty Mails')}}</h1>
                                                 @endforelse
 
                                             </ul>

@@ -19,10 +19,14 @@ class EmailCompose extends Component
     protected $rules=[
         'body'=>'required|min:1',
         'receiver'=>'required|email|exists:users,email',
-        'files.*' => ['nullable','file','mimes:png,jpg,pdf,docx,doc,zip','max:102400'],
+        'files.*' => ['nullable','mimes:png,jpg,pdf,docx,doc,zip,txt','max:102400'],
     ];
 
+    public function deleteFiles($index)
+    {
+        array_splice($this->files, $index, 1);
 
+    }
     public function send(){
 
         $this->validate();
@@ -44,15 +48,17 @@ class EmailCompose extends Component
             File::create([
                 'path'=>$file->hashName(),
                 'file_name'=>$file->getClientOriginalName(),
+                'extension'=>$file->extension(),
                 'fileable_id'=>$mailId,
                 'fileable_type'=>'App\Models\Mail',
             ]);
-        };
+        }
 
         (new \App\Http\Controllers\NotificationsController)->notify($receiver->id,'mail','sent you email');
 
-        return redirect()->route('inbox');
+        return redirect()->route('email.inbox');
     }
+
     public function render()
     {
         return view('livewire.email.email-compose');

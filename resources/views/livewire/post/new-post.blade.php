@@ -69,7 +69,7 @@
                 </button>
             </div>
 
-                <div
+            <div
                     x-data="{ isUploading: false, progress: 0 }"
                     x-on:livewire-upload-start="isUploading = true"
                     x-on:livewire-upload-finish="isUploading = false"
