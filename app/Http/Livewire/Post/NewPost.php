@@ -42,6 +42,11 @@ class NewPost extends Component
 
         return view('livewire.post.new-post');
     }
+    public function updatedMedia()
+    {
+        $this->validate();
+
+    }
 
     public function save()
     {
