@@ -38,7 +38,7 @@ Route::group(
         Route::get('/', [HomeController::class, 'home'])->name('home');
         Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-        Route::prefix('email')->group(function () {
+        Route::group(['prefix' => 'email' , 'as' => 'email.'] ,function () {
             Route::view('/inbox',  'pages.mail.inbox')->name('inbox');
             Route::view('/send', 'pages.mail.email-compose')->name('send');
             Route::get('/download/{id}', [Inbox::class,'download'])->name('download');

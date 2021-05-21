@@ -33,6 +33,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
@@ -87,7 +88,7 @@
                         <a href="" class="iq-waves-effect"><i class="las la-calendar"></i><span>{{__('Calendar')}}</span></a>
                     </li>
                     <li>
-                        <a href="" class="iq-waves-effect collapsed" ><i class="bi bi-envelope"></i><span>{{__('Email')}}</span></a>
+                        <a href="{{route('email.inbox')}}" class="iq-waves-effect collapsed" ><i class="bi bi-envelope"></i><span>{{__('Email')}}</span></a>
                     </li>
                 </ul>
             </nav>
@@ -427,7 +428,7 @@
     <!-- TOP Nav Bar END -->
 
     <!-- Right Sidebar Panel Start-->
-    <div class=" right-sidebar right-sidebar-mini" style=" z-index: 10">
+    <div class=" right-sidebar right-sidebar-mini d-none d-md-block" style=" z-index: 10">
         <div class="right-sidebar-panel p-0">
             <div class="iq-card shadow-none">
                 <div class="iq-card-body p-0">
@@ -497,14 +498,8 @@
 <footer class="bg-white iq-footer">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6">
-                <ul class="list-inline mb-0">
-                    <li class="list-inline-item"><a href="temp/html/privacy-policy.html">Privacy Policy</a></li>
-                    <li class="list-inline-item"><a href="temp/html/terms-of-service.html">Terms of Use</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-6 text-right">
-                Copyright 2020 <a href="#">SocialV</a> All Rights Reserved.
+            <div class="col-lg-6 mx-auto text-center">
+                {{__('Copyright')}} 2021 © <a href="{{route('home')}}">{{__('UniBook')}}</a>
             </div>
         </div>
     </div>

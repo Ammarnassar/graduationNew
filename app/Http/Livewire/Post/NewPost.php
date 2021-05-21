@@ -64,8 +64,11 @@ class NewPost extends Component
                 'extension' => $this->media->extension(),
                 'name' => $this->media->getClientOriginalName(),
                 'path' => $this->media->storeAs('media' , $name , 'public'),
-                'post_id' => $post_id
+                'mediaable_id'=>$post_id,
+                'mediaable_type'=>'App\Models\Post',
             ]);
+
+
         }
 
         if ($this->tags) {

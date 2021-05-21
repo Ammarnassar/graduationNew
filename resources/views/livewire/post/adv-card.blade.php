@@ -74,22 +74,24 @@
                         <div class="d-flex">
 
                             <div class="col-md-12 p-0">
-                                @if(in_array($post->media->extension , ['jpg' , 'jpeg' , 'png' , 'gif']))
-                                    <img src="{{asset('storage/'.$post->media->path)}}" alt="post-image" class="img-fluid rounded w-100" >
-                                @elseif(in_array($post->media->extension , ['mp4' , 'ogg' , 'mpeg' , 'mov' , 'flv' , 'mkv' , 'avi']))
+                                @foreach($post->media as $media)
+                                @if(in_array($media->extension , ['jpg' , 'jpeg' , 'png' , 'gif']))
+                                    <img src="{{asset('storage/'.$media->path)}}" alt="post-image" class="img-fluid rounded w-100" >
+                                @elseif(in_array($media->extension , ['mp4' , 'ogg' , 'mpeg' , 'mov' , 'flv' , 'mkv' , 'avi']))
                                     <video class="w-100 embed-responsive-item" controls>
-                                        <source src="{{asset('storage/'.$post->media->path)}}" type="video/mp4">
+                                        <source src="{{asset('storage/'.$media->path)}}" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                 @endif
+                                @endforeach
                             </div>
 
                         </div>
                     @endif
                 </div>
                 <div class="comment-area mt-3">
-                    <div class="d-flex justify-content-between align-items-center" style="width: max-content">
-                        <div class="like-block position-relative d-flex align-items-center">
+                    <div class="d-flex justify-content-between align-items-center" >
+                        <div class="like-block position-relative d-flex align-items-center ">
                             <div class="d-flex align-items-center">
                                 <div class="like-data d-flex align-items-center">
                                     @if($like)
@@ -107,7 +109,7 @@
                                 <div class="total-like-block ml-2 mr-3">
                                     <div class="dropdown">
                                     <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">
-                                         {{$likeCount}}  {{__('Likes')}}
+                                         {{$likeCount}}  <span class="d-none d-md-inline">{{__('Likes')}}</span>
                                     </span>
                                         <div class="dropdown-menu" style="">
                                             @forelse($likesList as $user)
@@ -119,23 +121,22 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="total-comment-block">
+                            <div class="dropdown d-flex align-items-center">
 
-                            <div class="total-comment-block">
-                                <div class="dropdown d-flex align-items-center">
-
-                                    <a class="btn-link btn px-2"  data-toggle="tooltip" data-placement="top" title="" >
-                                        <i class="bi bi-chat-square" style="font-size: 18px"></i>
-                                    </a>
-                                    <span  data-toggle="dropdown" >
-                             {{$commentsCount}} {{__('Comments')}}
-                             </span>
-                                </div>
+                                <a class="btn-link btn px-2"  data-toggle="tooltip" data-placement="top" title="" >
+                                    <i class="bi bi-chat-square" style="font-size: 18px"></i>
+                                </a>
+                                <span  data-toggle="dropdown"  >
+                                        {{$commentsCount}} <span class="d-none d-md-inline">{{__('Comments')}}</span>
+                                    </span>
                             </div>
                         </div>
                         <div class="share-block d-flex align-items-center feather-icon mx-3">
                             <a href="">
                                 <i class="las la-share " style="font-size: 18px"></i>
-                                <span class="ml-1">99 {{__('Share')}}</span>
+                                99 <span class="ml-1 d-none d-md-inline"> {{__('Share')}}</span>
                             </a>
                         </div>
                     </div>

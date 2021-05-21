@@ -12,7 +12,6 @@ class UserController extends Controller
     {
         return view('user.profile.index' , [
             'user' => User::findOrFail($id),
-            'posts' => Post::where('user_id' , $id)->latest()->get(),
         ]);
     }
 

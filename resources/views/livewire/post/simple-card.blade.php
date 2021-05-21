@@ -1,7 +1,6 @@
-<div class="iq-card iq-card-block post-card" id="card">
+<div class="iq-card iq-card-block post-card w-100" id="card">
     <a href="{{route('home')}}" class="">
         <div class="iq-card-body  p-3 " style="cursor: pointer">
-
             <div class="user-post-data">
                     <div class="d-flex flex-wrap">
                         <a href="{{route('user.profile' , $post->user->id)}}" class="media-support-user-img mr-3">
@@ -78,15 +77,17 @@
                         <div class="d-flex">
 
                             <div class="col-md-12 p-0">
-                                @if(in_array($post->media->extension , ['jpg' , 'jpeg' , 'png' , 'gif']))
-                                    <img src="{{asset('storage/'.$post->media->path)}}" alt="post-image"
-                                         class="img-fluid rounded w-100">
-                                @elseif(in_array($post->media->extension , ['mp4' , 'ogg' , 'mpeg' , 'mov' , 'flv' , 'mkv' , 'avi']))
-                                    <video class="w-100 embed-responsive-item" controls>
-                                        <source src="{{asset('storage/'.$post->media->path)}}" type="video/mp4">
-                                        Your browser does not support the video tag.
-                                    </video>
-                                @endif
+                                @foreach($post->media as $media)
+                                    @if(in_array($media->extension , ['jpg' , 'jpeg' , 'png' , 'gif']))
+                                        <img src="{{asset('storage/'.$media->path)}}" alt="post-image"
+                                             class="img-fluid rounded w-100">
+                                    @elseif(in_array($media->extension , ['mp4' , 'ogg' , 'mpeg' , 'mov' , 'flv' , 'mkv' , 'avi']))
+                                        <video class="w-100 embed-responsive-item" controls>
+                                            <source src="{{asset('storage/'.$media->path)}}" type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                    @endif
+                                @endforeach
                             </div>
 
                         </div>
@@ -95,7 +96,7 @@
             </div>
 
             <div class="comment-area mt-3">
-                <div class="d-flex justify-content-between align-items-center" style="width: max-content">
+                <div class="d-flex justify-content-between align-items-center" >
                     <div class="like-block position-relative d-flex align-items-center">
                         <div class="d-flex align-items-center">
                             <div class="like-data d-flex align-items-center">
@@ -117,8 +118,9 @@
                                 <div class="dropdown">
                                     <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                           aria-expanded="false" role="button">
-                                         {{$likeCount}}  {{__('Likes')}}
-                                    </span>
+                                         {{$likeCount}} </span>
+                                    <span class="d-none d-md-inline">{{__('Likes')}}</span>
+
                                     <div class="dropdown-menu" style="">
                                         @forelse($likesList as $user)
                                             <a class="dropdown-item"
@@ -130,22 +132,20 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="share-block d-flex align-items-center feather-icon mx-3">
-                            <a href="{{route('post.show' , $post->id)}}">
-                                <i class="bi-chat-square " style="font-size: 18px"></i>
-                                <span class="ml-1">{{$commentsCount}} {{__('Comments')}}</span>
-                            </a>
-                        </div>
-
-                        <div class="share-block d-flex align-items-center feather-icon mx-3">
-                            <a href="">
-                                <i class="las la-share " style="font-size: 18px"></i>
-                                <span class="ml-1">99 {{__('Share')}}</span>
-                            </a>
-                        </div>
                     </div>
 
+                    <div class="share-block d-flex align-items-center feather-icon mx-3">
+                        <a href="{{route('post.show' , $post->id)}}">
+                            <i class="bi-chat-square " style="font-size: 18px"></i>
+                            <span class="ml-1">{{$commentsCount}}</span> <span class="ml-1 d-none d-md-inline"> {{__('Comments')}}</span>
+                        </a>
+                    </div>
+                    <div class="share-block d-flex align-items-center feather-icon mx-3">
+                        <a href="">
+                            <i class="las la-share " style="font-size: 18px"></i>
+                            <span class="ml-1">0</span> <span class="d-none d-md-inline">{{__('Share')}}</span>
+                        </a>
+                    </div>
                 </div>
 
             </div>

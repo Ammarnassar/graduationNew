@@ -9,8 +9,6 @@ class Follow extends Component
 {
     public $user;
 
-
-
     public function follow($user_id){
         ModelsFollow::create([
             'following'=>auth()->id(),

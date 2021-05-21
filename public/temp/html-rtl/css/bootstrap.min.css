@@ -746,6 +746,7 @@ pre code {
 }
 .post-card-column{
     height: 100% !important;
+    width: 100% ;
 }
 .col {
 	-ms-flex-preferred-size: 0;

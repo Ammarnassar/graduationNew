@@ -29,7 +29,6 @@ class Inbox extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-
     public function mount()
     {
         $this->bookmarks_count=Mail::where('receiver',auth()->id())->where('important',1)->get()->count();
@@ -37,14 +36,14 @@ class Inbox extends Component
 
     public function delete($id)
     {
-        Mail::where('id',$id)->delete();
-        return redirect()->route('inbox') ;
+        Mail::findOrFail($id)->delete();
+        return redirect()->route('email.inbox') ;
     }
 
     public function forceDelete($id)
     {
         Mail::where('id',$id)->forceDelete();
-        return redirect()->route('inbox') ;
+        return redirect()->route('email.inbox') ;
     }
 
       public function download($id)

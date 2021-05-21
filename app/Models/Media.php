@@ -11,8 +11,8 @@ class Media extends Model
 
     protected $guarded = [];
 
-    public function post()
+    public function mediaable()
     {
-        return $this->belongsTo(Post::class);
+        return $this->morphTo();
     }
 }

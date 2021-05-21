@@ -16,9 +16,9 @@ class CreateMediaTable extends Migration
         Schema::create('media', function (Blueprint $table) {
             $table->id();
             $table->string('extension');
-            $table->foreignId('post_id')->constrained('posts')->cascadeOnDelete();
             $table->string('path');
             $table->string('name');
+            $table->morphs('mediaable');
             $table->timestamps();
         });
     }
