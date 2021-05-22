@@ -17,7 +17,7 @@
 
                                             <label for="inputEmail3" class="col-sm-2 col-form-label">{{__('To')}}:</label>
                                             <div class="col-sm-10 d-flex flex-column">
-                                                <input wire:model.defer="receiver"  type="email" id="inputEmail3" class="form-control"  >
+                                                <input wire:model.defer="receiver"  type="email" id="inputEmail3" class="form-control  @error('receiver') is-invalid @enderror"  >
                                                 @error('receiver')
                                                 <div class="text-danger p-2">
                                                     {{$message}}
@@ -31,15 +31,26 @@
                                         <div class="form-group d-flex flex-column flex-md-row">
                                             <label for="subject" class="col-sm-2 col-form-label">{{__('Subject')}}:</label>
                                             <div class="col-sm-10">
-                                                <input wire:model.defer="subject" type="text" id="subject" class="form-control"  >
+                                                <input wire:model.defer="subject" type="text" id="subject" class="form-control  @error('subject') is-invalid @enderror"  >
+                                                @error('subject')
+                                                <div class="text-danger p-2">
+                                                    {{$message}}
+                                                </div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="form-group d-flex flex-column flex-md-row">
                                             <label for="subject" class="col-sm-2 col-form-label">{{__('Your Message')}}:</label>
                                             <div class="col-md-10">
-                                                <textarea wire:model.defer="body" class="textarea form-control" rows="5">
+                                                <textarea wire:model.defer="body" class="textarea form-control  @error('body') is-invalid @enderror" rows="5">
 
                                                 </textarea>
+
+                                                @error('body')
+                                                <div class="text-danger p-2">
+                                                    {{$message}}
+                                                </div>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="form-group d-flex flex-column flex-md-row align-items-center">

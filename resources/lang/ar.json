@@ -85,5 +85,26 @@
     "Follow" : "متابعة",
     "Profile Photo Updated Successfully" : "تم تحديث صورة الملف الشخصي بنجاح !",
     "ATTACHED FILES" : "الملفات المرفقة",
-    "NO FILES" : "لا يوجد ملفات"
+    "NO FILES" : "لا يوجد ملفات",
+    "Join":"إنضمام",
+    "Un Join":"إالغاء الإنضمام",
+    "Members":"الأعضاء",
+    "Group Name":"إسم الجروب",
+    "Share Post":"شارك منشور",
+    "University Name":"إسم الجامعة",
+    "colleague":"الكلية",
+    "Country":"البلد",
+    "Description":"الوصف",
+    "Create Group":"إنشاء مجموعة",
+    "Submit":"إرسال",
+    "Cancle":"إلغاء",
+    "Show":"عرض",
+    "Media":"ميديا",
+    "Home":"رئيسية",
+    "About":"معلومات",
+    "Photos":"الصور",
+    "Group Information":"معلومات الجروب",
+    "University":"الجامعة",
+    "All Members":"جميع الأعضاء"
+
 }
