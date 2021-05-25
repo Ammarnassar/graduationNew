@@ -166,6 +166,8 @@ return [
         'dob' => 'تاريخ الميلاد',
         'current_password' => 'كلمة المرور الحالية',
         'password_confirmation' => 'تأكيد كلمة المرور',
+        'group_name' => 'اسم المجموعة',
+        'university_name' => 'اسم الجامعة',
     ],
 
 ];

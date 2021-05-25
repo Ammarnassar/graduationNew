@@ -3,7 +3,7 @@
 @section('content')
     <div class="header-for-bg">
         <div class="background-header position-relative">
-            <img src="{{__('temp/images/page-img/profile-bg9.jpg')}}" class="img-fluid rounded w-100 rounded rounded" alt="profile-bg">
+            <img src="{{asset('temp/images/page-img/profile-bg9.jpg')}}" class="img-fluid rounded w-100 rounded rounded" alt="profile-bg">
             <div class="title-on-header">
                 <div class="data-block">
                     <h2>{{__('Your Videos')}}</h2>

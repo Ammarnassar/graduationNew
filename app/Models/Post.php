@@ -43,4 +43,9 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class)->latest();
     }
+
+    public function group()
+    {
+        return $this->be(Group::class);
+    }
 }

@@ -19,6 +19,7 @@ class Index extends Component
 
     public function render()
     {
+
         return view('livewire.user.profile.index' , [
             'posts' => Post::where('user_id' , $this->user->id)->latest()->get()
         ]);

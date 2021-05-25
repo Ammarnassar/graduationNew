@@ -39,6 +39,7 @@ Route::group(
         Route::get('logout', [AuthController::class, 'logout'])->name('logout');
         Route::view('/following',  'user.follow_list.following')->name('following');
         Route::view('/followers',  'user.follow_list.follower')->name('followers');
+        Route::view('/search',  'search.index')->name('search');
 
         Route::group(['as' => 'group.'] ,function () {
             Route::view('/create',  'user.group.form')->name('create');

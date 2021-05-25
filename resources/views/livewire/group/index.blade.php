@@ -239,11 +239,11 @@
                         <div class="col-lg-8">
                             <div id="post-modal-data" class="iq-card">
 
-                                <livewire:group.newpost :group="$group" />
+                                <livewire:post.new-post />
 
                             </div>
 
-
+                            <livewire:post.index :posts="$posts"/>
                         </div>
                     </div>
                 </div>
