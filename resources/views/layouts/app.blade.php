@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="{{asset('temp/images/favicon.ico')}}" />
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css" integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
     @if (App::currentLocale() === 'ar')
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('temp/html-rtl/css/typography.css')}}">
@@ -63,9 +63,22 @@
                     <li>
                         <a href="" class="iq-waves-effect"><i class="las la-user-friends"></i><span>{{__('Friends List')}}</span></a>
                     </li>
+
                     <li>
-                        <a href="" class="iq-waves-effect"><i class="las la-users"></i><span>{{__('Groups')}}</span></a>
-                    </li>
+                        <a href="#frinds" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="las la-user-friends"></i><span>{{__('Friends List')}}</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="frinds" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                           <li><a href="{{route('group.groups')}}"><i class="fas fa-user-friends"></i>Following</a></li>
+                           <li><a href="{{route('group.create')}}"><i class="fas fa-plus"></i>Followers</a></li>
+                        </ul>
+                     </li>
+                    
+                    <li>
+                        <a href="#groups" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="las la-users"></i><span>{{__('Groups')}}</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <ul id="groups" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                           <li><a href="{{route('group.groups')}}"><i class="fas fa-user-friends"></i>All Groups</a></li>
+                           <li><a href="{{route('group.create')}}"><i class="fas fa-plus"></i>Create</a></li>
+                        </ul>
+                     </li>
                     <li @if(Route::currentRouteName() == 'user.photos') class="active" @endif>
                         <a href="{{route('user.photos')}}" class="iq-waves-effect"><i class="las la-image"></i><span>{{__('Profile Image')}}</span></a>
                     </li>
@@ -90,6 +103,7 @@
                     <li>
                         <a href="{{route('email.inbox')}}" class="iq-waves-effect collapsed" ><i class="bi bi-envelope"></i><span>{{__('Email')}}</span></a>
                     </li>
+                
                 </ul>
             </nav>
             <div class="p-3"></div>

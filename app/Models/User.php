@@ -101,4 +101,8 @@ class User extends Authenticatable
         return $this->morphMany(Media::class,'mediaable');
     }
 
+    public function groups(){
+        return $this->hasMany(Join::class,'user_id');
+    }
+
 }
