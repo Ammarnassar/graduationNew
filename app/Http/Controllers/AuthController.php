@@ -32,7 +32,7 @@ class AuthController extends Controller
             'email' => $request->email,
             'username' => $request->username,
             'university' => $request->university,
-            'college' => $request->college,
+            'city' => $request->city,
             'password' => bcrypt($request->password),
         ]);
 
