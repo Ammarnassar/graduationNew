@@ -18,8 +18,8 @@ class CreateGroupsTable extends Migration
             $table->string("group_name");
             $table->string("university_name");
             $table->foreignId('admin')->constrained('users')->onDelete('cascade');
-            $table->string("colleague");
-            $table->string("country");
+            $table->string("colleague"); //TODO : change name to college
+            $table->string("country"); //TODO : change name to city
             $table->text("description");
             $table->timestamps();
         });

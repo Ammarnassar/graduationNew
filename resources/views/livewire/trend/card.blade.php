@@ -15,7 +15,7 @@
                 </div>
             </li>
             @empty
-                <div class="text-center">No Trends</div>
+                <div class="text-center">{{__('No Trends')}}</div>
             @endforelse
         </ul>
         <a href="#" class="btn btn-primary d-block mt-3">See All</a>

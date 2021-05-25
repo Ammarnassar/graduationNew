@@ -263,13 +263,13 @@
                                                 <h6>{{__('University')}}</h6>
                                             </div>
                                             <div class="col-9">
-                                                <p class="mb-0">{{ $group->university_name }}</p>
+                                                <p class="mb-0">{{ __($group->university_name) }}</p>
                                             </div>
                                             <div class="col-3">
                                                 <h6>{{__('colleague')}}</h6>
                                             </div>
                                             <div class="col-9">
-                                                <p class="mb-0">{{ $group->Colleague }}</p>
+                                                <p class="mb-0">{{ __($group->colleague) }}</p>
                                             </div>
                                             <div class="col-3">
                                                 <h6>{{__('Description')}}</h6>
