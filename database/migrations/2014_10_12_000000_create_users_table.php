@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('last_name');
             $table->string('username')->unique();
             $table->string('university');
-            $table->string('college');
+            $table->string('college')->nullable();
             $table->date('dob')->nullable();
             $table->string('city')->nullable();
             $table->string('age')->nullable(); //TODO : change type to integer

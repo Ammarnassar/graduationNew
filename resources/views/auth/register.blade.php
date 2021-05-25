@@ -56,7 +56,7 @@
                                 <option value="" disabled selected> {{__('University')}}</option>
 
                                 @foreach(array_keys(config('universities.data')) as $uni)
-                                <option>{{__($uni)}}</option>
+                                    <option value="{{ $uni }}" {{ (old("university") == $uni ? "selected":"") }}>{{ __($uni) }}</option>
                                 @endforeach
                             </select>
                             @error('university')
@@ -71,12 +71,12 @@
 
                         {{-- City --}}
                         <div class="form-group col-12 w-100 p-0">
-                            <select class="form-control mb-0 @error('city') is-invalid @enderror" id="city" name="city">
+                            <select class="form-control mb-0 @error('city') is-invalid @enderror" id="city" name="city" >
 
                                 <option value="" disabled selected> {{__('City')}}</option>
 
                                 @foreach(config('cities.data') as $city)
-                                    <option>{{__($city)}}</option>
+                                    <option value="{{ $city }}" {{ (old("city") == $city ? "selected":"") }}>{{ __($city) }}</option>
                                 @endforeach
                             </select>
 
