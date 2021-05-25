@@ -8,10 +8,10 @@ use Livewire\Component;
 class Join extends Component
 {
     public $group;
-   
+
     public function join()
     {
-        
+
         ModelsJoin::create([
             'user_id' => auth()->id(),
             'group_id' => $this->group->id,
@@ -25,6 +25,6 @@ class Join extends Component
 
     public function render()
     {
-        return view('livewire.group.join',['user_join'=>ModelsJoin::where('user_id',auth()->id())->where('user_id',auth()->id())->get()->count()]);
+         return view('livewire.group.join',['user_join'=>ModelsJoin::where('user_id',auth()->id())->where('group_id', $this->group->id)->get()->count()]);
     }
 }

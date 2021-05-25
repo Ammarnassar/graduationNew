@@ -182,5 +182,10 @@
     "No Trends" : " لا يوجد وسوم ",
     "Your Groups" : " مجموعاتك ",
     "Create Group" : "انشاء مجموعة جديدة ",
-    "Select College" : "اختر الكلية "
+    "Select College" : "اختر الكلية ",
+    "All Notifications": "جميع الإشعارات",
+    "Show All": "عرض الجميع",
+    "Liked your post": "لقد أعجب في منشورك",
+    "Sent you email": "أرسل إليك بريدًا إلكترونيًا",
+    "Has followed you": "لقد قام بمتابعتك"
 }
