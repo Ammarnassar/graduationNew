@@ -46,11 +46,18 @@
                             @enderror
                         </div>
 
+                        @php
+
+                        @endphp
                         {{-- University --}}
                         <div class="form-group col-12 w-100 p-0">
                             <select class="form-control mb-0 @error('university') is-invalid @enderror" id="university" name="university">
+
                                 <option value="" disabled selected> {{__('University')}}</option>
-                                <option>Jordan</option>
+
+                                @foreach(array_keys(config('universities.data')) as $uni)
+                                <option>{{__($uni)}}</option>
+                                @endforeach
                             </select>
                             @error('university')
                             <div class="mt-1 text-danger">
@@ -61,13 +68,19 @@
                     </div>
 
                     <div class="d-flex flex-column align-items-center col-12 col-md-6 w-100">
-                        {{-- College --}}
+
+                        {{-- City --}}
                         <div class="form-group col-12 w-100 p-0">
-                            <select class="form-control mb-0 @error('college') is-invalid @enderror" id="college" name="college">
-                                <option value="" disabled selected> {{__('College')}}</option>
-                                <option>IT</option>
+                            <select class="form-control mb-0 @error('city') is-invalid @enderror" id="city" name="city">
+
+                                <option value="" disabled selected> {{__('City')}}</option>
+
+                                @foreach(config('cities.data') as $city)
+                                    <option>{{__($city)}}</option>
+                                @endforeach
                             </select>
-                            @error('college')
+
+                            @error('city')
                             <div class="mt-1 text-danger">
                                 {{$message}}
                             </div>
