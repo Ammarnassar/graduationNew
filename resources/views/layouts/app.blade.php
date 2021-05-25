@@ -383,23 +383,14 @@
                                                 </div>
                                             </div>
                                         </a>
-                                        <a href="{{route('user.profile.edit')}}" class="iq-sub-card iq-bg-warning-hover">
-                                            <div class="media align-items-center">
-                                                <div class="rounded iq-card-icon iq-bg-warning">
-                                                    <i class="bi bi-pencil-square"></i>
-                                                </div>
-                                                <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">{{__('Edit Profile')}}</h6>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="{{asset('temp/account-setting.html')}}" class="iq-sub-card iq-bg-info-hover">
+
+                                        <a href="{{route('user.profile.edit')}}" class="iq-sub-card iq-bg-info-hover">
                                             <div class="media align-items-center">
                                                 <div class="rounded iq-card-icon iq-bg-info">
                                                     <i class="bi bi-gear"></i>
                                                 </div>
                                                 <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">{{__('Account settings')}}</h6>
+                                                    <h6 class="mb-0 ">{{__('Settings')}}</h6>
                                                 </div>
                                             </div>
                                         </a>
@@ -534,8 +525,8 @@
     <script src="{{asset('temp/js/custom.js')}}"></script>
     <script src="{{asset('js/app.js')}}"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10">
-</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
 <x-livewire-alert::scripts />
 
 </body>

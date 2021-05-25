@@ -30,8 +30,6 @@
                             @endif
 
 
-
-
                             <input type="file" id="profilePhoto" name="profilePhoto" class="d-none" wire:model="profilePhoto">
 
                         </div>
@@ -75,16 +73,16 @@
                 <div class="user-tabing">
                     <ul class="nav nav-pills d-flex align-items-center justify-content-center profile-feed-items p-0 m-0">
                         <li class="col-sm-3 p-0">
-                            <a class="nav-link active" data-toggle="pill" href="#timeline">Timeline</a>
+                            <a class="nav-link active" data-toggle="pill" href="#timeline">{{__('Timeline')}}</a>
                         </li>
                         <li class="col-sm-3 p-0">
-                            <a class="nav-link" data-toggle="pill" href="#about">About</a>
+                            <a class="nav-link" data-toggle="pill" href="#about">{{__('About')}}</a>
                         </li>
                         <li class="col-sm-3 p-0">
-                            <a class="nav-link" data-toggle="pill" href="#friends">friends</a>
+                            <a class="nav-link" data-toggle="pill" href="#friends">{{__('Friends')}}</a>
                         </li>
                         <li class="col-sm-3 p-0">
-                            <a class="nav-link" data-toggle="pill" href="#photos">Photos</a>
+                            <a class="nav-link" data-toggle="pill" href="#photos">{{__('Photos')}}</a>
                         </li>
                     </ul>
                 </div>

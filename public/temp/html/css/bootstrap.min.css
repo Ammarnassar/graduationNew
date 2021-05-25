@@ -69,7 +69,6 @@ body {
 	font-weight: 400;
 	line-height: 1.5;
 	color: #212529;
-	text-align: left;
 	background-color: #fff
 }
 
@@ -4525,7 +4524,7 @@ input[type=submit].btn-block {
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
 	color: #fff;
-	background-color: #007bff
+	background-color: var(--iq-primary)
 }
 
 .nav-fill .nav-item {
@@ -7035,7 +7034,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-	background-color: #007bff!important
+	background-color: var(--iq-primary) !important;
 }
 
 a.bg-primary:focus,
@@ -10386,7 +10385,7 @@ button.bg-dark:hover {
 }
 
 .text-primary {
-	color: #007bff!important
+	color: var(--iq-primary)!important;
 }
 
 a.text-primary:focus,

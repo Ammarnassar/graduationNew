@@ -19,7 +19,7 @@
   --iq-light-warning: #fffcf3;
   --iq-light-info: #eee6f5;
   --iq-light-dark: #f0efef;
-  --iq-primary-hover: #2aa3fb;
+  --iq-primary-hover: var(--iq-primary);
   --iq-border-light: #f1f1f1;
   --iq-dark-primary: #29324f;
   --iq-dark-secondary: rgba(160,158,158,0.2);

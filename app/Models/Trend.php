@@ -16,13 +16,6 @@ class Trend extends Model
     ];
 
 
-    public function getPostsCountAttribute()
-    {
-        $count = Trend::where('name' , $this->attributes['name'])->count();
-
-        return $count;
-    }
-
     public function posts()
     {
         return $this->belongsToMany(Post::class , 'post_trend')->latest();

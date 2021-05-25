@@ -35,11 +35,12 @@
                     <a href="#" class="float-left mt-2">{{__('Forgot password?')}}</a>
                 </div>
                 <div class="d-inline-block w-100">
-                    <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1 ">
-                        <input type="checkbox" class="form-check-input " style="height: 17px ; width: 17px" id="remember" name="remember">
-                        <label class="form-check-label mx-1" for="customCheck1">{{__('Remember Me')}}</label>
+                    <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="remember">
+                        <label class="custom-control-label " for="customCheck1">{{__('Remember Me')}}</label>
                     </div>
-                    <button type="submit" class="btn btn-primary float-right">{{__('Login')}}</button>
+
+                    <button type="submit" class="btn btn-primary col-12 col-md-5 w-100 float-md-right">{{__('Login')}}</button>
                 </div>
                 <div class="sign-info">
                     <span class="dark-color d-inline-block line-height-2">{{__('Don\'t have an account?')}} <a href="{{route('register')}}">{{__('Register')}}</a></span>
