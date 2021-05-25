@@ -118,6 +118,7 @@ return [
     'uploaded' => ' حدث خطأ أثناء تحميل الملف',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
+    'matchOldPassword' => ':attribute  غير صحيحة',
 
     /*
     |--------------------------------------------------------------------------
@@ -151,7 +152,20 @@ return [
         'password' => 'كلمة المرور',
         'email' => 'البريد الإلكتروني',
         'name' => 'الاسم',
+        'firstName' => 'الاسم الأول',
+        'lastName' => 'الاسم الأخير',
+        'username' => 'اسم المستخدم',
+        'university' => 'الجامعة',
         'receiver' => 'بريد المستقبل',
+        'college' => 'الكلية',
+        'lang' => 'اللغة',
+        'age' => 'العمر',
+        'address' => 'العنوان',
+        'gender' => 'الجنس',
+        'city' => 'المدينة',
+        'dob' => 'تاريخ الميلاد',
+        'current_password' => 'كلمة المرور الحالية',
+        'password_confirmation' => 'تأكيد كلمة المرور',
     ],
 
 ];

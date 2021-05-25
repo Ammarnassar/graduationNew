@@ -4,12 +4,14 @@ namespace App\Http\Livewire\User\Profile;
 
 use App\Models\Media;
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class Index extends Component
 {
+
     use WithFileUploads;
 
     public $user;
@@ -27,19 +29,28 @@ class Index extends Component
 
         $name = Hash::make($this->profilePhoto->getClientOriginalName()).'.'.$this->profilePhoto->extension();
 
-        Media::create([
+        $mediaID = Media::insertGetId([
             'extension' => $this->profilePhoto->extension(),
             'name' => $this->profilePhoto->getClientOriginalName(),
             'path' => $this->profilePhoto->storeAs('media' , $name , 'public'),
             'mediaable_id'=>$this->user->id,
             'mediaable_type'=>'App\Models\User',
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
 
-        $this->profilePhoto = '';
+        $photo = Media::findOrFail($mediaID);
+
+        auth()->user()->update([
+         'profile_photo' => $photo->path,
+        ]);
 
         $this->alert(
             'success',
             __('Profile Photo Updated Successfully !')
         );
+
+        $this->profilePhoto = null;
+
     }
 }
