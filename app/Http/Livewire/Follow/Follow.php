@@ -15,7 +15,7 @@ class Follow extends Component
             'follower'=>$user_id,
         ]);
 
-        (new \App\Http\Controllers\NotificationsController)->notify($this->user->id,'follow','has followed you');
+        (new \App\Http\Controllers\NotificationsController)->notify($this->user->id,'like','Liked your post');
 
     }
 

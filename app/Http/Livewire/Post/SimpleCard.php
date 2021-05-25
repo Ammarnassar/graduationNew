@@ -40,6 +40,11 @@ class SimpleCard extends Component
 
         $this->like = true;
 
+        if ($this->post->user->id!== auth()->id())
+        {
+        (new \App\Http\Controllers\NotificationsController)->notify($this->post->user->id,'mail','Liked your post');
+        }
+
         $this->emit('likeAdded');
     }
 

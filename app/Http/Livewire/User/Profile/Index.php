@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\User\Profile;
 
 use App\Models\Media;
+use App\Models\Notifications;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;

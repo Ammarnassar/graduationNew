@@ -54,7 +54,7 @@ class EmailCompose extends Component
             ]);
         }
 
-        (new \App\Http\Controllers\NotificationsController)->notify($receiver->id,'mail','sent you email');
+        (new \App\Http\Controllers\NotificationsController)->notify($receiver->id,'mail','Sent you email');
 
         return redirect()->route('email.inbox');
     }

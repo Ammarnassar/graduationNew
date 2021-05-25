@@ -73,66 +73,14 @@
                 <div class="iq-card-body p-0">
                     <div class="row flex-lg-row-reverse flex-column-reverse">
                         <div class="col-lg-4">
-                            <div class="iq-card">
-                                <div class="iq-card-body">
-                                    <a href="#"><span
-                                            class="badge badge-pill badge-primary font-weight-normal ml-auto mr-1"><i
-                                                class="ri-star-line"></i></span> 27 Items for yoou</a>
-                                </div>
-                            </div>
-                            <div class="iq-card">
-                                <div class="iq-card-header d-flex justify-content-between">
-                                    <div class="iq-header-title">
-                                        <h4 class="card-title">Life Event</h4>
-                                    </div>
-                                    <div class="iq-card-header-toolbar d-flex align-items-center">
-                                        <p class="m-0"><a href="javacsript:void();"> Create </a></p>
-                                    </div>
-                                </div>
-                                <div class="iq-card-body">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="event-post position-relative">
-                                                <a href="javascript:void();"><img
-                                                        src="{{ asset('temp/html/images/page-img/07.jpg') }}"
-                                                        alt="gallary-image" class="img-fluid rounded"></a>
-                                                <div class="job-icon-position">
-                                                    <div class="job-icon bg-primary p-2 d-inline-block rounded-circle">
-                                                        <i class="ri-briefcase-line"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="iq-card-body text-center p-2">
-                                                    <h5>Started New Job at Apple</h5>
-                                                    <p>January 24, 2019</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="event-post position-relative">
-                                                <a href="javascript:void();"><img
-                                                        src="{{ asset('temp/html/images/page-img/06.jpg') }}"
-                                                        alt="gallary-image" class="img-fluid rounded"></a>
-                                                <div class="job-icon-position">
-                                                    <div class="job-icon bg-primary p-2 d-inline-block rounded-circle">
-                                                        <i class="ri-briefcase-line"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="iq-card-body text-center p-2">
-                                                    <h5>Freelance Photographer</h5>
-                                                    <p>January 24, 2019</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                             <div class="iq-card">
                                 <div class="iq-card-header d-flex justify-content-between">
                                     <div class="iq-header-title">
                                         <h4 class="card-title">Photos</h4>
                                     </div>
                                     <div class="iq-card-header-toolbar d-flex align-items-center">
-                                        <p class="m-0"><a href="javacsript:void();">Add Photo </a></p>
+                                        <p class="m-0"><a href="javacsript:void();">Show All </a></p>
                                     </div>
                                 </div>
                                 <div class="iq-card-body">
@@ -140,100 +88,20 @@
                                         <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img
                                                     src="{{ asset('temp/html/images/page-img/g1.jpg') }}"
                                                     alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/page-img/g2.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/page-img/g3.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/page-img/g4.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/page-img/g5.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/page-img/g6.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-0"><a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/page-img/g7.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-0"><a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/page-img/g8.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-0"><a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/page-img/g9.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a></li>
+
                                     </ul>
                                 </div>
                             </div>
                             <div class="iq-card">
                                 <div class="iq-card-header d-flex justify-content-between">
                                     <div class="iq-header-title">
-                                        <h4 class="card-title">Friends</h4>
+                                        <h4 class="card-title">Members</h4>
                                     </div>
                                     <div class="iq-card-header-toolbar d-flex align-items-center">
-                                        <p class="m-0"><a href="javacsript:void();">Add New </a></p>
+                                        <p class="m-0"><a href="javacsript:void();">Show All </a></p>
                                     </div>
                                 </div>
-                                <div class="iq-card-body">
-                                    <ul class="profile-img-gallary d-flex flex-wrap p-0 m-0">
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
-                                            <a href="javascript:void();">
-                                                <img src="{{ asset('temp/html/images/user/05.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Anna Rexia</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
-                                            <a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/user/06.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Tara Zona</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
-                                            <a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/user/07.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Polly Tech</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
-                                            <a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/user/08.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Bill Emia</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
-                                            <a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/user/09.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Moe Fugga</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
-                                            <a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/user/10.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Hal Appeno </h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-0">
-                                            <a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/user/07.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Zack Lee</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-0">
-                                            <a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/user/06.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Terry Aki</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-0">
-                                            <a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/user/05.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Greta Life</h6>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <livewire:group.membercard :group="$group" />
                             </div>
                         </div>
                         <div class="col-lg-8">
