@@ -19,7 +19,7 @@ class Form extends Component
         'university_name' => 'required|string|min:3|max:64',
         'colleague' => 'required',
         'city' => 'required',
-        'description' => 'string|min:3|max:255',
+        'description' => 'nullable|min:3|max:255',
     ];
 
     public function store()

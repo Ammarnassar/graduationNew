@@ -12,22 +12,27 @@
                     <div class="user-detail text-center">
                         <form wire:submit.prevent="saveProfilePhoto">
                         <div class="profile-img ">
-                            @if($profilePhoto && auth()->id() == $user->id)
-                                <div class="profilePhoto position-relative mx-auto">
-                                    <img src="{{$profilePhoto->temporaryUrl()}}" alt="profile-img" class="avatar-130 img-fluid w-100 h-100"/>
-                                    <label for="profilePhoto">
-                                        <button type="submit" class="p-0 border-0 icon-circle btn btn-success position-absolute text-white" style="z-index:10 ;bottom: -5px ; margin-right: -70px ;cursor: pointer"><i class="ri-check-line"></i></button>
-                                    </label>
-                                </div>
 
-                            @else
-                                <div class="profilePhoto position-relative mx-auto">
-                                    <img src="{{$user->avatar}}" alt="profile-img" class="avatar-130 img-fluid w-100 h-100" />
-                                    <label for="profilePhoto">
-                                        <a class="icon-circle position-absolute bg-primary text-white" style="z-index:10 ;bottom: -5px ; margin-right: -70px ;cursor: pointer"><i class="ri-pencil-line"></i></a>
-                                    </label>
-                                </div>
-                            @endif
+                                @if($profilePhoto )
+
+                                    <div class="profilePhoto position-relative mx-auto">
+                                        <img src="{{$profilePhoto->temporaryUrl()}}" alt="profile-img" class="avatar-130 img-fluid w-100 h-100"/>
+                                        <label for="profilePhoto">
+                                            <button type="submit" class="p-0 border-0 icon-circle btn btn-success position-absolute text-white" style="z-index:10 ;bottom: -5px ; margin-right: -70px ;cursor: pointer"><i class="ri-check-line"></i></button>
+                                        </label>
+                                    </div>
+
+                                @else
+                                    <div class="profilePhoto position-relative mx-auto">
+                                        <img src="{{$user->avatar}}" alt="profile-img" class="avatar-130 img-fluid w-100 h-100" />
+                                        @if(auth()->id() == $user->id)
+                                        <label for="profilePhoto">
+                                            <a class="icon-circle position-absolute bg-primary text-white" style="z-index:10 ;bottom: -5px ; margin-right: -70px ;cursor: pointer"><i class="ri-pencil-line"></i></a>
+                                        </label>
+                                        @endif
+                                    </div>
+                                @endif
+
 
 
                             <input type="file" id="profilePhoto" name="profilePhoto" class="d-none" wire:model="profilePhoto">

@@ -15,7 +15,6 @@ class Trend extends Model
       'name'
     ];
 
-
     public function posts()
     {
         return $this->belongsToMany(Post::class , 'post_trend')->latest();

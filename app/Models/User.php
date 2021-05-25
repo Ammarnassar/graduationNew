@@ -49,7 +49,7 @@ class User extends Authenticatable
         if ($this->profile_photo)
             return asset('storage/'.$this->profile_photo);
         else
-            return 'https://ui-avatars.com/api/?name='.urlencode($this->name);
+            return 'https://ui-avatars.com/api/?name='.urlencode($this->getNameAttribute() );
     }
 
     public function posts()

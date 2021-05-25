@@ -60,11 +60,13 @@
                     <li @if(Route::currentRouteName() == 'user.profile') class="active" @endif>
                         <a href="{{route('user.profile' , auth()->id())}}" class="iq-waves-effect"><i class="las la-user"></i><span>{{__('Profile')}}</span></a>
                     </li>
+
                     <li>
-                        <a href="#frinds" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="las la-user-friends"></i><span>{{__('Friends List')}}</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
+                        <a href="#frinds" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="las la-user-friends"></i><span>{{__('Persons')}}</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="frinds" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                           <li><a href="{{route('following')}}"><i class="fas fa-user-friends" style="font-size: 14px;"></i>{{__('Following')}}</a></li>
-                           <li><a href="{{route('followers')}}"><i class="fas fa-users" style="font-size: 14px;"></i>{{__('Followers')}}</a></li>
+                           <li><a href="{{route('following')}}"><i class="fas fa-user-friends"></i>{{__('Following')}}</a></li>
+                           <li><a href="{{route('followers')}}"><i class="fas fa-plus"></i>{{__('Followers')}}</a></li>
+
                         </ul>
                      </li>
 
@@ -127,11 +129,16 @@
                             {{ session('message') }}dds
                         </div>
                     @endif
-                    <form action="#" class="searchbox">
-                        <input type="text" class="text search-input" placeholder="{{__('Type here to search...')}}">
+
+                    @if(\Illuminate\Support\Facades\Route::currentRouteName() != 'search')
+                    <form class="searchbox ">
+                        <a href="{{route('search')}}">
+                        <input type="text" class="text search-input" placeholder="{{__('Click here to search...')}}">
 
                         <a class="search-link" href="#"><i class="bi bi-search"></i></a>
+                        </a>
                     </form>
+                    @endif
 
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"  aria-label="Toggle navigation">
@@ -151,94 +158,17 @@
                         </li>
                         <li>
                             <a href="{{route('home')}}" class="iq-waves-effect d-flex align-items-center">
-                                <i class="bi bi-house-door"></i>
+                                <i class="bi bi-house-door"  style="font-size: 18px"></i>
+                            </a>
+                        </li>
+
+                        <li class="d-md-none">
+                            <a href="{{route('search')}}" class="iq-waves-effect d-flex align-items-center">
+                                <i class="bi bi-search"  style="font-size: 18px"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="search-toggle iq-waves-effect" href="#"><i class="bi bi-person-plus" style="font-size: 20px"></i></a>
-                            <div class="iq-sub-dropdown iq-sub-dropdown-large">
-                                <div class="iq-card shadow-none m-0">
-                                    <div class="iq-card-body p-0 ">
-                                        <div class="bg-primary p-3">
-                                            <h5 class="mb-0 text-white">Friend Request<small class="badge  badge-light float-right pt-1">4</small></h5>
-                                        </div>
-                                        <div class="iq-friend-request">
-                                            <div class="iq-sub-card iq-sub-card-big d-flex align-items-center justify-content-between" >
-                                                <div class="d-flex align-items-center">
-                                                    <div class="">
-                                                        <img class="avatar-40 rounded" src="{{asset('temp/images/user/01.jpg')}}" alt="">
-                                                    </div>
-                                                    <div class="media-body ml-3">
-                                                        <h6 class="mb-0 ">Jaques Amole</h6>
-                                                        <p class="mb-0">40  friends</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center">
-                                                    <a href="javascript:void();" class="mr-3 btn btn-primary rounded">Confirm</a>
-                                                    <a href="javascript:void();" class="mr-3 btn btn-secondary rounded">Delete Request</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="iq-friend-request">
-                                            <div class="iq-sub-card iq-sub-card-big d-flex align-items-center justify-content-between" >
-                                                <div class="d-flex align-items-center">
-                                                    <div class="">
-                                                        <img class="avatar-40 rounded" src="{{asset('temp/images/user/02.jpg')}}" alt="">
-                                                    </div>
-                                                    <div class="media-body ml-3">
-                                                        <h6 class="mb-0 ">Lucy Tania</h6>
-                                                        <p class="mb-0">12  friends</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center">
-                                                    <a href="javascript:void();" class="mr-3 btn btn-primary rounded">Confirm</a>
-                                                    <a href="javascript:void();" class="mr-3 btn btn-secondary rounded">Delete Request</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="iq-friend-request">
-                                            <div class="iq-sub-card iq-sub-card-big d-flex align-items-center justify-content-between" >
-                                                <div class="d-flex align-items-center">
-                                                    <div class="">
-                                                        <img class="avatar-40 rounded" src="{{asset('temp/images/user/03.jpg')}}" alt="">
-                                                    </div>
-                                                    <div class="media-body ml-3">
-                                                        <h6 class="mb-0 ">Manny Petty</h6>
-                                                        <p class="mb-0">3  friends</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center">
-                                                    <a href="javascript:void();" class="mr-3 btn btn-primary rounded">Confirm</a>
-                                                    <a href="javascript:void();" class="mr-3 btn btn-secondary rounded">Delete Request</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="iq-friend-request">
-                                            <div class="iq-sub-card iq-sub-card-big d-flex align-items-center justify-content-between" >
-                                                <div class="d-flex align-items-center">
-                                                    <div class="">
-                                                        <img class="avatar-40 rounded" src="{{asset('temp/images/user/04.jpg')}}" alt="">
-                                                    </div>
-                                                    <div class="media-body ml-3">
-                                                        <h6 class="mb-0 ">Marsha Mello</h6>
-                                                        <p class="mb-0">15  friends</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex align-items-center">
-                                                    <a href="javascript:void();" class="mr-3 btn btn-primary rounded">Confirm</a>
-                                                    <a href="javascript:void();" class="mr-3 btn btn-secondary rounded">Delete Request</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center">
-                                            <a href="#" class="mr-3 btn text-primary">View More Request</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="search-toggle iq-waves-effect">
+                            <a href="#" class="search-toggle iq-waves-effect" >
                                 <div id="lottie-beil"></div>
                                 <span class="bg-danger dots"></span>
                             </a>
@@ -247,9 +177,9 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a href="#" class="search-toggle iq-waves-effect">
-                                <div id="lottie-mail"></div>
-                                <span class="bg-primary count-mail"></span>
+                            <a href="#" class="search-toggle iq-waves-effect" >
+                                <div id="lottie-mail" ></div>
+                                <span class="bg-primary count-mail" style="font-size: 25px"></span>
                             </a>
                             <div class="iq-sub-dropdown">
                                 <div class="iq-card shadow-none m-0">
