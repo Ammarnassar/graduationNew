@@ -71,12 +71,12 @@
                            <li><a href="{{route('group.create')}}"><i class="fas fa-plus"></i>Followers</a></li>
                         </ul>
                      </li>
-                    
+
                     <li>
                         <a href="#groups" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="las la-users"></i><span>{{__('Groups')}}</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="groups" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                           <li><a href="{{route('group.groups')}}"><i class="fas fa-user-friends"></i>All Groups</a></li>
-                           <li><a href="{{route('group.create')}}"><i class="fas fa-plus"></i>Create</a></li>
+                           <li><a href="{{route('group.groups')}}"><i class="fas fa-user-friends"></i>{{__('Your Groups')}}</a></li>
+                           <li><a href="{{route('group.create')}}"><i class="fas fa-plus"></i>{{__('Create Group')}}</a></li>
                         </ul>
                      </li>
                     <li @if(Route::currentRouteName() == 'user.photos') class="active" @endif>
@@ -103,7 +103,7 @@
                     <li>
                         <a href="{{route('email.inbox')}}" class="iq-waves-effect collapsed" ><i class="bi bi-envelope"></i><span>{{__('Email')}}</span></a>
                     </li>
-                
+
                 </ul>
             </nav>
             <div class="p-3"></div>

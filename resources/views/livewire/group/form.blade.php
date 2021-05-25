@@ -12,37 +12,60 @@
                     </div>
                 @enderror
             </div>
-            <div class="form-group col-sm-6">
-                <label for="lname">{{__('University Name')}}:</label>
-                <input wire:model.defer="university_name" type="text"
-                    class="form-control @error('university_name') is-invalid @enderror" id="uname" value="">
-                @error('university_name')
-                    <div class="text-danger mt-2">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="form-group col-sm-6">
-                <label for="uname">{{__('colleague')}}:</label>
-                <input wire:model.defer="colleague" type="text"
-                    class="form-control @error('colleague') is-invalid @enderror" id="cname" value="">
-                @error('colleague')
-                    <div class="text-danger mt-2">
-                        {{ $message }}
-                    </div>
-                @enderror
-            </div>
-            <div class="form-group col-sm-6">
-                <label>{{__('Country')}}:</label>
-                <select wire:model.defer="country" class="form-control @error('country') is-invalid @enderror"
-                    id="exampleFormControlSelect3">
-                    <option value="Caneda">Caneda</option>
-                    <option>Noida</option>
-                    <option value="Jordan" selected="">Jordan</option>
-                    <option>India</option>
-                    <option>Africa</option>
+            <div class="form-group col-12 col-md-6">
+                <label>{{__('University')}} :</label>
+                <select class="form-control" id="exampleFormControlSelect2" wire:model="university_name">
+
+                    @foreach($universities as $uni)
+                        <option value="{{$uni}}" >
+                            {{__($uni)}}
+                        </option>
+                    @endforeach
+
                 </select>
-                @error('country')
+
+                @error('university_name')
+                <div class="text-danger">
+                    {{$message}}
+                </div>
+                @enderror
+
+            </div>
+
+
+            <div class="form-group col-12 col-md-6">
+                <label>{{__('College')}} :</label>
+
+                <select class="form-control" id="exampleFormControlSelect2" wire:model.defer="college">
+                    <option value="" selected disabled>
+                        {{__('Select College')}}
+                    </option>
+                    @if($colleges)
+                        @foreach($colleges as $coll)
+                            <option value="{{$coll}}">
+                                {{__($coll)}}
+                            </option>
+                        @endforeach
+                    @endif
+                </select>
+
+                @error('college')
+                <div class="text-danger">
+                    {{$message}}
+                </div>
+                @enderror
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label>{{__('City')}}:</label>
+                <select class="form-control " id="" wire:model.defer="city">
+
+                    @foreach($cities as $cit)
+                        <option class="w-100" value="{{$cit}}">{{__($cit)}}</option>
+                    @endforeach
+                </select>
+
+                @error('city')
                     <div class="text-danger mt-2">
                         {{ $message }}
                     </div>

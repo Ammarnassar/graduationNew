@@ -37,14 +37,15 @@ Route::group(
     Route::group(['middleware' => 'auth'], function () {
         Route::get('/', [HomeController::class, 'home'])->name('home');
         Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-        Route::view('/create',  'user.group.form')->name('group.create');
-        Route::view('/groups',  'user.group.groups')->name('group.groups');
         Route::view('/following',  'user.follow_list.following')->name('following');
         Route::view('/followers',  'user.follow_list.follower')->name('followers');
 
-        Route::get('/group/{id}', [GroupController::class,'index'])->name('group');
+        Route::group(['as' => 'group.'] ,function () {
+            Route::view('/create',  'user.group.form')->name('create');
+            Route::view('/groups',  'user.group.groups')->name('groups');
+            Route::get('/group/{id}', [GroupController::class,'index'])->name('show');
+        });
 
-        
         Route::group(['prefix' => 'email' , 'as' => 'email.'] ,function () {
             Route::view('/inbox',  'pages.mail.inbox')->name('inbox');
             Route::view('/send', 'pages.mail.email-compose')->name('send');
