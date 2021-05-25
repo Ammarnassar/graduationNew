@@ -27,18 +27,21 @@ class AuthController extends Controller
     public function register(RegisterRequest $request)
     {
         User::create([
-            'name' => $request->name,
+            'first_name' => $request->firstName,
+            'last_name' => $request->lastName,
             'email' => $request->email,
+            'username' => $request->username,
+            'university' => $request->university,
+            'college' => $request->college,
             'password' => bcrypt($request->password),
         ]);
 
         Auth::attempt($request->only(['email' , 'password']));
 
         Follow::create([
-            'following'=>auth()->id(),
-            'follower'=>auth()->id(),
+            'following'=> auth()->id(),
+            'follower'=> auth()->id(),
         ]);
-
 
         return redirect()->route('home');
     }

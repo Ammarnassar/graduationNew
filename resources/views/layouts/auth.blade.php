@@ -52,7 +52,7 @@
         <div id="circle-xxlarge"  style="right: -750px;"></div>
 
     </div>
-    <div class="container  d-flex flex-column justify-content-center align-items-center " style="min-height: 100vh;">
+    <div class="container-md  d-flex flex-column justify-content-center align-items-center " style="min-height: 100vh;">
         <div class="row no-gutters w-100">
             @yield('content')
         </div>

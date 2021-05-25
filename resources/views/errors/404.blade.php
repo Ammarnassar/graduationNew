@@ -17,11 +17,7 @@
     <link rel="stylesheet" href="{{asset('temp/html/css/responsive.css')}}">
 </head>
 <body class="iq-bg-primary">
-<!-- loader Start -->
-<div id="loading">
-    <div id="loading-center">
-    </div>
-</div>
+
 <!-- loader END -->
 <!-- Wrapper Start -->
 <div class="wrapper">

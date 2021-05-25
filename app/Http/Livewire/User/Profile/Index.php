@@ -11,6 +11,7 @@ use Livewire\WithFileUploads;
 
 class Index extends Component
 {
+
     use WithFileUploads;
 
     public $user;
@@ -40,15 +41,16 @@ class Index extends Component
 
         $photo = Media::findOrFail($mediaID);
 
-        User::findOrFail($this->user->id)->update([
+        auth()->user()->update([
          'profile_photo' => $photo->path,
         ]);
-
-        $this->profilePhoto = '';
 
         $this->alert(
             'success',
             __('Profile Photo Updated Successfully !')
         );
+
+        $this->profilePhoto = null;
+
     }
 }

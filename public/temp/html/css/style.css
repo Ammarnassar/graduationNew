@@ -570,6 +570,7 @@ div#post-modal-data .modal .modal-dialog { max-width: 100%; margin: 0; }
 .iq-email-list .iq-email-ui li:last-child { margin-bottom: 0; }
 .iq-email-list .iq-email-ui li a { color: var(--iq-body-text); padding: 0; display: inline-block; width: 100%; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5  px; transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; }
 .iq-email-list .iq-email-ui li.active a, .iq-email-list .iq-email-ui li a:hover { text-decoration: none; color: var(--iq-primary); }
+.iq-email-list .iq-email-ui li.active a, .iq-email-list { text-decoration: none; color: white; }
 .iq-email-list .iq-email-ui li { list-style-type: none; }
 .iq-email-list .iq-email-ui li i { margin-right: 10px; }
 .iq-email-list .iq-email-ui li .badge { float: right; font-weight: normal; margin-top: 3px; }

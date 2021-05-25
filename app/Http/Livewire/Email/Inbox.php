@@ -71,7 +71,8 @@ class Inbox extends Component
     {
         return view('livewire.email.inbox',[
             'mails'=>Mail::with('files')->whereHas('user' , function($query) {
-            $query->where('name' , 'like', '%'.$this->search.'%');
+            $query->where('first_name' , 'like', '%'.$this->search.'%')
+            ->orWhere('last_name' , 'like', '%'.$this->search.'%');
         })->where('receiver',auth()->id())->latest()->simplePaginate(10),
 
         'trashs'=>Mail::with('files')->where('receiver',auth()->id())->latest()->onlyTrashed()->get(),
