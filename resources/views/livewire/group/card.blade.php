@@ -9,7 +9,7 @@
 
                 <div class="group-info pt-3 pb-3">
                     <h4>{{ $group->group->group_name }}</h4>
-                    <p>{{ $group->group->university_name }}</p>
+                    <p>{{__($group->group->university_name)}}</p>
                 </div>
                 <div class="group-details d-inline-block pb-3">
                     <ul class="d-flex align-items-center justify-content-between list-inline m-0 p-0">
@@ -27,8 +27,8 @@
                         </li>
                     </ul>
                 </div>
-                 
-                <a href="{{ route('group', $group->group_id) }}"
+
+                <a href="{{ route('group.show', $group->group_id) }}"
                     class="btn btn-primary d-block w-100 text-white">{{__('Show')}}</a>
             </div>
         </div>

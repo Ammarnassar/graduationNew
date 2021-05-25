@@ -61,14 +61,10 @@
                         <a href="{{route('user.profile' , auth()->id())}}" class="iq-waves-effect"><i class="las la-user"></i><span>{{__('Profile')}}</span></a>
                     </li>
                     <li>
-                        <a href="" class="iq-waves-effect"><i class="las la-user-friends"></i><span>{{__('Friends List')}}</span></a>
-                    </li>
-
-                    <li>
                         <a href="#frinds" class="iq-waves-effect collapsed"  data-toggle="collapse" aria-expanded="false"><i class="las la-user-friends"></i><span>{{__('Friends List')}}</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                         <ul id="frinds" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
-                           <li><a href="{{route('group.groups')}}"><i class="fas fa-user-friends"></i>Following</a></li>
-                           <li><a href="{{route('group.create')}}"><i class="fas fa-plus"></i>Followers</a></li>
+                           <li><a href="{{route('following')}}"><i class="fas fa-user-friends" style="font-size: 14px;"></i>{{__('Following')}}</a></li>
+                           <li><a href="{{route('followers')}}"><i class="fas fa-users" style="font-size: 14px;"></i>{{__('Followers')}}</a></li>
                         </ul>
                      </li>
 
@@ -86,7 +82,7 @@
                         <a href="{{route('user.videos')}}" class="iq-waves-effect"><i class="las la-video"></i><span>{{__('Profile Video')}}</span></a>
                     </li>
                     <li>
-                        <a href="" class="iq-waves-effect"><i class="las la-bell"></i><span>{{__('Notification')}}</span></a>
+                        <a href="{{route('notifications')}}" class="iq-waves-effect"><i class="las la-bell"></i><span>{{__('Notification')}}</span></a>
                     </li>
                     <li>
                         <a href="" class="iq-waves-effect"><i class="las la-anchor"></i><span>{{__('Friend Request')}}</span></a>
@@ -247,61 +243,7 @@
                                 <span class="bg-danger dots"></span>
                             </a>
                             <div class="iq-sub-dropdown">
-                                <div class="iq-card shadow-none m-0">
-                                    <div class="iq-card-body p-0 ">
-                                        <div class="bg-primary p-3">
-                                            <h5 class="mb-0 text-white">All Notifications<small class="badge  badge-light float-right pt-1">4</small></h5>
-                                        </div>
-                                        <a href="#" class="iq-sub-card" >
-                                            <div class="media align-items-center">
-                                                <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/01.jpg')}}" alt="">
-                                                </div>
-                                                <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">Emma Watson Bni</h6>
-                                                    <small class="float-right font-size-12">Just Now</small>
-                                                    <p class="mb-0">95 MB</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="iq-sub-card" >
-                                            <div class="media align-items-center">
-                                                <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/02.jpg')}}" alt="">
-                                                </div>
-                                                <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">New customer is join</h6>
-                                                    <small class="float-right font-size-12">5 days ago</small>
-                                                    <p class="mb-0">Cyst Bni</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="iq-sub-card" >
-                                            <div class="media align-items-center">
-                                                <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/03.jpg')}}" alt="">
-                                                </div>
-                                                <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">Two customer is left</h6>
-                                                    <small class="float-right font-size-12">2 days ago</small>
-                                                    <p class="mb-0">Cyst Bni</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="#" class="iq-sub-card" >
-                                            <div class="media align-items-center">
-                                                <div class="">
-                                                    <img class="avatar-40 rounded" src="{{asset('temp/images/user/04.jpg')}}" alt="">
-                                                </div>
-                                                <div class="media-body ml-3">
-                                                    <h6 class="mb-0 ">New Mail from Fenny</h6>
-                                                    <small class="float-right font-size-12">3 days ago</small>
-                                                    <p class="mb-0">Cyst Bni</p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+                               <livewire:notifications.notify />
                             </div>
                         </li>
                         <li class="nav-item dropdown">

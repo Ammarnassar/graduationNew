@@ -36,8 +36,8 @@
             <div class="form-group col-12 col-md-6">
                 <label>{{__('College')}} :</label>
 
-                <select class="form-control" id="exampleFormControlSelect2" wire:model.defer="college">
-                    <option value="" selected disabled>
+                <select class="form-control" id="exampleFormControlSelect2" wire:model="colleague">
+                    <option value="" selected >
                         {{__('Select College')}}
                     </option>
                     @if($colleges)
@@ -58,7 +58,7 @@
 
             <div class="form-group col-sm-6">
                 <label>{{__('City')}}:</label>
-                <select class="form-control " id="" wire:model.defer="city">
+                <select class="form-control " id="" wire:model="city">
 
                     @foreach($cities as $cit)
                         <option class="w-100" value="{{$cit}}">{{__($cit)}}</option>
