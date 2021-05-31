@@ -103,4 +103,17 @@ class User extends Authenticatable
         return $this->hasMany(Join::class,'user_id');
     }
 
+    public function getAllGroupsAttribute(){
+
+        $groups = auth()->user()->groups->toArray();
+        $ids = [];
+
+        foreach ($groups as $group) {
+            array_push($ids , $group['group_id']);
+        }
+
+        return $ids;
+
+    }
+
 }
