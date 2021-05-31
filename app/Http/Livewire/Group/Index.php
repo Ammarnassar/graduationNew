@@ -39,7 +39,6 @@ class Index extends Component
 
     public function render()
     {
-        dd($this->group->posts);
         return view('livewire.group.index', [
             'users' => $this->group->users,
             'posts' => $this->group->posts

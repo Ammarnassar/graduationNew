@@ -113,7 +113,12 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary d-block w-100">Join</button>
+
+                                @if(in_array($group->id , auth()->user()->allGroups))
+                                    <a type="submit" href="{{route('group.show' , $group->id)}}" class="btn btn-primary btn-link text-white d-block w-100">{{__('Show')}}</a>
+                                @else
+                                    <a type="submit" class="btn btn-primary btn-link text-white d-block w-100">{{__('Join')}}</a>
+                                @endif
                             </div>
                         </div>
                     @empty

@@ -24,7 +24,6 @@ class Form extends Component
 
     public function store()
     {
-
           $id = Group::insertGetId([
             'group_name' => $this->group_name,
             'university_name' => $this->university_name,
