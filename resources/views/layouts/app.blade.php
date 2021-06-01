@@ -89,8 +89,8 @@
                     <li>
                         <a href="" class="iq-waves-effect"><i class="las la-anchor"></i><span>{{__('Friend Request')}}</span></a>
                     </li>
-                    <li>
-                        <a href="" class="iq-waves-effect"><i class="lab la-rocketchat"></i><span>{{__('Chat')}}</span></a>
+                    <li @if(Route::currentRouteName() == 'chat.index') class="active" @endif>
+                        <a href="{{route('chat.index')}}" class="iq-waves-effect"><i class="lab la-rocketchat"></i><span>{{__('Chat')}}</span></a>
                     </li>
                     <li>
                         <a href="" class="iq-waves-effect"><i class="las la-check-circle"></i><span>{{__('Todo')}}</span></a>
@@ -115,7 +115,7 @@
                 <div class="iq-navbar-logo d-flex justify-content-between">
                     <a href="/">
                         <img src="{{asset('temp/images/logo.png')}}" loading="lazy" class="img-fluid" alt="">
-                        <span>UniBook</span>
+                        <span>My University</span>
                     </a>
                     <div class="iq-menu-bt align-self-center">
                         <div class="wrapper-menu">
@@ -376,7 +376,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6 mx-auto text-center">
-                {{__('Copyright')}} 2021 © <a href="{{route('home')}}">{{__('UniBook')}}</a>
+                {{__('Copyright')}} 2021 © <a href="{{route('home')}}">{{__('My University')}}</a>
             </div>
         </div>
     </div>

@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\FileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\MessageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\TrendController;
 use App\Http\Controllers\UserController;
@@ -70,6 +72,10 @@ Route::group(
 
         Route::group(['as' => 'post.'], function () {
             Route::get('/post/{id}', [PostController::class, 'show'])->name('show');
+        });
+
+        Route::group(['as' => 'chat.'], function () {
+            Route::get('chat', [ChatController::class, 'index'])->name('index');
         });
 
     });
