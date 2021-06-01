@@ -106,13 +106,16 @@
                                     <div class="iq-header-title">
                                         <h4 class="card-title">{{__('Photos')}}</h4>
                                     </div>
-                                    <div class="iq-card-header-toolbar d-flex align-items-center">
-                                        <p class="m-0"><a href="javacsript:void();">Add Photo </a></p>
-                                    </div>
                                 </div>
                                 <div class="iq-card-body">
                                     <ul class="profile-img-gallary d-flex flex-wrap p-0 m-0">
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img src="{{asset('temp/html/images/page-img/g1.jpg')}}" alt="gallary-image" class="img-fluid" /></a></li>
+                                        @forelse($photos as $photo)
+                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img src="{{asset('storage/'.$photo->media->path)}}" alt="gallary-image" class="img-fluid" /></a></li>
+                                        @empty
+                                            <div class="mx-auto">
+                                                {{__('There is no photos to show !')}}
+                                            </div>
+                                        @endforelse
                                     </ul>
                                 </div>
                             </div>
@@ -697,7 +700,7 @@
             <div class="tab-pane fade" id="photos" role="tabpanel">
                 <div class="iq-card">
                     <div class="iq-card-body">
-                        <h2>Photos</h2>
+                        <h2>{{__('Photos')}}</h2>
                         <div class="friend-list-tab mt-2">
                             <div class="tab-content">
                                 <div class="tab-pane fade active show" id="photosofyou" role="tabpanel">
