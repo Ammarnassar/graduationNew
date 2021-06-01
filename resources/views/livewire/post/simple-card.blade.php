@@ -1,4 +1,4 @@
-<div class="iq-card iq-card-block post-card w-100" id="card">
+<div class="iq-card iq-card-block post-card w-100" id="card" wire:poll>
     <a href="{{route('home')}}" class="">
         <div class="iq-card-body  p-3 " style="cursor: pointer">
             <div class="user-post-data">
@@ -6,7 +6,7 @@
                         <a href="{{route('user.profile' , $post->user->id)}}" class="media-support-user-img mr-3">
                             <img class="rounded-circle img-fluid" src="{{$post->user->avatar}}" alt="">
                         </a>
-                        <div class="media-support-info mt-2">
+                        <div class="media-support-info mt-2 " >
                             <a href="{{route('user.profile' , $post->user->id)}}"
                                class="btn btn-link p-0 text-dark d-inline-block font-size-20">{{$post->user->name}}</a>
                             <p class="mb-0 text-primary">{{$post->created_at->diffForHumans()}}</p>

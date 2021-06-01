@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function home()
     {
         return view('home' , [
-           'posts' => Post::with(['likes' , 'user'])->latest()->get()
+           'posts' => auth()->user()->postsFromFollowing
         ]);
     }
 }

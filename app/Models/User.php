@@ -49,7 +49,7 @@ class User extends Authenticatable
         if ($this->profile_photo)
             return asset('storage/'.$this->profile_photo);
         else
-            return 'https://ui-avatars.com/api/?name='.urlencode($this->getNameAttribute() );
+            return 'https://ui-avatars.com/api/?name='.urlencode($this->attributes['first_name'] . ' ' .$this->attributes['last_name'] );
     }
 
     public function posts()
@@ -114,6 +114,16 @@ class User extends Authenticatable
 
         return $ids;
 
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+
+    public function chats()
+    {
+        return $this->hasMany(Chat::class , 'sender_id')->with('user')->latest();
     }
 
 }

@@ -19,20 +19,6 @@ class Card extends Component
 
     public function render()
     {
-//        DB::table('trends')->where(function ($query) use ($activated) {
-//            $query->where('activated', '=', $activated);
-//        })->get();
-//
-//        $tr = DB::table('trends')->whereIn('id' , function($innerQuery) {
-//            $innerQuery->select('trend_id')
-//                ->from('post_trend')->groupBy('trend_id')->limit(5)->orderBy(DB::raw('count(*)'), 'DESC');
-//        })->get();
-//
-//        dd($new);
-//        $new = Trend::with('posts')->get();
-//
-//        dd($new);
-//
 
         $trends = DB::table('post_trend')->select('trend_id')
             ->groupBy('trend_id')
@@ -45,7 +31,7 @@ class Card extends Component
             array_push($this->ids , $trend->trend_id);
         }
 
-
+        $this->trends = Trend::findOrFail($this->ids);
         return view('livewire.trend.card');
     }
 
