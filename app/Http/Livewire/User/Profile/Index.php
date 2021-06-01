@@ -6,6 +6,7 @@ use App\Models\Media;
 use App\Models\Notifications;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Follow;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 use Livewire\WithFileUploads;
@@ -22,7 +23,7 @@ class Index extends Component
     {
 
         return view('livewire.user.profile.index' , [
-            'posts' => Post::where('user_id' , $this->user->id)->latest()->get()
+            'posts' => Post::where('user_id' , $this->user->id)->latest()->get(),'users'=>$this->user->followers,
         ]);
     }
 

@@ -61,11 +61,11 @@
                                 </li>
                                 <li class="text-center pl-3">
                                     <h6>{{__('Followers')}}</h6>
-                                    <p class="mb-0">{{$user->followers->count()-1}}</p>
+                                    <p class="mb-0">{{$user->followers->count()}}</p>
                                 </li>
                                 <li class="text-center pl-3">
                                     <h6>{{__('Following')}}</h6>
-                                    <p class="mb-0">{{$user->following->count()-1}}</p>
+                                    <p class="mb-0">{{$user->following->count()}}</p>
                                 </li>
                             </ul>
                         </div>
@@ -84,7 +84,7 @@
                             <a class="nav-link" data-toggle="pill" href="#about">{{__('About')}}</a>
                         </li>
                         <li class="col-sm-3 p-0">
-                            <a class="nav-link" data-toggle="pill" href="#friends">{{__('Friends')}}</a>
+                            <a class="nav-link" data-toggle="pill" href="#friends">{{__('Following')}}</a>
                         </li>
                         <li class="col-sm-3 p-0">
                             <a class="nav-link" data-toggle="pill" href="#photos">{{__('Photos')}}</a>
@@ -100,122 +100,41 @@
                 <div class="iq-card-body p-0">
                     <div class="row flex-lg-row-reverse flex-column-reverse">
                         <div class="col-lg-4">
-                            <div class="iq-card">
-                                <div class="iq-card-body">
-                                    <a href="#"><span class="badge badge-pill badge-primary font-weight-normal ml-auto mr-1"><i class="ri-star-line"></i></span> 27 Items for yoou</a>
-                                </div>
-                            </div>
+
                             <div class="iq-card">
                                 <div class="iq-card-header d-flex justify-content-between">
                                     <div class="iq-header-title">
-                                        <h4 class="card-title">Life Event</h4>
+                                        <h4 class="card-title">{{__('Photos')}}</h4>
                                     </div>
-                                    <div class="iq-card-header-toolbar d-flex align-items-center">
-                                        <p class="m-0"><a href="javacsript:void();"> Create </a></p>
-                                    </div>
-                                </div>
-                                <div class="iq-card-body">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="event-post position-relative">
-                                                <a href="javascript:void();"><img src="{{asset('temp/html/images/page-img/07.jpg')}}" alt="gallary-image" class="img-fluid rounded"></a>
-                                                <div class="job-icon-position">
-                                                    <div class="job-icon bg-primary p-2 d-inline-block rounded-circle"><i class="ri-briefcase-line"></i></div>
-                                                </div>
-                                                <div class="iq-card-body text-center p-2">
-                                                    <h5>Started New Job at Apple</h5>
-                                                    <p>January 24, 2019</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12">
-                                            <div class="event-post position-relative">
-                                                <a href="javascript:void();"><img src="{{asset('temp/html/images/page-img/06.jpg')}}" alt="gallary-image" class="img-fluid rounded"></a>
-                                                <div class="job-icon-position">
-                                                    <div class="job-icon bg-primary p-2 d-inline-block rounded-circle"><i class="ri-briefcase-line"></i></div>
-                                                </div>
-                                                <div class="iq-card-body text-center p-2">
-                                                    <h5>Freelance Photographer</h5>
-                                                    <p>January 24, 2019</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="iq-card">
-                                <div class="iq-card-header d-flex justify-content-between">
-                                    <div class="iq-header-title">
-                                        <h4 class="card-title">Photos</h4>
-                                    </div>
-                                    <div class="iq-card-header-toolbar d-flex align-items-center">
-                                        <p class="m-0"><a href="javacsript:void();">Add Photo </a></p>
-                                    </div>
+
                                 </div>
                                 <div class="iq-card-body">
                                     <ul class="profile-img-gallary d-flex flex-wrap p-0 m-0">
                                         <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img src="{{asset('temp/html/images/page-img/g1.jpg')}}" alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img src="{{asset('temp/html/images/page-img/g2.jpg')}}" alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img src="{{asset('temp/html/images/page-img/g3.jpg')}}" alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img src="{{asset('temp/html/images/page-img/g4.jpg')}}" alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img src="{{asset('temp/html/images/page-img/g5.jpg')}}" alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img src="{{asset('temp/html/images/page-img/g6.jpg')}}" alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-0"><a href="javascript:void();"><img src="{{asset('temp/html/images/page-img/g7.jpg')}}" alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-0"><a href="javascript:void();"><img src="{{asset('temp/html/images/page-img/g8.jpg')}}" alt="gallary-image" class="img-fluid" /></a></li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-0"><a href="javascript:void();"><img src="{{asset('temp/html/images/page-img/g9.jpg')}}" alt="gallary-image" class="img-fluid" /></a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="iq-card">
                                 <div class="iq-card-header d-flex justify-content-between">
                                     <div class="iq-header-title">
-                                        <h4 class="card-title">Friends</h4>
-                                    </div>
-                                    <div class="iq-card-header-toolbar d-flex align-items-center">
-                                        <p class="m-0"><a href="javacsript:void();">Add New </a></p>
+                                        <h4 class="card-title">{{__('Following')}}</h4>
                                     </div>
                                 </div>
                                 <div class="iq-card-body">
                                     <ul class="profile-img-gallary d-flex flex-wrap p-0 m-0">
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
-                                            <a href="javascript:void();">
-                                                <img src="{{asset('temp/html/images/user/05.jpg')}}" alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Anna Rexia</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
-                                            <a href="javascript:void();"><img src="{{asset('temp/html/images/user/06.jpg')}}" alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Tara Zona</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
-                                            <a href="javascript:void();"><img src="{{asset('temp/html/images/user/07.jpg')}}" alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Polly Tech</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
-                                            <a href="javascript:void();"><img src="{{asset('temp/html/images/user/08.jpg')}}" alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Bill Emia</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
-                                            <a href="javascript:void();"><img src="{{asset('temp/html/images/user/09.jpg')}}" alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Moe Fugga</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
-                                            <a href="javascript:void();"><img src="{{asset('temp/html/images/user/10.jpg')}}" alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Hal Appeno </h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-0">
-                                            <a href="javascript:void();"><img src="{{asset('temp/html/images/user/07.jpg')}}" alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Zack Lee</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-0">
-                                            <a href="javascript:void();"><img src="{{asset('temp/html/images/user/06.jpg')}}" alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Terry Aki</h6>
-                                        </li>
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-0">
-                                            <a href="javascript:void();"><img src="{{asset('temp/html/images/user/05.jpg')}}" alt="gallary-image" class="img-fluid" /></a>
-                                            <h6 class="mt-2">Greta Life</h6>
-                                        </li>
+                                        @forelse($user->following->take(9) as $user)
+                                            <li class="col-md-4 col-6 pl-2 pr-0 pb-3">
+                                                <a href="javascript:void();">
+                                                    <img src="{{$user->getAvatarAttribute()}}"
+                                                         alt="gallary-image" class="w-100" /></a>
+                                                <h6 class="mt-2 text-center">{{$user->first_name}}</h6>
+                                            </li>
+                                        @empty
+
+                                        @endforelse
                                     </ul>
                                 </div>
+
                             </div>
                         </div>
                         <div class="col-lg-8">
@@ -233,98 +152,42 @@
                 <div class="iq-card">
                     <div class="iq-card-body">
                         <div class="row">
-                            <div class="col-md-3">
-                                <ul class="nav nav-pills basic-info-items list-inline d-block p-0 m-0">
-                                    <li>
-                                        <a class="nav-link active" data-toggle="pill" href="#basicinfo">Contact and Basic Info</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" data-toggle="pill" href="#family">Family and Relationship</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" data-toggle="pill" href="#work">Work and Education</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" data-toggle="pill" href="#lived">Places You've Lived</a>
-                                    </li>
-                                    <li>
-                                        <a class="nav-link" data-toggle="pill" href="#details">Details About You</a>
-                                    </li>
-                                </ul>
-                            </div>
+
                             <div class="col-md-9 pl-4">
                                 <div class="tab-content">
                                     <div class="tab-pane fade active show" id="basicinfo" role="tabpanel">
-                                        <h4>Contact Information</h4>
+                                        <h4>{{__('User Information')}}</h4>
                                         <hr>
                                         <div class="row">
                                             <div class="col-3">
-                                                <h6>Email</h6>
+                                                <h6>{{(__('Email'))}}</h6>
                                             </div>
                                             <div class="col-9">
-                                                <p class="mb-0">Bnijohn@gmail.com</p>
+                                                <p class="mb-0">{{$user->email}}</p>
                                             </div>
                                             <div class="col-3">
-                                                <h6>Mobile</h6>
+                                                <h6>{{__('University')}}</h6>
                                             </div>
                                             <div class="col-9">
-                                                <p class="mb-0">(001) 4544 565 456</p>
+                                                <p class="mb-0">{{$user->university}}</p>
                                             </div>
                                             <div class="col-3">
-                                                <h6>Address</h6>
+                                                <h6>{{__('City')}}</h6>
                                             </div>
                                             <div class="col-9">
-                                                <p class="mb-0">United States of America</p>
-                                            </div>
-                                        </div>
-                                        <h4 class="mt-3">Websites and Social Links</h4>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-3">
-                                                <h6>Website</h6>
-                                            </div>
-                                            <div class="col-9">
-                                                <p class="mb-0">www.bootstrap.com</p>
+                                                <p class="mb-0">{{$user->city}}</p>
                                             </div>
                                             <div class="col-3">
-                                                <h6>Social Link</h6>
+                                                <h6>{{__('Age')}}</h6>
                                             </div>
                                             <div class="col-9">
-                                                <p class="mb-0">www.bootstrap.com</p>
-                                            </div>
-                                        </div>
-                                        <h4 class="mt-3">Basic Information</h4>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-3">
-                                                <h6>Birth Date</h6>
-                                            </div>
-                                            <div class="col-9">
-                                                <p class="mb-0">24 January</p>
+                                                <p class="mb-0">{{$user->age}}</p>
                                             </div>
                                             <div class="col-3">
-                                                <h6>Birth Year</h6>
+                                                <h6>{{__('Address')}}</h6>
                                             </div>
                                             <div class="col-9">
-                                                <p class="mb-0">1994</p>
-                                            </div>
-                                            <div class="col-3">
-                                                <h6>Gender</h6>
-                                            </div>
-                                            <div class="col-9">
-                                                <p class="mb-0">Female</p>
-                                            </div>
-                                            <div class="col-3">
-                                                <h6>interested in</h6>
-                                            </div>
-                                            <div class="col-9">
-                                                <p class="mb-0">Designing</p>
-                                            </div>
-                                            <div class="col-3">
-                                                <h6>language</h6>
-                                            </div>
-                                            <div class="col-9">
-                                                <p class="mb-0">English, French</p>
+                                                <p class="mb-0">{{$user->address}}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -480,87 +343,34 @@
             <div class="tab-pane fade" id="friends" role="tabpanel">
                 <div class="iq-card">
                     <div class="iq-card-body">
-                        <h2>Friends</h2>
+                        <h2>{{__('Following')}}</h2>
                         <div class="friend-list-tab mt-2">
-                            <ul class="nav nav-pills d-flex align-items-center justify-content-left friend-list-items p-0 mb-2">
-                                <li>
-                                    <a class="nav-link active" data-toggle="pill" href="#all-friends">All Friends</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" data-toggle="pill" href="#recently-add">Recently Added</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" data-toggle="pill" href="#closefriends">Close friends</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" data-toggle="pill" href="#home">Home/Town</a>
-                                </li>
-                                <li>
-                                    <a class="nav-link" data-toggle="pill" href="#following">Following</a>
-                                </li>
-                            </ul>
                             <div class="tab-content">
                                 <div class="tab-pane fade active show" id="all-friends" role="tabpanel">
                                     <div class="iq-card-body p-0">
                                         <div class="row">
-                                            <div class="col-md-6 col-lg-6 mb-3">
-                                                <div class="iq-friendlist-block">
-                                                    <div class="d-flex align-items-center justify-content-between">
-                                                        <div class="d-flex align-items-center">
-                                                            <a href="#">
-                                                                <img src="{{asset('temp/html/images/user/05.jpg')}}" alt="profile-img" class="img-fluid">
-                                                            </a>
-                                                            <div class="friend-info ml-3">
-                                                                <h5>Petey Cruiser</h5>
-                                                                <p class="mb-0">15  friends</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="iq-card-header-toolbar d-flex align-items-center">
-                                                            <div class="dropdown">
-                                                               <span class="dropdown-toggle btn btn-secondary mr-2" id="dropdownMenuButton01" data-toggle="dropdown" aria-expanded="true" role="button">
-                                                               <i class="ri-check-line mr-1 text-white font-size-16"></i> Friend
-                                                               </span>
-                                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton01">
-                                                                    <a class="dropdown-item" href="#">Get Notification</a>
-                                                                    <a class="dropdown-item" href="#">Close Friend</a>
-                                                                    <a class="dropdown-item" href="#">Unfollow</a>
-                                                                    <a class="dropdown-item" href="#">Unfriend</a>
-                                                                    <a class="dropdown-item" href="#">Block</a>
+                                            @forelse ($users as $user)
+                                                <div class="col-md-6 col-lg-6 mb-3">
+                                                    <div class="iq-friendlist-block">
+                                                        <div class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center">
+                                                                <a href="#">
+                                                                    <img src="{{ $user->getAvatarAttribute() }}"
+                                                                         alt="profile-img" class="img-fluid">
+                                                                </a>
+                                                                <div class="friend-info ml-3">
+                                                                    <h5>{{ $user->name }}</h5>
                                                                 </div>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col-md-6 col-lg-6 mb-3">
-                                                <div class="iq-friendlist-block">
-                                                    <div class="d-flex align-items-center justify-content-between">
-                                                        <div class="d-flex align-items-center">
-                                                            <a href="#">
-                                                                <img src="{{asset('temp/html/images/user/06.jpg')}}" alt="profile-img" class="img-fluid">
-                                                            </a>
-                                                            <div class="friend-info ml-3">
-                                                                <h5>Anna Sthesia</h5>
-                                                                <p class="mb-0">50  friends</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="iq-card-header-toolbar d-flex align-items-center">
-                                                            <div class="dropdown">
-                                                               <span class="dropdown-toggle btn btn-secondary mr-2" id="dropdownMenuButton02" data-toggle="dropdown" aria-expanded="true" role="button">
-                                                               <i class="ri-check-line mr-1 text-white font-size-16"></i> Friend
-                                                               </span>
-                                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton02">
-                                                                    <a class="dropdown-item" href="#">Get Notification</a>
-                                                                    <a class="dropdown-item" href="#">Close Friend</a>
-                                                                    <a class="dropdown-item" href="#">Unfollow</a>
-                                                                    <a class="dropdown-item" href="#">Unfriend</a>
-                                                                    <a class="dropdown-item" href="#">Block</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            @empty
+
+                                            @endforelse
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -572,20 +382,27 @@
                                                     <div class="d-flex align-items-center justify-content-between">
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
-                                                                <img src="{{asset('temp/html/images/user/07.jpg')}}" alt="profile-img" class="img-fluid">
+                                                                <img src="{{ asset('temp/html/images/user/07.jpg') }}"
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Otto Matic</h5>
-                                                                <p class="mb-0">4  friends</p>
+                                                                <p class="mb-0">4 friends</p>
                                                             </div>
                                                         </div>
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
-                                                               <span class="dropdown-toggle btn btn-secondary mr-2" id="dropdownMenuButton31" data-toggle="dropdown" aria-expanded="true" role="button">
-                                                               <i class="ri-check-line mr-1 text-white font-size-16"></i> Friend
-                                                               </span>
-                                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton31">
-                                                                    <a class="dropdown-item" href="#">Get Notification</a>
+                                                                <span class="dropdown-toggle btn btn-secondary mr-2"
+                                                                      id="dropdownMenuButton31" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
+                                                                    <i
+                                                                        class="ri-check-line mr-1 text-white font-size-16"></i>
+                                                                    Friend
+                                                                </span>
+                                                                <div class="dropdown-menu dropdown-menu-right"
+                                                                     aria-labelledby="dropdownMenuButton31">
+                                                                    <a class="dropdown-item" href="#">Get
+                                                                        Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
                                                                     <a class="dropdown-item" href="#">Unfollow</a>
                                                                     <a class="dropdown-item" href="#">Unfriend</a>
@@ -601,20 +418,27 @@
                                                     <div class="d-flex align-items-center justify-content-between">
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
-                                                                <img src="{{asset('temp/html/images/user/08.jpg')}}" alt="profile-img" class="img-fluid">
+                                                                <img src="{{ asset('temp/html/images/user/08.jpg') }}"
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Moe Fugga</h5>
-                                                                <p class="mb-0">16  friends</p>
+                                                                <p class="mb-0">16 friends</p>
                                                             </div>
                                                         </div>
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
-                                                               <span class="dropdown-toggle btn btn-secondary mr-2" id="dropdownMenuButton32" data-toggle="dropdown" aria-expanded="true" role="button">
-                                                               <i class="ri-check-line mr-1 text-white font-size-16"></i> Friend
-                                                               </span>
-                                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton32">
-                                                                    <a class="dropdown-item" href="#">Get Notification</a>
+                                                                <span class="dropdown-toggle btn btn-secondary mr-2"
+                                                                      id="dropdownMenuButton32" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
+                                                                    <i
+                                                                        class="ri-check-line mr-1 text-white font-size-16"></i>
+                                                                    Friend
+                                                                </span>
+                                                                <div class="dropdown-menu dropdown-menu-right"
+                                                                     aria-labelledby="dropdownMenuButton32">
+                                                                    <a class="dropdown-item" href="#">Get
+                                                                        Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
                                                                     <a class="dropdown-item" href="#">Unfollow</a>
                                                                     <a class="dropdown-item" href="#">Unfriend</a>
@@ -636,20 +460,27 @@
                                                     <div class="d-flex align-items-center justify-content-between">
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
-                                                                <img src="{{asset('temp/html/images/user/19.jpg')}}" alt="profile-img" class="img-fluid">
+                                                                <img src="{{ asset('temp/html/images/user/19.jpg') }}"
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Bud Wiser</h5>
-                                                                <p class="mb-0">32  friends</p>
+                                                                <p class="mb-0">32 friends</p>
                                                             </div>
                                                         </div>
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
-                                                               <span class="dropdown-toggle btn btn-secondary mr-2" id="dropdownMenuButton39" data-toggle="dropdown" aria-expanded="true" role="button">
-                                                               <i class="ri-check-line mr-1 text-white font-size-16"></i> Friend
-                                                               </span>
-                                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton39">
-                                                                    <a class="dropdown-item" href="#">Get Notification</a>
+                                                                <span class="dropdown-toggle btn btn-secondary mr-2"
+                                                                      id="dropdownMenuButton39" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
+                                                                    <i
+                                                                        class="ri-check-line mr-1 text-white font-size-16"></i>
+                                                                    Friend
+                                                                </span>
+                                                                <div class="dropdown-menu dropdown-menu-right"
+                                                                     aria-labelledby="dropdownMenuButton39">
+                                                                    <a class="dropdown-item" href="#">Get
+                                                                        Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
                                                                     <a class="dropdown-item" href="#">Unfollow</a>
                                                                     <a class="dropdown-item" href="#">Unfriend</a>
@@ -665,20 +496,27 @@
                                                     <div class="d-flex align-items-center justify-content-between">
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
-                                                                <img src="{{asset('temp/html/images/user/05.jpg')}}" alt="profile-img" class="img-fluid">
+                                                                <img src="{{ asset('temp/html/images/user/05.jpg') }}"
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Otto Matic</h5>
-                                                                <p class="mb-0">9  friends</p>
+                                                                <p class="mb-0">9 friends</p>
                                                             </div>
                                                         </div>
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
-                                                               <span class="dropdown-toggle btn btn-secondary mr-2" id="dropdownMenuButton40" data-toggle="dropdown" aria-expanded="true" role="button">
-                                                               <i class="ri-check-line mr-1 text-white font-size-16"></i> Friend
-                                                               </span>
-                                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton40">
-                                                                    <a class="dropdown-item" href="#">Get Notification</a>
+                                                                <span class="dropdown-toggle btn btn-secondary mr-2"
+                                                                      id="dropdownMenuButton40" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
+                                                                    <i
+                                                                        class="ri-check-line mr-1 text-white font-size-16"></i>
+                                                                    Friend
+                                                                </span>
+                                                                <div class="dropdown-menu dropdown-menu-right"
+                                                                     aria-labelledby="dropdownMenuButton40">
+                                                                    <a class="dropdown-item" href="#">Get
+                                                                        Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
                                                                     <a class="dropdown-item" href="#">Unfollow</a>
                                                                     <a class="dropdown-item" href="#">Unfriend</a>
@@ -700,20 +538,27 @@
                                                     <div class="d-flex align-items-center justify-content-between">
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
-                                                                <img src="{{asset('temp/html/images/user/18.jpg')}}" alt="profile-img" class="img-fluid">
+                                                                <img src="{{ asset('temp/html/images/user/18.jpg') }}"
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Paul Molive</h5>
-                                                                <p class="mb-0">14  friends</p>
+                                                                <p class="mb-0">14 friends</p>
                                                             </div>
                                                         </div>
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
-                                                               <span class="dropdown-toggle btn btn-secondary mr-2" id="dropdownMenuButton49" data-toggle="dropdown" aria-expanded="true" role="button">
-                                                               <i class="ri-check-line mr-1 text-white font-size-16"></i> Friend
-                                                               </span>
-                                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton49">
-                                                                    <a class="dropdown-item" href="#">Get Notification</a>
+                                                                <span class="dropdown-toggle btn btn-secondary mr-2"
+                                                                      id="dropdownMenuButton49" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
+                                                                    <i
+                                                                        class="ri-check-line mr-1 text-white font-size-16"></i>
+                                                                    Friend
+                                                                </span>
+                                                                <div class="dropdown-menu dropdown-menu-right"
+                                                                     aria-labelledby="dropdownMenuButton49">
+                                                                    <a class="dropdown-item" href="#">Get
+                                                                        Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
                                                                     <a class="dropdown-item" href="#">Unfollow</a>
                                                                     <a class="dropdown-item" href="#">Unfriend</a>
@@ -729,20 +574,27 @@
                                                     <div class="d-flex align-items-center justify-content-between">
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
-                                                                <img src="{{asset('temp/html/images/user/19.jpg')}}" alt="profile-img" class="img-fluid">
+                                                                <img src="{{ asset('temp/html/images/user/19.jpg') }}"
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Paige Turner</h5>
-                                                                <p class="mb-0">8  friends</p>
+                                                                <p class="mb-0">8 friends</p>
                                                             </div>
                                                         </div>
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
-                                                               <span class="dropdown-toggle btn btn-secondary mr-2" id="dropdownMenuButton50" data-toggle="dropdown" aria-expanded="true" role="button">
-                                                               <i class="ri-check-line mr-1 text-white font-size-16"></i> Friend
-                                                               </span>
-                                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton50">
-                                                                    <a class="dropdown-item" href="#">Get Notification</a>
+                                                                <span class="dropdown-toggle btn btn-secondary mr-2"
+                                                                      id="dropdownMenuButton50" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
+                                                                    <i
+                                                                        class="ri-check-line mr-1 text-white font-size-16"></i>
+                                                                    Friend
+                                                                </span>
+                                                                <div class="dropdown-menu dropdown-menu-right"
+                                                                     aria-labelledby="dropdownMenuButton50">
+                                                                    <a class="dropdown-item" href="#">Get
+                                                                        Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
                                                                     <a class="dropdown-item" href="#">Unfollow</a>
                                                                     <a class="dropdown-item" href="#">Unfriend</a>
@@ -764,20 +616,27 @@
                                                     <div class="d-flex align-items-center justify-content-between">
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
-                                                                <img src="{{asset('temp/html/images/user/05.jpg')}}" alt="profile-img" class="img-fluid">
+                                                                <img src="{{ asset('temp/html/images/user/05.jpg') }}"
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Maya Didas</h5>
-                                                                <p class="mb-0">20  friends</p>
+                                                                <p class="mb-0">20 friends</p>
                                                             </div>
                                                         </div>
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
-                                                               <span class="dropdown-toggle btn btn-secondary mr-2" id="dropdownMenuButton54" data-toggle="dropdown" aria-expanded="true" role="button">
-                                                               <i class="ri-check-line mr-1 text-white font-size-16"></i> Friend
-                                                               </span>
-                                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton54">
-                                                                    <a class="dropdown-item" href="#">Get Notification</a>
+                                                                <span class="dropdown-toggle btn btn-secondary mr-2"
+                                                                      id="dropdownMenuButton54" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
+                                                                    <i
+                                                                        class="ri-check-line mr-1 text-white font-size-16"></i>
+                                                                    Friend
+                                                                </span>
+                                                                <div class="dropdown-menu dropdown-menu-right"
+                                                                     aria-labelledby="dropdownMenuButton54">
+                                                                    <a class="dropdown-item" href="#">Get
+                                                                        Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
                                                                     <a class="dropdown-item" href="#">Unfollow</a>
                                                                     <a class="dropdown-item" href="#">Unfriend</a>
@@ -793,20 +652,27 @@
                                                     <div class="d-flex align-items-center justify-content-between">
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
-                                                                <img src="{{asset('temp/html/images/user/06.jpg')}}" alt="profile-img" class="img-fluid">
+                                                                <img src="{{ asset('temp/html/images/user/06.jpg') }}"
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Monty Carlo</h5>
-                                                                <p class="mb-0">3  friends</p>
+                                                                <p class="mb-0">3 friends</p>
                                                             </div>
                                                         </div>
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
-                                                               <span class="dropdown-toggle btn btn-secondary mr-2" id="dropdownMenuButton55" data-toggle="dropdown" aria-expanded="true" role="button">
-                                                               <i class="ri-check-line mr-1 text-white font-size-16"></i> Friend
-                                                               </span>
-                                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton55">
-                                                                    <a class="dropdown-item" href="#">Get Notification</a>
+                                                                <span class="dropdown-toggle btn btn-secondary mr-2"
+                                                                      id="dropdownMenuButton55" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
+                                                                    <i
+                                                                        class="ri-check-line mr-1 text-white font-size-16"></i>
+                                                                    Friend
+                                                                </span>
+                                                                <div class="dropdown-menu dropdown-menu-right"
+                                                                     aria-labelledby="dropdownMenuButton55">
+                                                                    <a class="dropdown-item" href="#">Get
+                                                                        Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
                                                                     <a class="dropdown-item" href="#">Unfollow</a>
                                                                     <a class="dropdown-item" href="#">Unfriend</a>
@@ -821,6 +687,7 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

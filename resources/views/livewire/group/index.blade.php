@@ -77,10 +77,7 @@
                             <div class="iq-card">
                                 <div class="iq-card-header d-flex justify-content-between">
                                     <div class="iq-header-title">
-                                        <h4 class="card-title">Photos</h4>
-                                    </div>
-                                    <div class="iq-card-header-toolbar d-flex align-items-center">
-                                        <p class="m-0"><a href="javacsript:void();">Show All </a></p>
+                                        <h4 class="card-title">{{__('Photos')}}</h4>
                                     </div>
                                 </div>
                                 <div class="iq-card-body">
@@ -95,10 +92,7 @@
                             <div class="iq-card">
                                 <div class="iq-card-header d-flex justify-content-between">
                                     <div class="iq-header-title">
-                                        <h4 class="card-title">Members</h4>
-                                    </div>
-                                    <div class="iq-card-header-toolbar d-flex align-items-center">
-                                        <p class="m-0"><a href="javacsript:void();">Show All </a></p>
+                                        <h4 class="card-title">{{__('Members')}}</h4>
                                     </div>
                                 </div>
                                 <livewire:group.membercard :group="$group" />
