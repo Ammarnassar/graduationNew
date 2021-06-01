@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Follow;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -11,6 +12,7 @@ class UserController extends Controller
 
     public function profile($id)
     {
+
         return view('user.profile.index' , [
             'user' => User::findOrFail($id),
         ]);

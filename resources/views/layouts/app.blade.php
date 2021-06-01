@@ -325,11 +325,12 @@
                         <i class="bi bi-arrow-left side-left-icon"></i>
                         <i class="bi bi-arrow-right side-right-icon"><span class="ml-3 d-inline-block">Close Menu</span></i>
 
-                    </div>
-                </div>
+                   </div>
+               </div>
             </div>
-        </div>
+       </div>
     </div>
+    
     <!-- Right Sidebar Panel End-->
 
     <!-- Page Content  -->
