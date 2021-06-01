@@ -310,51 +310,16 @@
             <div class="iq-card shadow-none">
                 <div class="iq-card-body p-0">
                     <div class="media-height p-3">
-                        <div class="media align-items-center mb-4">
+
+                            <div class="media align-items-center mb-4">
                             <div class="iq-profile-avatar status-online">
-                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/01.jpg')}}" alt="">
+                                <img class="rounded-circle avatar-50" src="{{asset('https://ui-avatars.com/api/?name=omar Ahmad')}}" alt="">
                             </div>
-                            <div class="media-body ml-3">
-                                <h6 class="mb-0"><a href="#">Anna Sthesia</a></h6>
-                                <p class="mb-0">Just Now</p>
+                                <div class="media-body ml-3">
+                                <h6 class="mb-0"><a href="{{route('chat.index')}}">Omar Ahmad</a></h6>
                             </div>
                         </div>
-                        <div class="media align-items-center mb-4">
-                            <div class="iq-profile-avatar status-online">
-                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/02.jpg')}}" alt="">
-                            </div>
-                            <div class="media-body ml-3">
-                                <h6 class="mb-0"><a href="#">Paul Molive</a></h6>
-                                <p class="mb-0">Admin</p>
-                            </div>
-                        </div>
-                        <div class="media align-items-center mb-4">
-                            <div class="iq-profile-avatar status-online">
-                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/03.jpg')}}" alt="">
-                            </div>
-                            <div class="media-body ml-3">
-                                <h6 class="mb-0"><a href="#">Anna Mull</a></h6>
-                                <p class="mb-0">Admin</p>
-                            </div>
-                        </div>
-                        <div class="media align-items-center mb-4">
-                            <div class="iq-profile-avatar status-online">
-                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/04.jpg')}}" alt="">
-                            </div>
-                            <div class="media-body ml-3">
-                                <h6 class="mb-0"><a href="#">Paige Turner</a></h6>
-                                <p class="mb-0">Admin</p>
-                            </div>
-                        </div>
-                        <div class="media align-items-center mb-4">
-                            <div class="iq-profile-avatar status-online">
-                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/11.jpg')}}" alt="">
-                            </div>
-                            <div class="media-body ml-3">
-                                <h6 class="mb-0"><a href="#">Bob Frapples</a></h6>
-                                <p class="mb-0">Admin</p>
-                            </div>
-                        </div>
+
                     </div>
                     <div class=" right-sidebar-toggle bg-primary mt-3">
                         <i class="bi bi-arrow-left side-left-icon"></i>

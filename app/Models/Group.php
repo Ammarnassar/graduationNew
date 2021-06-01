@@ -21,5 +21,13 @@ class Group extends Model
         return $this->hasMany(PostGroup::class);
     }
 
+    public function getPhotoAttribute()
+    {
+        if ($this->attributes['photo'])
+            return 'storage/'.$this->attributes['photo'];
+        else
+            return 'temp/html/images/page-img/profile-bg1.jpg';
+    }
+
 
 }

@@ -197,6 +197,10 @@
     "Sent you email": "أرسل إليك بريدًا إلكترونيًا",
     "Has followed you": "لقد قام بمتابعتك",
     "Your Chats": "محادثاتك",
-    "Search For Chat": "ابحث عن محادثة",
-    "Start Conversation!": "ابدأ محادثة !"
+    "Search For Users": "ابحث عن مستخدمين",
+    "Start Conversation!": "ابدأ محادثة !",
+    "Group Photo Updated Successfully !": "تم تحديث صورة المجموعة بنجاح !",
+    "Type your message": "اكتب رسالتك",
+    "There is no photos to show !": "لا يوجد صور لعرضها !"
+
 }
