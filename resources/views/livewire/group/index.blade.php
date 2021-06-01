@@ -6,16 +6,33 @@
                     <form wire:submit.prevent="saveGroupPhoto">
 
                         <div class="cover-container ">
-                            <img src="{{ asset('temp/html/images/page-img/profile-bg1.jpg') }}" alt="profile-bg"
+                            @if($groupPhoto )
+                            <img src="{{ $groupPhoto->temporaryUrl() }}" alt="profile-bg"
                                 class="rounded img-fluid ">
                             <ul class="header-nav d-flex flex-wrap justify-end px-2 m-0">
-                                <li><a href=""><label for="coverPhoto"
-                                            style="width: 40px;height: 40px;border-radius: 100%;"><i
-                                                class="ri-pencil-line"></i></label></a></li>
+                                <li><a href="">
+                                        <label for="groupPhoto">
+                                            <button type="submit" class="p-0 border-0 icon-circle btn btn-success position-absolute text-white" style="z-index:10 ;bottom: -5px ; margin-right: -70px ;cursor: pointer"><i class="ri-check-line"></i></button>
+                                        </label>
+                                    </a>
+                                </li>
                             </ul>
+                            @else
+                                <img src="{{ asset($group->photo) }}" alt="profile-bg"
+                                     class="rounded img-fluid w-100" style="max-height: 12rem ;">
+                                <ul class="header-nav d-flex flex-wrap justify-end px-2 m-0">
+                                        <li style="cursor: pointer">
+                                            <a href="#" >
+                                                <label for="groupPhoto" style="width: 40px;height: 40px;border-radius: 100%;">
+                                                    <i class="ri-pencil-line"></i>
+                                                </label>
+                                            </a>
+                                        </li>
+                                </ul>
+                            @endif
 
                         </div>
-                        <input type="file" id="coverPhoto" name="coverPhoto" class="d-none" wire:model="coverPhoto">
+                        <input type="file" id="groupPhoto" name="groupPhoto" class="d-none" wire:model="groupPhoto">
 
                     </form>
 

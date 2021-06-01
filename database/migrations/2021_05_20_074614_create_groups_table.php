@@ -21,6 +21,7 @@ class CreateGroupsTable extends Migration
             $table->string("colleague"); //TODO : change name to college
             $table->string("country"); //TODO : change name to city
             $table->text("description")->index();
+            $table->text("photo");
             $table->timestamps();
         });
     }

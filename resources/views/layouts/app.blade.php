@@ -305,66 +305,32 @@
     <!-- TOP Nav Bar END -->
 
     <!-- Right Sidebar Panel Start-->
-{{--    <div class=" right-sidebar right-sidebar-mini d-none d-md-block" style=" z-index: 10">--}}
-{{--        <div class="right-sidebar-panel p-0">--}}
-{{--            <div class="iq-card shadow-none">--}}
-{{--                <div class="iq-card-body p-0">--}}
-{{--                    <div class="media-height p-3">--}}
-{{--                        <div class="media align-items-center mb-4">--}}
-{{--                            <div class="iq-profile-avatar status-online">--}}
-{{--                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/01.jpg')}}" alt="">--}}
-{{--                            </div>--}}
-{{--                            <div class="media-body ml-3">--}}
-{{--                                <h6 class="mb-0"><a href="#">Anna Sthesia</a></h6>--}}
-{{--                                <p class="mb-0">Just Now</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="media align-items-center mb-4">--}}
-{{--                            <div class="iq-profile-avatar status-online">--}}
-{{--                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/02.jpg')}}" alt="">--}}
-{{--                            </div>--}}
-{{--                            <div class="media-body ml-3">--}}
-{{--                                <h6 class="mb-0"><a href="#">Paul Molive</a></h6>--}}
-{{--                                <p class="mb-0">Admin</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="media align-items-center mb-4">--}}
-{{--                            <div class="iq-profile-avatar status-online">--}}
-{{--                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/03.jpg')}}" alt="">--}}
-{{--                            </div>--}}
-{{--                            <div class="media-body ml-3">--}}
-{{--                                <h6 class="mb-0"><a href="#">Anna Mull</a></h6>--}}
-{{--                                <p class="mb-0">Admin</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="media align-items-center mb-4">--}}
-{{--                            <div class="iq-profile-avatar status-online">--}}
-{{--                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/04.jpg')}}" alt="">--}}
-{{--                            </div>--}}
-{{--                            <div class="media-body ml-3">--}}
-{{--                                <h6 class="mb-0"><a href="#">Paige Turner</a></h6>--}}
-{{--                                <p class="mb-0">Admin</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="media align-items-center mb-4">--}}
-{{--                            <div class="iq-profile-avatar status-online">--}}
-{{--                                <img class="rounded-circle avatar-50" src="{{asset('temp/images/user/11.jpg')}}" alt="">--}}
-{{--                            </div>--}}
-{{--                            <div class="media-body ml-3">--}}
-{{--                                <h6 class="mb-0"><a href="#">Bob Frapples</a></h6>--}}
-{{--                                <p class="mb-0">Admin</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                    <div class=" right-sidebar-toggle bg-primary mt-3">--}}
-{{--                        <i class="bi bi-arrow-left side-left-icon"></i>--}}
-{{--                        <i class="bi bi-arrow-right side-right-icon"><span class="ml-3 d-inline-block">Close Menu</span></i>--}}
+    <div class=" right-sidebar right-sidebar-mini d-none d-md-block" style=" z-index: 10">
+        <div class="right-sidebar-panel p-0">
+            <div class="iq-card shadow-none">
+                <div class="iq-card-body p-0">
+                    <div class="media-height p-3">
 
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+                            <div class="media align-items-center mb-4">
+                            <div class="iq-profile-avatar status-online">
+                                <img class="rounded-circle avatar-50" src="{{asset('https://ui-avatars.com/api/?name=omar Ahmad')}}" alt="">
+                            </div>
+                                <div class="media-body ml-3">
+                                <h6 class="mb-0"><a href="{{route('chat.index')}}">Omar Ahmad</a></h6>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class=" right-sidebar-toggle bg-primary mt-3">
+                        <i class="bi bi-arrow-left side-left-icon"></i>
+                        <i class="bi bi-arrow-right side-right-icon"><span class="ml-3 d-inline-block">Close Menu</span></i>
+
+                   </div>
+               </div>
+            </div>
+       </div>
+    </div>
+    
     <!-- Right Sidebar Panel End-->
 
     <!-- Page Content  -->

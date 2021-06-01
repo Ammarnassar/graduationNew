@@ -21,9 +21,12 @@ class Index extends Component
 
     public function render()
     {
-
         return view('livewire.user.profile.index' , [
             'posts' => Post::where('user_id' , $this->user->id)->latest()->get(),'users'=>$this->user->followers,
+
+            'photos' =>  Post::where('user_id' , $this->user->id)->whereHas('media', function($q){
+                $q->whereIn('extension', ['jpg' , 'jpeg' , 'png']);
+            })->get()
         ]);
     }
 

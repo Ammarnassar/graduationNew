@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Group;
 
+use App\Models\Group;
 use App\Models\Media;
 
 use App\Models\PostGroup;
@@ -18,7 +19,6 @@ class Index extends Component
 
     public function saveGroupPhoto()
     {
-
         $name = Hash::make($this->groupPhoto->getClientOriginalName()) . '.' . $this->groupPhoto->extension();
 
         Media::create([
@@ -29,11 +29,15 @@ class Index extends Component
             'mediaable_type' => 'App\Models\Group',
         ]);
 
+        Group::findOrFail($this->group->id)->update([
+            'photo' => $this->groupPhoto->storeAs('media', $name, 'public')
+        ]);
+
         $this->groupPhoto = '';
 
         $this->alert(
             'success',
-            __('Profile Photo Updated Successfully !')
+            __('Group Photo Updated Successfully !')
         );
     }
 
