@@ -4,14 +4,16 @@ namespace App\Http\Livewire\User\Profile;
 
 use App\Rules\MatchOldPassword;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\URL;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class Edit extends Component
 {
+    use LivewireAlert;
+
     public $college;
     public $first_name;
     public $last_name;
@@ -85,11 +87,11 @@ class Edit extends Component
 
     public function render()
     {
-        return view('livewire.user.profile.edit' ,
+        return view('livewire.user.profile.edit',
             [
-            'universities' => array_keys(config('universities.data')),
-            'cities' => config('cities.data'),
-            'colleges' => config('universities.data.'.$this->university.'.colleges'),
+                'universities' => array_keys(config('universities.data')),
+                'cities' => config('cities.data'),
+                'colleges' => config('universities.data.' . $this->university . '.colleges'),
             ]);
     }
 
@@ -100,8 +102,7 @@ class Edit extends Component
 
         auth()->user()->update($validated);
 
-        if (auth()->user()->wasChanged())
-        {
+        if (auth()->user()->wasChanged()) {
             $this->alert(
                 'success',
                 __('Your Information Updated Successfully !')
@@ -136,7 +137,7 @@ class Edit extends Component
 
     public function changeLanguage()
     {
-        $this->validateOnly('lang' , [
+        $this->validateOnly('lang', [
             'lang' => 'required'
         ]);
 
@@ -154,14 +155,13 @@ class Edit extends Component
     public function saveAccountSettings()
     {
         $validated = $this->validate([
-            'email' => 'required|email|unique:users,email,'.auth()->id(),
+            'email' => 'required|email|unique:users,email,' . auth()->id(),
             'username' => 'required|unique:users,email'
         ]);
 
         auth()->user()->update($validated);
 
-        if (auth()->user()->wasChanged())
-        {
+        if (auth()->user()->wasChanged()) {
             $this->alert(
                 'success',
                 __('Your Information Updated Successfully !')
@@ -173,17 +173,16 @@ class Edit extends Component
     public function changePassword()
     {
         $this->validate([
-            'current_password' => ['required' , new MatchOldPassword],
+            'current_password' => ['required', new MatchOldPassword],
             'password' => 'required|min:6|confirmed',
             'password_confirmation' => 'required',
         ]);
 
         auth()->user()->update([
-            'password'=> bcrypt($this->password)
+            'password' => bcrypt($this->password)
         ]);
 
-        if (auth()->user()->wasChanged())
-        {
+        if (auth()->user()->wasChanged()) {
             $this->alert(
                 'success',
                 __('Your Password Updated Successfully !')

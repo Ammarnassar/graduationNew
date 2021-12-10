@@ -7,13 +7,13 @@ use App\Models\Post;
 use App\Models\Trend;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
-use Illuminate\Support\HtmlString;
 use Livewire\WithFileUploads;
 
 class NewPost extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads, LivewireAlert;
 
     public $body;
     public $postLength;
@@ -36,53 +36,46 @@ class NewPost extends Component
 
     public function render()
     {
-        $this->postLength = Str::length(str_replace(' ' , '' ,$this->body));
+        $this->postLength = Str::length(str_replace(' ', '', $this->body));
 
         $this->tags = $this->getTagsFromPost($this->body);
-
         return view('livewire.post.new-post');
     }
+
     public function updatedMedia()
     {
         $this->validate();
-
     }
 
     public function save()
     {
         $this->validate();
 
-        $body = str_replace($this->tags, '' ,$this->body);
+        $body = str_replace($this->tags, '', $this->body);
 
-        $post_id = Post::insertGetId([
+        $post = Post::create([
             'body' => nl2br($body),
             'user_id' => auth()->id(),
-            'created_at' => now(),
-            'updated_at' => now()
         ]);
 
-        if ($this->media)
-        {
-            $name = Hash::make($this->media->getClientOriginalName()).'.'.$this->media->extension();
+        if ($this->media) {
+            $name = Hash::make($this->media->getClientOriginalName()) . '.' . $this->media->extension();
 
             Media::create([
                 'extension' => $this->media->extension(),
                 'name' => $this->media->getClientOriginalName(),
-                'path' => $this->media->storeAs('media' , $name , 'public'),
-                'mediaable_id'=>$post_id,
-                'mediaable_type'=>'App\Models\Post',
+                'path' => $this->media->storeAs('media', $name, 'public'),
+                'mediaable_id' => $post->id,
+                'mediaable_type' => 'App\Models\Post',
             ]);
-
-
         }
 
         if ($this->tags) {
-            foreach ($this->tags as $tag)
-            {
+            foreach ($this->tags as $tag) {
                 $trend = Trend::firstOrCreate([
-                    'name' =>  $tag,
+                    'name' => $tag,
                 ]);
-                $trend->posts()->attach($post_id);
+                $trend->posts()->attach($post->id);
 
             }
         }

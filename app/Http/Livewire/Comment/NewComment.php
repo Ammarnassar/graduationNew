@@ -3,10 +3,13 @@
 namespace App\Http\Livewire\Comment;
 
 use App\Models\Comment;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class NewComment extends Component
 {
+    use LivewireAlert;
+
     public $body;
     public $post;
 
@@ -23,7 +26,7 @@ class NewComment extends Component
             'user_id' => auth()->id(),
         ]);
 
-        $this->body = '' ;
+        $this->body = '';
 
         $this->emit('commentAdded');
 

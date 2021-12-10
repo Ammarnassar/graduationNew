@@ -25,7 +25,7 @@ class GroupFactory extends Factory
     {
 
         return [
-            'admin' => 2,
+            'admin_id' => 2,
             'group_name' => $this->faker->name,
             'university_name' => $this->faker->name,
             'colleague' => $this->faker->name,

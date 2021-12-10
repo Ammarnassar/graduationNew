@@ -7,12 +7,13 @@ use App\Models\Media;
 
 use App\Models\PostGroup;
 use Illuminate\Support\Facades\Hash;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class Index extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads , LivewireAlert;
 
     public $group;
     public $groupPhoto;

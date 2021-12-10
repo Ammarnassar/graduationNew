@@ -3,10 +3,13 @@
 namespace App\Http\Livewire\Comment;
 
 use App\Models\Comment;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class IndexComment extends Component
 {
+    use LivewireAlert;
+
     public $post;
     public $comments = [];
 

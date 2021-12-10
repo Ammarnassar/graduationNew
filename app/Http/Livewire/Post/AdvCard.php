@@ -5,10 +5,13 @@ namespace App\Http\Livewire\Post;
 use App\Models\Like;
 use App\Models\Post;
 use App\Models\User;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Component;
 
 class AdvCard extends Component
 {
+    use LivewireAlert;
+
     public $post;
     public $likeCount = 0;
     public $like = false;
@@ -16,7 +19,7 @@ class AdvCard extends Component
     public $commentsCount = 0;
 
     protected $listeners = [
-        'likeAdded' => 'likeCount' ,
+        'likeAdded' => 'likeCount',
         'likeDeleted' => 'likeCount',
         'commentAdded' => 'commentCount',
         'commentDeleted' => 'commentCount',
@@ -24,15 +27,15 @@ class AdvCard extends Component
 
     public function render()
     {
-        if (auth()->user()->likes->where('post_id' , $this->post->id)->count())
+        if (auth()->user()->likes->where('post_id', $this->post->id)->count())
             $this->like = true;
 
         $this->likeCount = $this->post->likes_count;
 
         $this->commentsCount = $this->post->comments->count();
 
-        $this->likesList = collect(User::whereHas('likes' , function ($q) {
-            $q->where('post_id' , $this->post->id);
+        $this->likesList = collect(User::whereHas('likes', function ($q) {
+            $q->where('post_id', $this->post->id);
         })->get())->take(5);
 
         return view('livewire.post.adv-card');
@@ -53,7 +56,7 @@ class AdvCard extends Component
 
     public function deleteLike()
     {
-        Like::where('post_id' , $this->post->id)->where('user_id' , auth()->id())->delete();
+        Like::where('post_id', $this->post->id)->where('user_id', auth()->id())->delete();
 
         $this->like = false;
 
@@ -78,7 +81,7 @@ class AdvCard extends Component
         $this->emit('postDeleted');
 
         $this->alert(
-            'success' ,
+            'success',
             'Post Deleted Successfully !'
         );
     }

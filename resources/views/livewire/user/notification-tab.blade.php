@@ -4,7 +4,7 @@
     <div class="iq-card-body">
     <ul class="notification-list m-0 p-0">
     <li class="d-flex align-items-center">
-        <div class="user-img img-fluid"><img src="{{auth()->user()->avatar}}" alt="story-img" class="rounded-circle avatar-40"></div>
+        <div class="user-img img-fluid"><img src="{{$notification->user->avatar}}" alt="story-img" class="rounded-circle avatar-40"></div>
         <div class="media-support-info ml-3">
            <h6>{{$notification->user->name}} {{$notification->text}}</h6>
            <p class="mb-0">{{$notification->created_at->diffForHumans()}}</p>

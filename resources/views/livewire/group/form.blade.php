@@ -5,11 +5,11 @@
             <div class="form-group col-sm-6">
                 <label for="fname">{{__('Group Name')}}:</label>
                 <input wire:model.defer="group_name" type="text"
-                    class="form-control @error('group_name') is-invalid @enderror" id="gname" value="">
+                       class="form-control @error('group_name') is-invalid @enderror" id="gname" value="">
                 @error('group_name')
-                    <div class="text-danger mt-2">
-                        {{ $message }}
-                    </div>
+                <div class="text-danger mt-2">
+                    {{ $message }}
+                </div>
                 @enderror
             </div>
             <div class="form-group col-12 col-md-6">
@@ -17,7 +17,7 @@
                 <select class="form-control" id="exampleFormControlSelect2" wire:model="university_name">
 
                     @foreach($universities as $uni)
-                        <option value="{{$uni}}" >
+                        <option value="{{$uni}}">
                             {{__($uni)}}
                         </option>
                     @endforeach
@@ -37,7 +37,7 @@
                 <label>{{__('College')}} :</label>
 
                 <select class="form-control" id="exampleFormControlSelect2" wire:model="colleague">
-                    <option value="" selected >
+                    <option value="" selected>
                         {{__('Select College')}}
                     </option>
                     @if($colleges)
@@ -66,23 +66,23 @@
                 </select>
 
                 @error('city')
-                    <div class="text-danger mt-2">
-                        {{ $message }}
-                    </div>
+                <div class="text-danger mt-2">
+                    {{ $message }}
+                </div>
                 @enderror
             </div>
 
             <div class="form-group col-sm-12">
                 <label>{{__('Description')}}:</label>
                 <textarea wire:model.defer="description" class="form-control @error('description') is-invalid @enderror"
-                    name="address" rows="5" style="line-height: 22px;">
+                          name="address" rows="5" style="line-height: 22px;">
 
          </textarea>
 
                 @error('description')
-                    <div class="text-danger mt-2">
-                        {{ $message }}
-                    </div>
+                <div class="text-danger mt-2">
+                    {{ $message }}
+                </div>
                 @enderror
             </div>
         </div>

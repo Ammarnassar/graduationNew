@@ -16,8 +16,6 @@
                 <div class="comment-data-block ml-lg-2">
                     <p class="mb-2" style="line-break:anywhere">{{$comment->body}}</p>
                     <div class="d-flex flex-wrap align-items-center comment-activity">
-                        <a href="" class="mx-2">{{__('Like')}}</a>
-                        <a href="" class="mx-2">{{__('Reply')}}</a>
                         @if($comment->user->id == auth()->id())
                         <a class="text-danger mx-2" style="cursor: pointer" wire:click="deleteComment({{$comment->id}})">{{__('Delete')}}</a>
                         @endif

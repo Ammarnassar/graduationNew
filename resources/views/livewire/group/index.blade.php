@@ -7,27 +7,31 @@
 
                         <div class="cover-container ">
                             @if($groupPhoto )
-                            <img src="{{ $groupPhoto->temporaryUrl() }}" alt="profile-bg"
-                                class="rounded img-fluid ">
-                            <ul class="header-nav d-flex flex-wrap justify-end px-2 m-0">
-                                <li><a href="">
-                                        <label for="groupPhoto">
-                                            <button type="submit" class="p-0 border-0 icon-circle btn btn-success position-absolute text-white" style="z-index:10 ;bottom: -5px ; margin-right: -70px ;cursor: pointer"><i class="ri-check-line"></i></button>
-                                        </label>
-                                    </a>
-                                </li>
-                            </ul>
+                                <img src="{{ $groupPhoto->temporaryUrl() }}" alt="profile-bg"
+                                     class="rounded img-fluid ">
+                                <ul class="header-nav d-flex flex-wrap justify-end px-2 m-0">
+                                    <li><a href="">
+                                            <label for="groupPhoto">
+                                                <button type="submit"
+                                                        class="p-0 border-0 icon-circle btn btn-success position-absolute text-white"
+                                                        style="z-index:10 ;bottom: -5px ; margin-right: -70px ;cursor: pointer">
+                                                    <i class="ri-check-line"></i></button>
+                                            </label>
+                                        </a>
+                                    </li>
+                                </ul>
                             @else
                                 <img src="{{ asset($group->photo) }}" alt="profile-bg"
                                      class="rounded img-fluid w-100" style="max-height: 12rem ;">
                                 <ul class="header-nav d-flex flex-wrap justify-end px-2 m-0">
-                                        <li style="cursor: pointer">
-                                            <a href="#" >
-                                                <label for="groupPhoto" style="width: 40px;height: 40px;border-radius: 100%;">
-                                                    <i class="ri-pencil-line"></i>
-                                                </label>
-                                            </a>
-                                        </li>
+                                    <li style="cursor: pointer">
+                                        <a href="#">
+                                            <label for="groupPhoto"
+                                                   style="width: 40px;height: 40px;border-radius: 100%;">
+                                                <i class="ri-pencil-line"></i>
+                                            </label>
+                                        </a>
+                                    </li>
                                 </ul>
                             @endif
 
@@ -46,7 +50,7 @@
                         class="profile-info p-4 pt-0 d-flex align-items-center justify-content-between position-relative">
                         <div class="social-links text-center ">
 
-                            <livewire:group.join :group="$group" />
+                            <livewire:group.join :group="$group"/>
 
                         </div>
                         <div class="social-info">
@@ -101,7 +105,7 @@
                                     <ul class="profile-img-gallary d-flex flex-wrap p-0 m-0">
                                         <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img
                                                     src="{{ asset('temp/html/images/page-img/g1.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid" /></a></li>
+                                                    alt="gallary-image" class="img-fluid"/></a></li>
 
                                     </ul>
                                 </div>
@@ -112,13 +116,13 @@
                                         <h4 class="card-title">{{__('Members')}}</h4>
                                     </div>
                                 </div>
-                                <livewire:group.membercard :group="$group" />
+                                <livewire:group.membercard :group="$group"/>
                             </div>
                         </div>
                         <div class="col-lg-8">
                             <div id="post-modal-data" class="iq-card">
 
-                                <livewire:post.new-post />
+                                <livewire:post.new-post/>
 
                             </div>
 
@@ -183,7 +187,7 @@
                                                             <div class="d-flex align-items-center">
                                                                 <a href="#">
                                                                     <img src="{{ $user->getAvatarAttribute() }}"
-                                                                        alt="profile-img" class="img-fluid">
+                                                                         alt="profile-img" class="img-fluid">
                                                                 </a>
                                                                 <div class="friend-info ml-3">
                                                                     <h5>{{ $user->name }}</h5>
@@ -210,7 +214,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
                                                                 <img src="{{ asset('temp/html/images/user/07.jpg') }}"
-                                                                    alt="profile-img" class="img-fluid">
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Otto Matic</h5>
@@ -220,14 +224,14 @@
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
                                                                 <span class="dropdown-toggle btn btn-secondary mr-2"
-                                                                    id="dropdownMenuButton31" data-toggle="dropdown"
-                                                                    aria-expanded="true" role="button">
+                                                                      id="dropdownMenuButton31" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
                                                                     <i
                                                                         class="ri-check-line mr-1 text-white font-size-16"></i>
                                                                     Friend
                                                                 </span>
                                                                 <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dropdownMenuButton31">
+                                                                     aria-labelledby="dropdownMenuButton31">
                                                                     <a class="dropdown-item" href="#">Get
                                                                         Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
@@ -246,7 +250,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
                                                                 <img src="{{ asset('temp/html/images/user/08.jpg') }}"
-                                                                    alt="profile-img" class="img-fluid">
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Moe Fugga</h5>
@@ -256,14 +260,14 @@
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
                                                                 <span class="dropdown-toggle btn btn-secondary mr-2"
-                                                                    id="dropdownMenuButton32" data-toggle="dropdown"
-                                                                    aria-expanded="true" role="button">
+                                                                      id="dropdownMenuButton32" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
                                                                     <i
                                                                         class="ri-check-line mr-1 text-white font-size-16"></i>
                                                                     Friend
                                                                 </span>
                                                                 <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dropdownMenuButton32">
+                                                                     aria-labelledby="dropdownMenuButton32">
                                                                     <a class="dropdown-item" href="#">Get
                                                                         Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
@@ -288,7 +292,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
                                                                 <img src="{{ asset('temp/html/images/user/19.jpg') }}"
-                                                                    alt="profile-img" class="img-fluid">
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Bud Wiser</h5>
@@ -298,14 +302,14 @@
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
                                                                 <span class="dropdown-toggle btn btn-secondary mr-2"
-                                                                    id="dropdownMenuButton39" data-toggle="dropdown"
-                                                                    aria-expanded="true" role="button">
+                                                                      id="dropdownMenuButton39" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
                                                                     <i
                                                                         class="ri-check-line mr-1 text-white font-size-16"></i>
                                                                     Friend
                                                                 </span>
                                                                 <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dropdownMenuButton39">
+                                                                     aria-labelledby="dropdownMenuButton39">
                                                                     <a class="dropdown-item" href="#">Get
                                                                         Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
@@ -324,7 +328,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
                                                                 <img src="{{ asset('temp/html/images/user/05.jpg') }}"
-                                                                    alt="profile-img" class="img-fluid">
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Otto Matic</h5>
@@ -334,14 +338,14 @@
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
                                                                 <span class="dropdown-toggle btn btn-secondary mr-2"
-                                                                    id="dropdownMenuButton40" data-toggle="dropdown"
-                                                                    aria-expanded="true" role="button">
+                                                                      id="dropdownMenuButton40" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
                                                                     <i
                                                                         class="ri-check-line mr-1 text-white font-size-16"></i>
                                                                     Friend
                                                                 </span>
                                                                 <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dropdownMenuButton40">
+                                                                     aria-labelledby="dropdownMenuButton40">
                                                                     <a class="dropdown-item" href="#">Get
                                                                         Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
@@ -366,7 +370,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
                                                                 <img src="{{ asset('temp/html/images/user/18.jpg') }}"
-                                                                    alt="profile-img" class="img-fluid">
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Paul Molive</h5>
@@ -376,14 +380,14 @@
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
                                                                 <span class="dropdown-toggle btn btn-secondary mr-2"
-                                                                    id="dropdownMenuButton49" data-toggle="dropdown"
-                                                                    aria-expanded="true" role="button">
+                                                                      id="dropdownMenuButton49" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
                                                                     <i
                                                                         class="ri-check-line mr-1 text-white font-size-16"></i>
                                                                     Friend
                                                                 </span>
                                                                 <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dropdownMenuButton49">
+                                                                     aria-labelledby="dropdownMenuButton49">
                                                                     <a class="dropdown-item" href="#">Get
                                                                         Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
@@ -402,7 +406,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
                                                                 <img src="{{ asset('temp/html/images/user/19.jpg') }}"
-                                                                    alt="profile-img" class="img-fluid">
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Paige Turner</h5>
@@ -412,14 +416,14 @@
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
                                                                 <span class="dropdown-toggle btn btn-secondary mr-2"
-                                                                    id="dropdownMenuButton50" data-toggle="dropdown"
-                                                                    aria-expanded="true" role="button">
+                                                                      id="dropdownMenuButton50" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
                                                                     <i
                                                                         class="ri-check-line mr-1 text-white font-size-16"></i>
                                                                     Friend
                                                                 </span>
                                                                 <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dropdownMenuButton50">
+                                                                     aria-labelledby="dropdownMenuButton50">
                                                                     <a class="dropdown-item" href="#">Get
                                                                         Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
@@ -444,7 +448,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
                                                                 <img src="{{ asset('temp/html/images/user/05.jpg') }}"
-                                                                    alt="profile-img" class="img-fluid">
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Maya Didas</h5>
@@ -454,14 +458,14 @@
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
                                                                 <span class="dropdown-toggle btn btn-secondary mr-2"
-                                                                    id="dropdownMenuButton54" data-toggle="dropdown"
-                                                                    aria-expanded="true" role="button">
+                                                                      id="dropdownMenuButton54" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
                                                                     <i
                                                                         class="ri-check-line mr-1 text-white font-size-16"></i>
                                                                     Friend
                                                                 </span>
                                                                 <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dropdownMenuButton54">
+                                                                     aria-labelledby="dropdownMenuButton54">
                                                                     <a class="dropdown-item" href="#">Get
                                                                         Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
@@ -480,7 +484,7 @@
                                                         <div class="d-flex align-items-center">
                                                             <a href="#">
                                                                 <img src="{{ asset('temp/html/images/user/06.jpg') }}"
-                                                                    alt="profile-img" class="img-fluid">
+                                                                     alt="profile-img" class="img-fluid">
                                                             </a>
                                                             <div class="friend-info ml-3">
                                                                 <h5>Monty Carlo</h5>
@@ -490,14 +494,14 @@
                                                         <div class="iq-card-header-toolbar d-flex align-items-center">
                                                             <div class="dropdown">
                                                                 <span class="dropdown-toggle btn btn-secondary mr-2"
-                                                                    id="dropdownMenuButton55" data-toggle="dropdown"
-                                                                    aria-expanded="true" role="button">
+                                                                      id="dropdownMenuButton55" data-toggle="dropdown"
+                                                                      aria-expanded="true" role="button">
                                                                     <i
                                                                         class="ri-check-line mr-1 text-white font-size-16"></i>
                                                                     Friend
                                                                 </span>
                                                                 <div class="dropdown-menu dropdown-menu-right"
-                                                                    aria-labelledby="dropdownMenuButton55">
+                                                                     aria-labelledby="dropdownMenuButton55">
                                                                     <a class="dropdown-item" href="#">Get
                                                                         Notification</a>
                                                                     <a class="dropdown-item" href="#">Close Friend</a>
@@ -540,7 +544,7 @@
                                                 <div class="user-images position-relative overflow-hidden">
                                                     <a href="#">
                                                         <img src="{{ asset('temp/html/images/page-img/51.jpg') }}"
-                                                            class="img-fluid rounded" alt="Responsive image">
+                                                             class="img-fluid rounded" alt="Responsive image">
                                                     </a>
                                                     <div class="image-hover-data">
                                                         <div class="product-elements-icon">
@@ -555,8 +559,8 @@
                                                         </div>
                                                     </div>
                                                     <a href="#" class="image-edit-btn" data-toggle="tooltip"
-                                                        data-placement="top" title=""
-                                                        data-original-title="Edit or Remove"><i
+                                                       data-placement="top" title=""
+                                                       data-original-title="Edit or Remove"><i
                                                             class="ri-edit-2-fill"></i></a>
                                                 </div>
                                             </div>
@@ -564,7 +568,7 @@
                                                 <div class="user-images position-relative overflow-hidden">
                                                     <a href="#">
                                                         <img src="{{ asset('temp/html/images/page-img/52.jpg') }}"
-                                                            class="img-fluid rounded" alt="Responsive image">
+                                                             class="img-fluid rounded" alt="Responsive image">
                                                     </a>
                                                     <div class="image-hover-data">
                                                         <div class="product-elements-icon">
@@ -579,8 +583,8 @@
                                                         </div>
                                                     </div>
                                                     <a href="#" class="image-edit-btn" data-toggle="tooltip"
-                                                        data-placement="top" title=""
-                                                        data-original-title="Edit or Remove"><i
+                                                       data-placement="top" title=""
+                                                       data-original-title="Edit or Remove"><i
                                                             class="ri-edit-2-fill"></i></a>
                                                 </div>
                                             </div>
@@ -588,7 +592,7 @@
                                                 <div class="user-images position-relative overflow-hidden">
                                                     <a href="#">
                                                         <img src="{{ asset('temp/html/images/page-img/53.jpg') }}"
-                                                            class="img-fluid rounded" alt="Responsive image">
+                                                             class="img-fluid rounded" alt="Responsive image">
                                                     </a>
                                                     <div class="image-hover-data">
                                                         <div class="product-elements-icon">
@@ -603,8 +607,8 @@
                                                         </div>
                                                     </div>
                                                     <a href="#" class="image-edit-btn" data-toggle="tooltip"
-                                                        data-placement="top" title=""
-                                                        data-original-title="Edit or Remove"><i
+                                                       data-placement="top" title=""
+                                                       data-original-title="Edit or Remove"><i
                                                             class="ri-edit-2-fill"></i></a>
                                                 </div>
                                             </div>
@@ -612,7 +616,7 @@
                                                 <div class="user-images position-relative overflow-hidden">
                                                     <a href="#">
                                                         <img src="{{ asset('temp/html/images/page-img/54.jpg') }}"
-                                                            class="img-fluid rounded" alt="Responsive image">
+                                                             class="img-fluid rounded" alt="Responsive image">
                                                     </a>
                                                     <div class="image-hover-data">
                                                         <div class="product-elements-icon">
@@ -627,8 +631,8 @@
                                                         </div>
                                                     </div>
                                                     <a href="#" class="image-edit-btn" data-toggle="tooltip"
-                                                        data-placement="top" title=""
-                                                        data-original-title="Edit or Remove"><i
+                                                       data-placement="top" title=""
+                                                       data-original-title="Edit or Remove"><i
                                                             class="ri-edit-2-fill"></i></a>
                                                 </div>
                                             </div>
@@ -642,7 +646,7 @@
                                                 <div class="user-images position-relative overflow-hidden">
                                                     <a href="#">
                                                         <img src="{{ asset('temp/html/images/page-img/51.jpg') }}"
-                                                            class="img-fluid rounded" alt="Responsive image">
+                                                             class="img-fluid rounded" alt="Responsive image">
                                                     </a>
                                                     <div class="image-hover-data">
                                                         <div class="product-elements-icon">
@@ -657,8 +661,8 @@
                                                         </div>
                                                     </div>
                                                     <a href="#" class="image-edit-btn" data-toggle="tooltip"
-                                                        data-placement="top" title=""
-                                                        data-original-title="Edit or Remove"><i
+                                                       data-placement="top" title=""
+                                                       data-original-title="Edit or Remove"><i
                                                             class="ri-edit-2-fill"></i></a>
                                                 </div>
                                             </div>
@@ -666,7 +670,7 @@
                                                 <div class="user-images position-relative overflow-hidden">
                                                     <a href="#">
                                                         <img src="{{ asset('temp/html/images/page-img/52.jpg') }}"
-                                                            class="img-fluid rounded" alt="Responsive image">
+                                                             class="img-fluid rounded" alt="Responsive image">
                                                     </a>
                                                     <div class="image-hover-data">
                                                         <div class="product-elements-icon">
@@ -681,8 +685,8 @@
                                                         </div>
                                                     </div>
                                                     <a href="#" class="image-edit-btn" data-toggle="tooltip"
-                                                        data-placement="top" title=""
-                                                        data-original-title="Edit or Remove"><i
+                                                       data-placement="top" title=""
+                                                       data-original-title="Edit or Remove"><i
                                                             class="ri-edit-2-fill"></i></a>
                                                 </div>
                                             </div>
@@ -690,7 +694,7 @@
                                                 <div class="user-images position-relative overflow-hidden">
                                                     <a href="#">
                                                         <img src="{{ asset('temp/html/images/page-img/53.jpg') }}"
-                                                            class="img-fluid rounded" alt="Responsive image">
+                                                             class="img-fluid rounded" alt="Responsive image">
                                                     </a>
                                                     <div class="image-hover-data">
                                                         <div class="product-elements-icon">
@@ -705,8 +709,8 @@
                                                         </div>
                                                     </div>
                                                     <a href="#" class="image-edit-btn" data-toggle="tooltip"
-                                                        data-placement="top" title=""
-                                                        data-original-title="Edit or Remove"><i
+                                                       data-placement="top" title=""
+                                                       data-original-title="Edit or Remove"><i
                                                             class="ri-edit-2-fill"></i></a>
                                                 </div>
                                             </div>
@@ -714,7 +718,7 @@
                                                 <div class="user-images position-relative overflow-hidden">
                                                     <a href="#">
                                                         <img src="{{ asset('temp/html/images/page-img/54.jpg') }}"
-                                                            class="img-fluid rounded" alt="Responsive image">
+                                                             class="img-fluid rounded" alt="Responsive image">
                                                     </a>
                                                     <div class="image-hover-data">
                                                         <div class="product-elements-icon">
@@ -729,8 +733,8 @@
                                                         </div>
                                                     </div>
                                                     <a href="#" class="image-edit-btn" data-toggle="tooltip"
-                                                        data-placement="top" title=""
-                                                        data-original-title="Edit or Remove"><i
+                                                       data-placement="top" title=""
+                                                       data-original-title="Edit or Remove"><i
                                                             class="ri-edit-2-fill"></i></a>
                                                 </div>
                                             </div>

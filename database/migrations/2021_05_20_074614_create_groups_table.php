@@ -17,10 +17,10 @@ class CreateGroupsTable extends Migration
             $table->id();
             $table->string("group_name")->index();
             $table->string("university_name");
-            $table->foreignId('admin')->constrained('users')->onDelete('cascade');
-            $table->string("colleague"); //TODO : change name to college
+            $table->foreignId('admin_id')->constrained('users')->onDelete('cascade');
+            $table->string("colleague")->nullable(); //TODO : change name to college
             $table->string("country"); //TODO : change name to city
-            $table->text("description")->index();
+            $table->text("description")->nullable()->index();
             $table->text("photo");
             $table->timestamps();
         });

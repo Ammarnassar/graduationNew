@@ -17,20 +17,21 @@ class Form extends Component
     protected $rules = [
         'group_name' => 'required|string|min:3|max:64',
         'university_name' => 'required|string|min:3|max:64',
-        'colleague' => 'required',
+        'colleague' => 'nullable',
         'city' => 'required',
         'description' => 'nullable|min:3|max:255',
     ];
 
     public function store()
     {
+        $this->validate();
           $id = Group::insertGetId([
             'group_name' => $this->group_name,
             'university_name' => $this->university_name,
             'colleague' => $this->colleague,
             'country' => $this->city,
             'description' => $this->description,
-            "admin" => auth()->id(),
+            "admin_id" => auth()->id(),
             "created_at" => now(),
             "updated_at" => now(),
         ]);

@@ -4,7 +4,7 @@
     <ul class="notification-list m-0 p-0">
 
         <li class="d-flex align-items-center">
-            <div class="user-img img-fluid"><img src="{{$notification->user->getAvatarAttribute()}}}}" alt="story-img" class="rounded-circle avatar-40"></div>
+            <div class="user-img img-fluid"><img src="{{'storage/'.$notification->user->avatar}}}}" alt="story-img" class="rounded-circle avatar-40"></div>
             <div class="media-support-info ml-3 d-flex flex-row justify-content-between">
                 <div style="margin-top: 9px;">
                     <h6>{{$notification->user->name}}</h6>

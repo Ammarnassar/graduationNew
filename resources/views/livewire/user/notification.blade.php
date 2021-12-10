@@ -7,7 +7,7 @@
         <a href="#" class="iq-sub-card" >
             <div class="media align-items-center">
                 <div class="">
-                    <img class="avatar-40 rounded" src="{{auth()->user()->avatar}}" alt="">
+                    <img class="avatar-40 rounded" src="{{$notification->user->avatar}}" alt="">
                 </div>
                 <div class="media-body ml-3">
                     <h6 class="mb-0 ">{{$notification->user->name}}</h6>

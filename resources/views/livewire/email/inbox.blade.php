@@ -101,7 +101,7 @@
                                                                     <h5 class="mt-0">{{$mail->subject}}</h5>
                                                                     <div class="iq-inbox-subject-info">
                                                                         <div class="iq-subject-info">
-                                                                            <img src="../images/user/user-1.jpg" class="img-fluid rounded-circle" alt="#">
+                                                                            <img src="{{$mail->user->avatar}}" class="img-fluid rounded-circle" alt="#">
                                                                             <div class="iq-subject-status align-self-center">
                                                                                 <h6 class="mb-0">{{$mail->user->name}}<a href="dummy@SocialV.com"><dummy@SocialV.com></a></h6>
                                                                                 <div class="dropdown">
@@ -308,7 +308,7 @@
                                                                         <h5 class="mt-0">{{$mail->subject}}</h5>
                                                                         <div class="iq-inbox-subject-info">
                                                                             <div class="iq-subject-info">
-                                                                                <img src="../images/user/user-1.jpg" class="img-fluid rounded-circle" alt="#">
+                                                                                <img src="{{$mail->user->avatar}}" class="img-fluid rounded-circle" alt="#">
                                                                                 <div class="iq-subject-status align-self-center">
                                                                                     <h6 class="mb-0">{{$mail->user->name}}<a href="dummy@SocialV.com"><dummy@SocialV.com></a></h6>
                                                                                     <div class="dropdown">
@@ -431,7 +431,7 @@
                                                                         <h5 class="mt-0">{{$mail->subject}}</h5>
                                                                         <div class="iq-inbox-subject-info">
                                                                             <div class="iq-subject-info">
-                                                                                <img src="../images/user/user-1.jpg" class="img-fluid rounded-circle" alt="#">
+                                                                                <img src="{{$mail->user->avatar}}" class="img-fluid rounded-circle" alt="#">
                                                                                 <div class="iq-subject-status align-self-center">
                                                                                     <h6 class="mb-0">{{$mail->user->name}}<a href="dummy@SocialV.com"><dummy@SocialV.com></a></h6>
                                                                                     <div class="dropdown">
@@ -552,7 +552,7 @@
                                                                     <h5 class="mt-0">{{$mail->subject}}</h5>
                                                                     <div class="iq-inbox-subject-info">
                                                                         <div class="iq-subject-info">
-                                                                            <img src="../images/user/user-1.jpg" class="img-fluid rounded-circle" alt="#">
+                                                                            <img src="{{$mail->user->avatar}}" class="img-fluid rounded-circle" alt="#">
                                                                             <div class="iq-subject-status align-self-center">
                                                                                 <h6 class="mb-0">{{$mail->user->name}}<a href="dummy@SocialV.com"><dummy@SocialV.com></a></h6>
                                                                                 <div class="dropdown">

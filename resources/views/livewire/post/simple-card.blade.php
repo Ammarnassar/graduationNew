@@ -140,12 +140,12 @@
                             <span class="ml-1">{{$commentsCount}}</span> <span class="ml-1 d-none d-md-inline"> {{__('Comments')}}</span>
                         </a>
                     </div>
-                    <div class="share-block d-flex align-items-center feather-icon mx-3">
-                        <a href="">
-                            <i class="las la-share " style="font-size: 18px"></i>
-                            <span class="ml-1">0</span> <span class="d-none d-md-inline">{{__('Share')}}</span>
-                        </a>
-                    </div>
+{{--                    <div class="share-block d-flex align-items-center feather-icon mx-3">--}}
+{{--                        <a href="">--}}
+{{--                            <i class="las la-share " style="font-size: 18px"></i>--}}
+{{--                            <span class="ml-1">0</span> <span class="d-none d-md-inline">{{__('Share')}}</span>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
                 </div>
 
             </div>

@@ -18,7 +18,7 @@
                 <div class="text-center">{{__('No Trends')}}</div>
             @endforelse
         </ul>
-        <a href="#" class="btn btn-primary d-block mt-3">See All</a>
+        <a href="#" class="btn btn-primary d-block mt-3">{{__('See All')}}</a>
     </div>
 
 </div>

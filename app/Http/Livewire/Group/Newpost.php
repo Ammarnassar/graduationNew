@@ -2,19 +2,19 @@
 
 namespace App\Http\Livewire\Group;
 
-use Livewire\Component;
-use App\Models\Trend;
-use Livewire\WithFileUploads;
 use App\Models\Media;
-use App\Models\Post;
 use App\Models\Post_group;
 use App\Models\PostGroup as ModelsPostGroup;
+use App\Models\Trend;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Illuminate\Support\HtmlString;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class Newpost extends Component
-{ use WithFileUploads;
+{
+    use WithFileUploads , LivewireAlert;
 
     public $body;
     public $postLength;
@@ -41,36 +41,34 @@ class Newpost extends Component
     {
         $this->validate();
 
-        $body = str_replace($this->tags, '' ,$this->body);
+        $body = str_replace($this->tags, '', $this->body);
 
         $post_id = ModelsPostGroup::insertGetId([
             'body' => nl2br($body),
             'user_id' => auth()->id(),
-            'group_id'=>$this->group->id,
+            'group_id' => $this->group->id,
             'created_at' => now(),
             'updated_at' => now()
         ]);
 
-        if ($this->media)
-        {
-            $name = Hash::make($this->media->getClientOriginalName()).'.'.$this->media->extension();
+        if ($this->media) {
+            $name = Hash::make($this->media->getClientOriginalName()) . '.' . $this->media->extension();
 
             Media::create([
                 'extension' => $this->media->extension(),
                 'name' => $this->media->getClientOriginalName(),
-                'path' => $this->media->storeAs('media' , $name , 'public'),
-                'mediaable_id'=>$post_id,
-                'mediaable_type'=>'App\Models\PostGroup',
+                'path' => $this->media->storeAs('media', $name, 'public'),
+                'mediaable_id' => $post_id,
+                'mediaable_type' => 'App\Models\PostGroup',
             ]);
 
 
         }
 
         if ($this->tags) {
-            foreach ($this->tags as $tag)
-            {
+            foreach ($this->tags as $tag) {
                 $trend = Trend::firstOrCreate([
-                    'name' =>  $tag,
+                    'name' => $tag,
                 ]);
                 $trend->posts()->attach($post_id);
 
@@ -93,9 +91,10 @@ class Newpost extends Component
     {
         $this->media = '';
     }
+
     public function render()
     {
-        $this->postLength =Str::length(str_replace(' ' , '' ,$this->body));
+        $this->postLength = Str::length(str_replace(' ', '', $this->body));
 
         $this->tags = $this->getTagsFromPostGroup($this->body);
 

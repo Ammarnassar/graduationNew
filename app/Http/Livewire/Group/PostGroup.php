@@ -2,21 +2,19 @@
 
 namespace App\Http\Livewire\Group;
 
-use App\Models\Trend;
-use Livewire\Component;
-use Livewire\WithFileUploads;
 use App\Models\Media;
-use App\Models\Post;
-use App\Models\Post_group;
 use App\Models\PostGroup as ModelsPostGroup;
+use App\Models\Trend;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
-use Illuminate\Support\HtmlString;
+use Jantinnerezo\LivewireAlert\LivewireAlert;
+use Livewire\Component;
+use Livewire\WithFileUploads;
 
 
 class PostGroup extends Component
 {
-    use WithFileUploads;
+    use WithFileUploads, LivewireAlert;
 
     public $body;
     public $postLength;
@@ -68,7 +66,7 @@ class PostGroup extends Component
         if ($this->tags) {
             foreach ($this->tags as $tag) {
                 $trend = Trend::firstOrCreate([
-                    'name' =>  $tag,
+                    'name' => $tag,
                 ]);
                 $trend->posts()->attach($post_id);
             }
@@ -90,6 +88,7 @@ class PostGroup extends Component
     {
         $this->media = '';
     }
+
     public function render()
     {
         $this->postLength = Str::length(str_replace(' ', '', $this->body));
