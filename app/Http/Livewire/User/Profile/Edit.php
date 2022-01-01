@@ -52,18 +52,6 @@ class Edit extends Component
         'email',
     ];
 
-    public $rules = [
-        'first_name' => 'required',
-        'last_name' => 'required',
-        'age' => 'required',
-        'dob' => 'required',
-        'city' => 'required',
-        'address' => 'nullable|string',
-        'gender' => 'required',
-        'university' => 'required',
-        'college' => 'required',
-    ];
-
     public function resetData()
     {
         $this->mount();
@@ -97,8 +85,17 @@ class Edit extends Component
 
     public function savePersonalInfo()
     {
-        $validated = $this->validate();
-
+        $validated = $this->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'age' => 'required',
+            'dob' => 'required',
+            'city' => 'required',
+            'address' => 'nullable|string',
+            'gender' => 'required',
+            'university' => 'required',
+            'college' => 'required',
+        ]);
 
         auth()->user()->update($validated);
 

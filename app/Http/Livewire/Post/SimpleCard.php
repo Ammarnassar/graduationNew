@@ -67,19 +67,18 @@ class SimpleCard extends Component
 
     public function deletePost()
     {
-
         Post::find($this->post->id)->delete();
-
-        $this->emit('postDeleted');
 
         $this->alert(
             'success',
             __('Post Deleted Successfully !')
         );
+
+        $this->emit('postDeleted');
     }
 
     public function showPost()
     {
-        return redirect()->route('post.show', $this->post->id);
+        return redirect(route('post.show', $this->post->id));
     }
 }

@@ -6,16 +6,13 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Follow;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-
     public function login(LoginRequest $request)
     {
-        if (auth()->attempt($request->validated() , $request->remember))
-        {
+        if (auth()->attempt($request->validated(), $request->remember)) {
             return redirect()->route('home');
         }
 
@@ -36,11 +33,11 @@ class AuthController extends Controller
             'password' => bcrypt($request->password),
         ]);
 
-        Auth::attempt($request->only(['email' , 'password']));
+        Auth::attempt($request->only(['email', 'password']));
 
         Follow::create([
-            'following'=> auth()->id(),
-            'follower'=> auth()->id(),
+            'following' => auth()->id(),
+            'follower' => auth()->id(),
         ]);
 
         return redirect()->route('home');

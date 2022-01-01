@@ -80,9 +80,6 @@
                         <li class="col-sm-3 p-0">
                             <a class="nav-link" data-toggle="pill" href="#friends">{{__('Members')}}</a>
                         </li>
-                        <li class="col-sm-3 p-0">
-                            <a class="nav-link" data-toggle="pill" href="#photos">{{__('Photos')}}</a>
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -94,22 +91,6 @@
                 <div class="iq-card-body p-0">
                     <div class="row flex-lg-row-reverse flex-column-reverse">
                         <div class="col-lg-4">
-
-                            <div class="iq-card">
-                                <div class="iq-card-header d-flex justify-content-between">
-                                    <div class="iq-header-title">
-                                        <h4 class="card-title">{{__('Photos')}}</h4>
-                                    </div>
-                                </div>
-                                <div class="iq-card-body">
-                                    <ul class="profile-img-gallary d-flex flex-wrap p-0 m-0">
-                                        <li class="col-md-4 col-6 pl-2 pr-0 pb-3"><a href="javascript:void();"><img
-                                                    src="{{ asset('temp/html/images/page-img/g1.jpg') }}"
-                                                    alt="gallary-image" class="img-fluid"/></a></li>
-
-                                    </ul>
-                                </div>
-                            </div>
                             <div class="iq-card">
                                 <div class="iq-card-header d-flex justify-content-between">
                                     <div class="iq-header-title">

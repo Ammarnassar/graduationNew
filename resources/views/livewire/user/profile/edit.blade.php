@@ -45,7 +45,9 @@
                                     {{-- First Name --}}
                                     <div class="form-group col-12 col-md-6">
                                         <label for="first_name">{{__('First Name')}} :</label>
-                                        <input  type="text" class="form-control @error('first_name') is-invalid @enderror" id="first_name" wire:model="first_name">
+                                        <input type="text"
+                                               class="form-control @error('first_name') is-invalid @enderror"
+                                               id="first_name" wire:model="first_name">
                                         @error('first_name')
                                         <div class="text-danger">
                                             {{$message}}
@@ -57,7 +59,8 @@
                                     <div class="form-group col-12 col-md-6">
                                         <label for="last_name">{{__('Last Name')}} :</label>
 
-                                        <input type="text" class="form-control @error('last_name') is-invalid @enderror" id="last_name"  wire:model="last_name">
+                                        <input type="text" class="form-control @error('last_name') is-invalid @enderror"
+                                               id="last_name" wire:model="last_name">
                                         @error('last_name')
                                         <div class="text-danger">
                                             {{$message}}
@@ -68,10 +71,11 @@
                                     {{-- University --}}
                                     <div class="form-group col-12 col-md-6">
                                         <label>{{__('University')}} :</label>
-                                        <select class="form-control" id="exampleFormControlSelect2" wire:model="university">
+                                        <select class="form-control" id="exampleFormControlSelect2"
+                                                wire:model="university">
 
                                             @foreach($universities as $uni)
-                                                <option value="{{$uni}}" >
+                                                <option value="{{$uni}}">
                                                     {{__($uni)}}
                                                 </option>
                                             @endforeach
@@ -90,7 +94,8 @@
                                     <div class="form-group col-12 col-md-6">
                                         <label>{{__('College')}} :</label>
 
-                                        <select class="form-control" id="exampleFormControlSelect2" wire:model="college">
+                                        <select class="form-control" id="exampleFormControlSelect2"
+                                                wire:model="college">
                                             @if($colleges)
                                                 @foreach($colleges as $coll)
                                                     <option value="{{$coll}}">
@@ -100,7 +105,7 @@
                                             @endif
                                         </select>
 
-                                        @error('university')
+                                        @error('college')
                                         <div class="text-danger">
                                             {{$message}}
                                         </div>
@@ -110,7 +115,7 @@
                                     {{-- Date Of Birth --}}
                                     <div class="form-group col-12 col-md-6">
                                         <label for="dob">{{__('Date Of Birth')}}:</label>
-                                        <input  class="form-control" id="dob" type="date" wire:model="dob">
+                                        <input class="form-control" id="dob" type="date" wire:model="dob">
 
                                         @error('dob')
                                         <div class="text-danger">
@@ -139,7 +144,8 @@
                                     {{-- Age --}}
                                     <div class="form-group col-12 col-md-6">
                                         <label>{{__('Age')}}:</label>
-                                        <input class="form-control" type="number" id="exampleFormControlSelect2" wire:model="age">
+                                        <input class="form-control" type="number" id="exampleFormControlSelect2"
+                                               wire:model="age">
 
                                         @error('age')
                                         <div class="text-danger">
@@ -151,7 +157,7 @@
                                     {{-- Address --}}
                                     <div class="form-group col-12 col-md-6">
                                         <label>{{__('Address')}}:</label>
-                                        <input  class="form-control" id="address" wire:model="address">
+                                        <input class="form-control" id="address" wire:model="address">
 
                                         @error('address')
                                         <div class="text-danger">
@@ -164,12 +170,16 @@
                                     <div class="form-group col-12 col-md-6">
                                         <label class="d-block">{{__('Gender')}} :</label>
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" id="customRadio6" name="customRadio1" class="custom-control-input" value="male" wire:model="gender">
-                                            <label class="custom-control-label" for="customRadio6"> {{__('Male')}} </label>
+                                            <input type="radio" id="customRadio6" name="customRadio1"
+                                                   class="custom-control-input" value="male" wire:model="gender">
+                                            <label class="custom-control-label"
+                                                   for="customRadio6"> {{__('Male')}} </label>
                                         </div>
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" id="customRadio7" name="customRadio1" class="custom-control-input" value="female" wire:model="gender">
-                                            <label class="custom-control-label" for="customRadio7"> {{__('Female')}} </label>
+                                            <input type="radio" id="customRadio7" name="customRadio1"
+                                                   class="custom-control-input" value="female" wire:model="gender">
+                                            <label class="custom-control-label"
+                                                   for="customRadio7"> {{__('Female')}} </label>
                                         </div>
                                         @error('gender')
                                         <div class="text-danger">
@@ -179,8 +189,10 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center align-items-center mt-4">
-                                    <button type="submit" form="personalInfo" class="btn btn-primary mx-2">{{__('Save')}}</button>
-                                    <button type="button" wire:click="resetData" class="btn iq-bg-danger mx-2">{{__('Cancel')}}</button>
+                                    <button type="submit" form="personalInfo"
+                                            class="btn btn-primary mx-2">{{__('Save')}}</button>
+                                    <button type="button" wire:click="resetData"
+                                            class="btn iq-bg-danger mx-2">{{__('Cancel')}}</button>
                                 </div>
 
                             </form>
@@ -203,7 +215,9 @@
 
                                         <a href="" class="float-right">{{__('Forgot Password')}}</a>
 
-                                        <input type="Password" class="@error('current_password') is-invalid @enderror form-control" id="current_password" wire:model.defer="current_password">
+                                        <input type="Password"
+                                               class="@error('current_password') is-invalid @enderror form-control"
+                                               id="current_password" wire:model.defer="current_password">
 
                                         @error('current_password')
                                         <div class="text-danger">
@@ -214,7 +228,9 @@
 
                                     <div class="form-group col-12">
                                         <label for="new_password">{{__('New Password')}} :</label>
-                                        <input type="Password" class="@error('password') is-invalid @enderror form-control" id="password" wire:model.defer="password">
+                                        <input type="Password"
+                                               class="@error('password') is-invalid @enderror form-control"
+                                               id="password" wire:model.defer="password">
 
                                         @error('password')
                                         <div class="text-danger">
@@ -224,7 +240,9 @@
                                     </div>
                                     <div class="form-group col-12">
                                         <label for="password_confirmation">{{__('Verify Password')}} :</label>
-                                        <input type="Password" class="@error('password_confirmation') is-invalid @enderror form-control" id="password_confirmation" wire:model.defer="password_confirmation">
+                                        <input type="Password"
+                                               class="@error('password_confirmation') is-invalid @enderror form-control"
+                                               id="password_confirmation" wire:model.defer="password_confirmation">
 
                                         @error('password_confirmation')
                                         <div class="text-danger">
@@ -234,8 +252,10 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center align-items-center mt-4">
-                                    <button type="submit" form="changePassword" class="btn btn-primary mx-2">{{__('Save')}}</button>
-                                    <button wire:click="resetData" class="btn iq-bg-danger mx-2">{{__('Cancel')}}</button>
+                                    <button type="submit" form="changePassword"
+                                            class="btn btn-primary mx-2">{{__('Save')}}</button>
+                                    <button wire:click="resetData"
+                                            class="btn iq-bg-danger mx-2">{{__('Cancel')}}</button>
                                 </div>
                             </form>
                         </div>
@@ -250,40 +270,42 @@
                         </div>
                         <div class="iq-card-body">
 
-                        <form wire:submit.prevent="saveAccountSettings" id="saveAccountSettings">
+                            <form wire:submit.prevent="saveAccountSettings" id="saveAccountSettings">
 
-                            {{--Username --}}
-                            <div class="form-group col-12">
-                                <label for="username">{{__('Username')}} :</label>
-                                <input type="text" class="form-control" id="username" wire:model="username">
-                                @error('username')
+                                {{--Username --}}
+                                <div class="form-group col-12">
+                                    <label for="username">{{__('Username')}} :</label>
+                                    <input type="text" class="form-control" id="username" wire:model="username">
+                                    @error('username')
                                     <div class="text-danger">
                                         {{$message}}
                                     </div>
-                                @enderror
-                            </div>
-
-                            {{--Email --}}
-                            <div class="form-group col-12">
-                                <label for="email">{{__('Email')}} :</label>
-                                <input type="text" class="form-control" id="email" wire:model="email">
-
-                                @error('email')
-                                <div class="text-danger">
-                                    {{$message}}
+                                    @enderror
                                 </div>
-                                @enderror
-                            </div>
 
-                        </form>
+                                {{--Email --}}
+                                <div class="form-group col-12">
+                                    <label for="email">{{__('Email')}} :</label>
+                                    <input type="text" class="form-control" id="email" wire:model="email">
+
+                                    @error('email')
+                                    <div class="text-danger">
+                                        {{$message}}
+                                    </div>
+                                    @enderror
+                                </div>
+
+                            </form>
                             {{-- Delete Account --}}
                             <div class="form-group col-12 mt-2">
-                                <button class="btn btn-danger" form="deleteAccount" type="submit">{{__('Delete Account')}}</button>
+                                <button class="btn btn-danger" form="deleteAccount"
+                                        type="submit">{{__('Delete Account')}}</button>
                             </div>
-                            <form wire:submit.prevent="deleteAccount" id="deleteAccount"> </form>
+                            <form wire:submit.prevent="deleteAccount" id="deleteAccount"></form>
 
                             <div class="d-flex justify-content-center align-items-center mt-4">
-                                <button type="submit" form="saveAccountSettings" class="btn btn-primary mx-2">{{__('Save')}}</button>
+                                <button type="submit" form="saveAccountSettings"
+                                        class="btn btn-primary mx-2">{{__('Save')}}</button>
                                 <button wire:click="resetData" class="btn iq-bg-danger mx-2">{{__('Cancel')}}</button>
                             </div>
 
@@ -303,12 +325,17 @@
                                     <div class="form-group col-12 col-md-6">
                                         <label class="d-block">{{__('Language')}} :</label>
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" id="customRadio8" name="customRadio1" class="custom-control-input" value="ar" checked="" wire:model.defer="lang">
-                                            <label class="custom-control-label" for="customRadio8"> {{__('Arabic')}} </label>
+                                            <input type="radio" id="customRadio8" name="customRadio1"
+                                                   class="custom-control-input" value="ar" checked=""
+                                                   wire:model.defer="lang">
+                                            <label class="custom-control-label"
+                                                   for="customRadio8"> {{__('Arabic')}} </label>
                                         </div>
                                         <div class="custom-control custom-radio custom-control-inline">
-                                            <input type="radio" id="customRadio9" name="customRadio1" class="custom-control-input" value="en" wire:model.defer="lang">
-                                            <label class="custom-control-label" for="customRadio9"> {{__('English')}} </label>
+                                            <input type="radio" id="customRadio9" name="customRadio1"
+                                                   class="custom-control-input" value="en" wire:model.defer="lang">
+                                            <label class="custom-control-label"
+                                                   for="customRadio9"> {{__('English')}} </label>
                                         </div>
                                         @error('lang')
                                         <div class="text-danger">
@@ -318,7 +345,8 @@
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-center align-items-center mt-4">
-                                    <button type="submit" form="language" class="btn btn-primary mx-2">{{__('Save')}}</button>
+                                    <button type="submit" form="language"
+                                            class="btn btn-primary mx-2">{{__('Save')}}</button>
                                     <button type="reset" class="btn iq-bg-danger mx-2">{{__('Cancel')}}</button>
                                 </div>
                             </form>

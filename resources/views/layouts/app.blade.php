@@ -98,21 +98,9 @@
                         <a href="{{route('notifications')}}" class="iq-waves-effect"><i
                                 class="las la-bell"></i><span>{{__('Notification')}}</span></a>
                     </li>
-                    <li>
-                        <a href="" class="iq-waves-effect"><i
-                                class="las la-anchor"></i><span>{{__('Friend Request')}}</span></a>
-                    </li>
                     <li @if(Route::currentRouteName() == 'chat.index') class="active" @endif>
                         <a href="{{route('chat.index')}}" class="iq-waves-effect"><i
                                 class="lab la-rocketchat"></i><span>{{__('Chat')}}</span></a>
-                    </li>
-                    <li>
-                        <a href="" class="iq-waves-effect"><i
-                                class="las la-check-circle"></i><span>{{__('Todo')}}</span></a>
-                    </li>
-                    <li>
-                        <a href="" class="iq-waves-effect"><i
-                                class="las la-calendar"></i><span>{{__('Calendar')}}</span></a>
                     </li>
                     <li>
                         <a href="{{route('email.inbox')}}" class="iq-waves-effect collapsed"><i
@@ -326,33 +314,7 @@
     </div>
 
 
-    <div class=" right-sidebar right-sidebar-mini d-none d-md-block" style=" z-index: 10">
-        <div class="right-sidebar-panel p-0">
-            <div class="iq-card shadow-none">
-                <div class="iq-card-body p-0">
-                    <div class="media-height p-3">
-
-                        <div class="media align-items-center mb-4">
-                            <div class="iq-profile-avatar status-online">
-                                <img class="rounded-circle avatar-50"
-                                     src="{{asset('https://ui-avatars.com/api/?name=omar Ahmad')}}" alt="">
-                            </div>
-                            <div class="media-body ml-3">
-                                <h6 class="mb-0"><a href="{{route('chat.index')}}">Omar Ahmad</a></h6>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class=" right-sidebar-toggle bg-primary mt-3">
-                        <i class="bi bi-arrow-left side-left-icon"></i>
-                        <i class="bi bi-arrow-right side-right-icon"><span class="ml-3 d-inline-block">Close Menu</span></i>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    @include('layouts.chat-sidebar')
 
     @yield('content')
 </div>

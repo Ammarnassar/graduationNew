@@ -1,61 +1,61 @@
-<div class="iq-card iq-card-block post-card w-100" id="card" wire:poll>
+<div class="iq-card iq-card-block post-card w-100" id="card">
     <a href="{{route('home')}}" class="">
         <div class="iq-card-body  p-3 " style="cursor: pointer">
             <div class="user-post-data">
-                    <div class="d-flex flex-wrap">
-                        <a href="{{route('user.profile' , $post->user->id)}}" class="media-support-user-img mr-3">
-                            <img class="rounded-circle img-fluid" src="{{$post->user->avatar}}" alt="">
-                        </a>
-                        <div class="media-support-info mt-2 " >
-                            <a href="{{route('user.profile' , $post->user->id)}}"
-                               class="btn btn-link p-0 text-dark d-inline-block font-size-20">{{$post->user->name}}</a>
-                            <p class="mb-0 text-primary">{{$post->created_at->diffForHumans()}}</p>
-                        </div>
+                <div class="d-flex flex-wrap">
+                    <a href="{{route('user.profile' , $post->user->id)}}" class="media-support-user-img mr-3">
+                        <img class="rounded-circle img-fluid" src="{{$post->user->avatar}}" alt="">
+                    </a>
+                    <div class="media-support-info mt-2 ">
+                        <a href="{{route('user.profile' , $post->user->id)}}"
+                           class="btn btn-link p-0 text-dark d-inline-block font-size-20">{{$post->user->name}}</a>
+                        <p class="mb-0 text-primary">{{$post->created_at->diffForHumans()}}</p>
+                    </div>
 
-                        <div class="iq-card-post-toolbar" style="cursor: pointer ; z-index: 5">
-                                <div class="dropdown">
+                    <div class="iq-card-post-toolbar" style="cursor: pointer ; z-index: 5">
+                        <div class="dropdown">
                                     <span class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                                           aria-expanded="false" role="button">
                                          <i class="las la-ellipsis-v"></i>
                                      </span>
-                                    <div class="dropdown-menu " style="width: fit-content">
-                                        <a class="dropdown-item p-3 " href="#">
-                                            <div class="d-flex align-items-center ">
-                                                <div class="icon font-size-20">
-                                                    <i class="lar la-save"></i>
-                                                </div>
-                                                <div class="data ml-2 ">
-                                                    <h6>{{__('Save Post')}}</h6>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        @if($post->user->id == auth()->id())
-                                            <a class="dropdown-item p-3" wire:click="deletePost">
-                                                <div class="d-flex ">
-                                                    <div class="icon font-size-20 d-flex align-items-center">
-                                                        <i class="far fa-trash-alt text-danger"></i>
-                                                    </div>
-                                                    <div class="data ml-2">
-                                                        <h6 class="text-danger">{{__('Delete Post')}}</h6>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        @else
-                                            <a class="dropdown-item p-3" href="#">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="icon font-size-20"><i class="las la-user-times"></i></i>
-                                                    </div>
-                                                    <div class="data ml-2">
-                                                        <h6>{{__('Unfollow')}} {{$post->user->name}}</h6>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        @endif
+                            <div class="dropdown-menu " style="width: fit-content">
+                                <a class="dropdown-item p-3 " href="#">
+                                    <div class="d-flex align-items-center ">
+                                        <div class="icon font-size-20">
+                                            <i class="lar la-save"></i>
+                                        </div>
+                                        <div class="data ml-2 ">
+                                            <h6>{{__('Save Post')}}</h6>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
+                                @if($post->user->id == auth()->id())
+                                    <a class="dropdown-item p-3" wire:click="deletePost">
+                                        <div class="d-flex ">
+                                            <div class="icon font-size-20 d-flex align-items-center">
+                                                <i class="far fa-trash-alt text-danger"></i>
+                                            </div>
+                                            <div class="data ml-2">
+                                                <h6 class="text-danger">{{__('Delete Post')}}</h6>
+                                            </div>
+                                        </div>
+                                    </a>
+                                @else
+                                    <a class="dropdown-item p-3" href="#">
+                                        <div class="d-flex align-items-center">
+                                            <div class="icon font-size-20"><i class="las la-user-times"></i></i>
+                                            </div>
+                                            <div class="data ml-2">
+                                                <h6>{{__('Unfollow')}} {{$post->user->name}}</h6>
+                                            </div>
+                                        </div>
+                                    </a>
+                                @endif
                             </div>
+                        </div>
                     </div>
                 </div>
+            </div>
             <div onclick="document.location='/post/{{$post->id}}'">
                 <div class="mt-3 post-card" dir="auto">
                     <p class="p-0 mb-0 line-height w-100 text-justify">
@@ -96,7 +96,7 @@
             </div>
 
             <div class="comment-area mt-3">
-                <div class="d-flex justify-content-between align-items-center" >
+                <div class="d-flex justify-content-between align-items-center">
                     <div class="like-block position-relative d-flex align-items-center">
                         <div class="d-flex align-items-center">
                             <div class="like-data d-flex align-items-center">
@@ -137,15 +137,16 @@
                     <div class="share-block d-flex align-items-center feather-icon mx-3">
                         <a href="{{route('post.show' , $post->id)}}">
                             <i class="bi-chat-square " style="font-size: 18px"></i>
-                            <span class="ml-1">{{$commentsCount}}</span> <span class="ml-1 d-none d-md-inline"> {{__('Comments')}}</span>
+                            <span class="ml-1">{{$commentsCount}}</span> <span
+                                class="ml-1 d-none d-md-inline"> {{__('Comments')}}</span>
                         </a>
                     </div>
-{{--                    <div class="share-block d-flex align-items-center feather-icon mx-3">--}}
-{{--                        <a href="">--}}
-{{--                            <i class="las la-share " style="font-size: 18px"></i>--}}
-{{--                            <span class="ml-1">0</span> <span class="d-none d-md-inline">{{__('Share')}}</span>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="share-block d-flex align-items-center feather-icon mx-3">--}}
+                    {{--                        <a href="">--}}
+                    {{--                            <i class="las la-share " style="font-size: 18px"></i>--}}
+                    {{--                            <span class="ml-1">0</span> <span class="d-none d-md-inline">{{__('Share')}}</span>--}}
+                    {{--                        </a>--}}
+                    {{--                    </div>--}}
                 </div>
 
             </div>
