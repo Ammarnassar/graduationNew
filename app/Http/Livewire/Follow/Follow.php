@@ -9,23 +9,25 @@ class Follow extends Component
 {
     public $user;
 
-    public function follow($user_id){
+    public function follow($user_id)
+    {
         ModelsFollow::create([
-            'following'=>auth()->id(),
-            'follower'=>$user_id,
+            'following' => auth()->id(),
+            'follower' => $user_id,
         ]);
 
-        (new \App\Http\Controllers\NotificationsController)->notify($this->user->id,'like','Liked your post');
+        (new \App\Http\Controllers\NotificationsController)->notify($this->user->id, 'follow', __('follow you !'));
 
     }
 
-    public function unfollow($user_id){
+    public function unfollow($user_id)
+    {
 
-        ModelsFollow::where('following',auth()->id())->where('follower',$user_id)->delete();
+        ModelsFollow::where('following', auth()->id())->where('follower', $user_id)->delete();
     }
 
     public function render()
     {
-        return view('livewire.follow.follow',['user_follow'=>ModelsFollow::where('following',auth()->user()->id)->where('follower',$this->user->id)->get()->count()]);
+        return view('livewire.follow.follow', ['user_follow' => ModelsFollow::where('following', auth()->user()->id)->where('follower', $this->user->id)->get()->count()]);
     }
 }
